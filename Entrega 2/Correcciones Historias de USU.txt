@@ -1,0 +1,11 @@
+Chicos, les paso algunas historias que les faltaron en la pila:
+
+Contacto
+Recuperar clave
+Eliminar mi cuenta
+Buscar productos
+ABM Categorías
+Manejo de comentarios
+Manejo de perfil de usuario
+
+Saludos, Nico

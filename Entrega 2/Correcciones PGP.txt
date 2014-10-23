@@ -1,0 +1,16 @@
+Chicos, les paso las correcciones del documento de planificación de proyectos. Luego les mando comentarios sobre la pila de producto.
+
+Faltas de ortografía
+Estructura interna: Descentralizado Democrático / Descentralizado Controlado / Centralizado Controlado
+Están seguros que van a dedicarle tan pocas horas? Relicen un análisis y si consideran que es necesario, cambien las hs asignadas
+Riesgos: Falta la línea de corte. Los planes sólo deben hacerse para los riesgos que quedan por encima de la línea de corte.
+Indican un responsable “diseñador” cuando en los roles quedó claro que no cuentan con uno
+Riesgo 01: Lo descripto como plan de contingencia no es correcto. 
+Resgo 03: Es de producto
+Riesgo 04: Revisar plan de mitigación
+Riesgo 05: Revisar plan de mitigación
+Riesgo 11: 
+Qué significa que se realizará una correcta elicitación? 
+Contingencia: Puede ser que el problema no esté en el diseño
+
+Saludos, Nico
