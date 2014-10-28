@@ -7,10 +7,12 @@ Recuperar clave			listo
 Eliminar mi cuenta		(ya estaba de antes!)
 
 Buscar productos		(se refiere a una barra de busqueda o a explorar el sitio??)
+cristian: Creo que seria: "como usuario quiero buscar productos" asi seco, despues se espeficicara el como en una reunion
 
 ABM Categorías			(se refiere a poder buscar productos por categorias? Estaria asociada a la historia de arriba?)
 
 Manejo de comentarios		(agregué 2, poder hacer comentarios y poder borrar los comentarios de mi propia publicacion)
+cristian: Aca creo que solo iria la de hacer el comentario, el borrarlo no esta permitido en paginas como ML o Ebay.
 
 Manejo de perfil de usuario	(poder editar mi perfil)
 
