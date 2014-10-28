@@ -1,11 +1,17 @@
 Chicos, les paso algunas historias que les faltaron en la pila:
 
-Contacto
-Recuperar clave
-Eliminar mi cuenta
-Buscar productos
-ABM Categorías
-Manejo de comentarios
-Manejo de perfil de usuario
+Contacto			(se refiere a contacto con el soporte tecnico, administrador o otros usuarios??)
+
+Recuperar clave			listo
+
+Eliminar mi cuenta		(ya estaba de antes!)
+
+Buscar productos		(se refiere a una barra de busqueda o a explorar el sitio??)
+
+ABM Categorías			(se refiere a poder buscar productos por categorias? Estaria asociada a la historia de arriba?)
+
+Manejo de comentarios		(agregué 2, poder hacer comentarios y poder borrar los comentarios de mi propia publicacion)
+
+Manejo de perfil de usuario	(poder editar mi perfil)
 
 Saludos, Nico
