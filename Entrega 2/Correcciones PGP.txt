@@ -1,12 +1,12 @@
 Chicos, les paso las correcciones del documento de planificación de proyectos. Luego les mando comentarios sobre la pila de producto.
 
-Faltas de ortografía	????
+Faltas de ortografía	LISTO
 
 Estructura interna: Descentralizado Democrático / Descentralizado Controlado / Centralizado Controlado LISTO
 
 Están seguros que van a dedicarle tan pocas horas? Relicen un análisis y si consideran que es necesario, cambien las hs asignadas LISTO
 
-Riesgos: Falta la línea de corte. Los planes sólo deben hacerse para los riesgos que quedan por encima de la línea de corte.	????
+Riesgos: Falta la línea de corte. Los planes sólo deben hacerse para los riesgos que quedan por encima de la línea de corte.	LISTO
 
 Indican un responsable “diseñador” cuando en los roles quedó claro que no cuentan con uno LISTO
 
