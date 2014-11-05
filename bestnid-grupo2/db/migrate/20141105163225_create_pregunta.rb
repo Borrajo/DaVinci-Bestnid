@@ -5,7 +5,7 @@ class CreatePregunta < ActiveRecord::Migration
       t.integer :id_producto
       t.string :pregunta
       t.string :respuesta
-      t.datatime :fecha_respuesta
+      t.datetime :fecha_respuesta
 
       t.timestamps
     end

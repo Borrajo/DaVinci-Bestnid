@@ -4,7 +4,7 @@ class CreateProductos < ActiveRecord::Migration
       t.string :nombre
       t.string :descripcion
       t.integer :id_owner
-      t.datatime :fecha_finalizacion
+      t.datetime :fecha_finalizacion
       t.integer :cantidad_preguntas
       t.integer :id_comprador
       t.string :categoria
