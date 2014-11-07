@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_preguntador: 1
+  id_producto: 1
+  pregunta: MyString
+  respuesta: MyString
+  fecha_respuesta: 
+
+two:
+  id_preguntador: 1
+  id_producto: 1
+  pregunta: MyString
+  respuesta: MyString
+  fecha_respuesta: 
