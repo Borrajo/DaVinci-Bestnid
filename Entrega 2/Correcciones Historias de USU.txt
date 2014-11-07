@@ -1,0 +1,19 @@
+Chicos, les paso algunas historias que les faltaron en la pila:
+
+Contacto			(Correccion: Como usuario quiero poder contactarme con los administradores del sitio)
+
+Recuperar clave			listo
+
+Eliminar mi cuenta		(ya estaba de antes!)
+
+Buscar productos		(Correccion: como usuario quiero poder explorar el sitio para encontrar productos)
+cristian: Creo que seria: "como usuario quiero buscar productos" asi seco, despues se espeficicara el como en una reunion
+
+ABM Categorías			(como usuario quiero poder buscar productos por categoria)
+
+Manejo de comentarios		(Corregido: como usuario quiero poder hacer un comentario en una publicacion)
+cristian: Aca creo que solo iria la de hacer el comentario, el borrarlo no esta permitido en paginas como ML o Ebay.
+
+Manejo de perfil de usuario	(poder editar mi perfil)
+
+Saludos, Nico
