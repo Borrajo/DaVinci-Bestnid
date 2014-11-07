@@ -1,5 +1,9 @@
 class Usuario < ActiveRecord::Base
 
+	has_many :ofertas
+	has_many :productos
+	has_many :preguntas
+
 	validates :nombre, presence: true, length: {minimum: 2, maximum: 30}
 
 	validates :apellido, presence: true, length: {minimum: 2, maximum: 30}
