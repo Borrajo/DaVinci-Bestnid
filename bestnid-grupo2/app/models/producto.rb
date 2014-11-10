@@ -7,5 +7,4 @@ class Producto < ActiveRecord::Base
 
 	validates :nombre,presence: true,length: {minimum: 4, maximum: 30}
 	validates :descripcion, presence: true,length: {minimum: 10, maximum: 500}
-	validates :categoria, presence: true, inclusion: {in: %w(aca van las categorias), message: "%{value} no es una categoria valida"}
 end

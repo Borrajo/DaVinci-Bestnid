@@ -11,31 +11,19 @@
 	<div class="row">
 		<div class="col-md-2" class="pull-left">
 			<!--Aca va la barra de las categorias, cada categoria es un enlace,-->
+			<h2>Categorias</h2>
 			<ul >
-				<li>
-					
-				</li>
-				<li>
-					categoria 2
-				</li>
-				<li>
-					categoria 3
-				</li>
-				<li>
-					categoria 4
-				</li>
-				<li>
-					categoria 5
-				</li>
-				<li>
-					categoria 6
+				<% Categoria.all.each do |cat| %>
+				<li><h4>
+					<%= link_to cat.nombre%>
+				</h4>
 				</li>
 			</ul>
+			<%end%>
 		</div>
 		<!-- aca comienza la otra columna donde iran los productos-->
 		<div class="col-md-10 column">
 		<div class="row">  
-			<%= params[:categoria] %> 
 				<% Producto.all.each do |producto| %>
 				<div class="col-md-5">
 					<div class="thumbnail">
@@ -48,7 +36,7 @@
 								<%=producto.descripcion%>
 							</p>
 							<p>
-								<div type="button" class="btn btn-danger" href ="/productos/2">Ver </div> 
+								<div type="button" class="btn btn-danger" href ="show_producto_path(@producto) ">Ver </div> 
 								<a class="btn" href="#">Preguntar</a>
 							</p>
 						</div>
