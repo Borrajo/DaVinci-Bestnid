@@ -1,2 +1,94 @@
-<h1>Productos#show</h1>
-<p>Find me in app/views/productos/show.html.erb</p>
+<!DOCTYPE html>	
+<html>	
+	
+<head> </head>	
+<body>	
+<% @producto = Producto.find(params[:id]) %>
+<div class="container">
+	<div class="row clearfix">
+		<!--Esta es la barra de navegacion de categorias-->
+		<div class="col-md-12 column">
+			<ul class="breadcrumb">
+				<li>
+					<a href="/">Home</a> 
+					<span class="divider"></span>
+				</li>
+				<li>
+					<a href="#"><%=@producto.categoria%></a> 
+					<span class="divider"></span>
+				</li>
+				<li class="active">
+					<%=@producto.nombre%>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--aca comienza la publicacion en si misma-->
+	<div class="row clearfix">
+		<div class="col-md-8 column">
+			<h2 class="text-left">
+				<%=@producto.nombre%>
+			</h2>
+			<img alt="400x400" src="http://lorempixel.com/400/400/" class="img-rounded" />
+			<dl>
+				<h2 class="text-left">
+				Descripcion:
+			    </h2>
+			    <h4>
+				<%=@producto.descripcion%>
+			    </h4>
+			</dl>
+		</div>
+		<div class="col-md-4 column">
+			 <button type="button" class="btn btn-success">Ofertar</button>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3>
+				Preguntas
+			</h3>
+			<!-- se crea una tabla con las preguntas y las respuestas-->
+			<table class="table">
+				<!--Aca van los nombres de las columnas-->
+				<thead>
+					<tr>
+						<th>
+							Preguntas y Respuestas
+						</th>
+						<th>
+							fecha
+						</th>
+					</tr>
+				</thead>
+				<!--Aca comienzan las preguntas y respuestas-->
+				<tbody>
+					<% @producto.preguntas.each  do |pregunta| %> 
+					<!--Pregunta-->
+					<tr>
+						<td>
+							<%= pregunta.pregunta %>
+							lallaa
+						</td>
+						<td>
+							<%= pregunta.created_at %>
+						</td>
+					</tr>
+
+					<!--Respuesta-->
+					<tr class="danger" >
+						<td>
+							<%= pregunta.respuesta%>
+						</td>
+						<td class="text-right">
+							<%= pregunta.fecha_respuesta%>
+						</td>
+					</tr>  
+				<% end %> 
+				</tbody>
+			</table> <button type="button" class="btn btn-lg btn-danger">Preguntar</button>
+		</div>
+	</div>
+</div>
+</body>	
+</html>
