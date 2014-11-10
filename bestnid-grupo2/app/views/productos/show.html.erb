@@ -6,20 +6,24 @@
 <% @producto = Producto.find(params[:id]) %>
 <div class="container">
 	<div class="row clearfix">
+		<!--Esta es la barra de navegacion de categorias-->
 		<div class="col-md-12 column">
 			<ul class="breadcrumb">
 				<li>
-					<a href="#">Home</a> <span class="divider">/</span>
+					<a href="/">Home</a> 
+					<span class="divider"></span>
 				</li>
 				<li>
-					<a href="#"><%=@producto.categoria%></a> <span class="divider">/</span>
+					<a href="#"><%=@producto.categoria%></a> 
+					<span class="divider"></span>
 				</li>
 				<li class="active">
-					Data
+					<%=@producto.nombre%>
 				</li>
 			</ul>
 		</div>
 	</div>
+	<!--aca comienza la publicacion en si misma-->
 	<div class="row clearfix">
 		<div class="col-md-8 column">
 			<h2 class="text-left">
