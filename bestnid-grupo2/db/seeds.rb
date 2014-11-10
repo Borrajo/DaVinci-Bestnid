@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Creo los usuarios"
-Usuario.create(nombre: "Carlos", apellido: "Maidana", email: "a@a", telefono: "011 4234514", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
-Usuario.create(nombre: "Catalina", apellido: "Perez", email: "b@b", telefono: "011 4353152", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
-Usuario.create(nombre: "Sergio", apellido: "Ramirez", email: "c@c", telefono: "011 4514789", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
+Usuario.create(nombre: "Carlos", apellido: "Maidana", email: "a@a", telefono: "0114234514", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
+Usuario.create(nombre: "Catalina", apellido: "Perez", email: "b@b", telefono: "0114353152", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
+Usuario.create(nombre: "Sergio", apellido: "Ramirez", email: "c@c", telefono: "0114514789", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
 
 puts "Creo los productos"
 Producto.create(nombre: "Guantes de acero", descripcion: "Guante de malla de acero inox. tejido, anticorte, marca *manulatex* de industria francesa", 

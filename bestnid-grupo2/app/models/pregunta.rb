@@ -1,5 +1,5 @@
 class Pregunta < ActiveRecord::Base
   
   belongs_to :producto, dependent: :destroy
-  belongs_to :usuario
+  belongs_to :usuarios
 end
