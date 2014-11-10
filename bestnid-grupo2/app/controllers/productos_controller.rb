@@ -1,10 +1,5 @@
 class ProductosController < ApplicationController
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/master
   def index
     if params[:search]
       @producto_a = Producto.search(params[:search]).order("created_at DESC")

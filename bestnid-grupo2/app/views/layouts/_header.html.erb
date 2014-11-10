@@ -8,7 +8,7 @@
       <div class="row clearfix">
 
         <!-- LOGO -->
-        <div class="navbar-header col-md-2-column" id="header" >
+        <div class="navbar-header col-md-2" id="header" >
           <a href="/"><img src="http://i.imgur.com/2A5FQK1.png" title="Bestnid-Logo" class="img-circle"/></a>
         </div>
 
@@ -34,18 +34,20 @@
         <!-- BARRA DE BUSQUEDA -->
         <!-- When submit the form, the view rendered will be the index view of our articles resource -->
         <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-        <div class="input-append">
-          <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Articles" %>
+        <div class="navbar-header col-md-8" >
+          <div class = "input-group pull-center">
+          <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Busqueda" %>
             <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
               of using a Rails form helper -->
-          <button class="btn" type="submit"><i class="icon-search"></i></button>
+          <span class="input-group-btn"><button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-search"></span> </button>
+          </div>
         </div>
         <% end %>
 
 
 
         <!-- CAMPOS PARA EL LOGIN -->
-        <div class="col-md-2-column">
+        <div class="col-md-2">
         <form class="navbar-form navbar-left" role="input">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Email">
