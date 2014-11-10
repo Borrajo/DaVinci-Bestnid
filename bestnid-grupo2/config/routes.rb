@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'categorias/index'
+
   resources :usuarios
   resources :productos
   resources :preguntas

@@ -2,7 +2,7 @@
 <html>	
 <head> </head>	
 <body>	
-<% @producto = Producto.find(params[:id]) %>
+
 <div class="container">
 	<div class="row clearfix">
 		<!--Esta es la barra de navegacion de categorias-->
@@ -24,11 +24,12 @@
 	</div>
 	<!--aca comienza la publicacion en si misma-->
 	<div class="row clearfix">
-		<div class="col-md-8 column">
+		<div class="col-md-6 column">
 			<h2 class="text-left">
 				<%=@producto.nombre%>
 			</h2>
-			<img alt="400x400" src="http://lorempixel.com/400/400/animals/" class="img-rounded" />
+
+			<img class="img-responsive" alt="400x400" src="http://lorempixel.com/400/400/animals/" class="img-rounded" />
 			<dl>
 				<h2 class="text-left">
 				Descripcion:
@@ -38,9 +39,14 @@
 			    </h4>
 			</dl>
 		</div>
-		<div class="col-md-4 column">
-			 <button type="button" class="btn btn-success">Ofertar</button>
-		</div>
+		<div class="col-md-6 ">
+			<p class="bg-danger">
+				<%=@producto.descripcion%>
+				<a href="/" class="btn btn-success" role="button">Ofertar</a>
+
+		</p>
+      </div>
+    </div>
 	</div>
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -88,6 +94,7 @@
 			</table> <button type="button" class="btn btn-lg btn-danger">Preguntar</button>
 		</div>
 	</div>
-</div>
 </body>	
 </html>
+
+

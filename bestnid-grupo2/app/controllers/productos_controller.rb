@@ -13,5 +13,6 @@ class ProductosController < ApplicationController
   end
 
   def show 
+       @producto = Producto.find(params[:id]) 
   end
 end
