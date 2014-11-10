@@ -1,21 +1,17 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header" id="header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-      <%= link_to root_path, class: 'navbar-brand' do %>
-        <%= image_tag "logo.png", title: "Logo", class: "logo" %>
-      <% end %> 
-    </div>
+ 
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="row clearfix">
+
+        <!-- LOGO -->
+        <div class="navbar-header col-md-2-column" id="header" >
+          <a href="/"><img src="http://i.imgur.com/2A5FQK1.png" title="Bestnid-Logo" class="img-circle"/></a>
+        </div>
+
       <!-- 
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Link</a></li>
@@ -35,25 +31,29 @@
       </ul>
       -->
 
-      <!-- BARRA DE BUSQUEDA -->  
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">    
+        <!-- BARRA DE BUSQUEDA -->
+        <div class="col-md-8-column">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Busqueda">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+              </span>
+          </div>
         </div>
-        <button type="submit" class="btn btn-default">Buscar</button>
-      </form>
-      
-      <!-- CAMPOS PARA EL LOGIN -->
-      <form class="navbar-form navbar-left" role="input">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Email">
+
+        <!-- CAMPOS PARA EL LOGIN -->
+        <div class="col-md-2-column">
+        <form class="navbar-form navbar-left" role="input">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Ingresar</button>
+        </form>
         </div>
-        <div class="form-group">
-          <input type="password" class="form-control" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-default">Ingresar</button>
-      </form>
-      
+
       <!--
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
@@ -69,6 +69,7 @@
         </li>
       </ul>
       -->
+    </div> <!-- Fin del row -->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

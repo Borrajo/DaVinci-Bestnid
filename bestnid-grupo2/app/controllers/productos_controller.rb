@@ -1,5 +1,11 @@
 class ProductosController < ApplicationController
 
+  before_action :get_producto, only: [:index, :show]
+
+  def get_producto
+    @producto = Producto.find(params[:id])  
+  end
+
   def index
   end
 
@@ -15,4 +21,9 @@ class ProductosController < ApplicationController
   def show 
        @producto = Producto.find(params[:id]) 
   end
+
+  def search
+  end
+
+  
 end
