@@ -1,5 +1,6 @@
 class ProductoCambiarCategoriaId < ActiveRecord::Migration
   def change
-  	change_column :productos, :categoria, :integer
+  	remove_column(:productos, :categoria);
+  	add_column(:productos, :categoria, :integer);
   end
 end
