@@ -13,12 +13,25 @@ Usuario.create(nombre: "Sergio", apellido: "Ramirez", email: "c@c", telefono: "0
 
 puts "Creo los productos"
 Producto.create(nombre: "Guantes de acero", descripcion: "Guante de malla de acero inox. tejido, anticorte, marca *manulatex* de industria francesa", 
-	id_owner: 1, cantidad_preguntas: 0, categoria: 1)
+	id_owner: 1, cantidad_preguntas: 0, categoria: 5)
 Producto.create(nombre: "Llama", descripcion: "Llama adulta oriunda de Tilcara. Es mansita", 
 	id_owner: 2, cantidad_preguntas: 0, categoria: 1)
 Producto.create(nombre: "Espejo", descripcion: "Espejo sin marco. Medidas: 0.8m x 1.2m", 
-	id_owner: 1, cantidad_preguntas: 0, categoria: 1)
+	id_owner: 1, cantidad_preguntas: 0, categoria: 2)
 Producto.create(nombre: "Kriptonita", descripcion: "200 gramos de Kriptonita", 
-	id_owner: 2, cantidad_preguntas: 0, categoria: 1)
+	id_owner: 2, cantidad_preguntas: 0, categoria: 4)
 Producto.create(nombre: "Aceite y Vinagre", descripcion: "200ml de aceite y 300ml de vinagre. No incluye fascos", 
-	id_owner: 3, cantidad_preguntas: 0, categoria: 1)
+	id_owner: 3, cantidad_preguntas: 0, categoria: 7)
+
+puts "Creo las categorias"
+Categoria.create(nombre: "Animales")
+Categoria.create(nombre: "Hogar")
+Categoria.create(nombre: "Tecnologia")
+Categoria.create(nombre: "Minerales/Piedras")
+Categoria.create(nombre: "Indumentaria")
+Categoria.create(nombre: "Deportes")
+Categoria.create(nombre: "Cocina")
+Categoria.create(nombre: "Antiguedades")
+Categoria.create(nombre: "Santeria")
+Categoria.create(nombre: "Automotores")
+Categoria.create(nombre: "Otros")
