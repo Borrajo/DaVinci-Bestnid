@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
  
@@ -8,8 +8,8 @@
       <div class="row clearfix">
 
         <!-- LOGO -->
-        <div class="navbar-header col-md-2" id="header" >
-          <a href="/"><img src="http://i.imgur.com/2A5FQK1.png" title="Bestnid-Logo" class="img-circle"/></a>
+        <div class="navbar-header col-md-2" >
+          <a href="/"><img src="http://i.imgur.com/2G1RSzL.jpg" title="Bestnid-Logo" class="img-rounded"/></a>
         </div>
 
       <!-- 
@@ -34,8 +34,8 @@
         <!-- BARRA DE BUSQUEDA -->
         <!-- When submit the form, the view rendered will be the index view of our articles resource -->
         <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-        <div class="navbar-header col-md-8" >
-          <div class = "input-group pull-center">
+        <div class="navbar-header col-md-5" >
+          <div class = "input-group col-md-12">
           <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Busqueda" %>
             <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
               of using a Rails form helper -->
@@ -47,7 +47,7 @@
 
 
         <!-- CAMPOS PARA EL LOGIN -->
-        <div class="col-md-2">
+        <div class="col-md-5">
         <form class="navbar-form navbar-left" role="input">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Email">

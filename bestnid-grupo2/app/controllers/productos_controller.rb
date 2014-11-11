@@ -1,4 +1,5 @@
 class ProductosController < ApplicationController
+  before_action :get_producto, only: [:show, :destroy]
 
   def index
     if params[:search]
@@ -22,12 +23,14 @@ class ProductosController < ApplicationController
   end
 
   def show 
-    @producto = Producto.find(params[:id]) 
+     
   end
 
-  def search
-    @producto = Producto.find(params[:id]) 
+  private 
+  def get_producto
+    @producto = Producto.find(params[:id])
   end
+
 
   
 end

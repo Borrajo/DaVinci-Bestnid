@@ -34,7 +34,7 @@
 								<%=link_to producto.nombre, producto %>
 							</h3>
 							<p> 
-								<%=producto.descripcion%>
+								<%= truncate(producto.descripcion, length: 50)%>
 							</p>
 							<p>
 								<div type="button" class="btn btn-danger" href ="show_producto_path(@producto) ">Ver </div> 

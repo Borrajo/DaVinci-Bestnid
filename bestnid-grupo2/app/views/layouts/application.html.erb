@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id = "header">
 
 <%= render 'layouts/header' %>
 
@@ -19,7 +19,7 @@
 	<%= yield %>
 </div>
 
-<footer>
+<footer id = "footer">
 <nav class= "navbar navbar-default navbar-fixed-bottom" role= "navigation">
   <div class="container">
   	<%= link_to 'acerca de','/acerca'%>
