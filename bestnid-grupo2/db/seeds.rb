@@ -27,13 +27,13 @@ otros = Categoria.find_or_create_by(nombre: "Otros")
 
 puts "Creo los productos"
 Producto.find_or_create_by(nombre: "Guantes de acero", descripcion: "Guante de malla de acero inox. tejido, anticorte, marca *manulatex* de industria francesa", 
-	id_owner: 1, cantidad_preguntas: 0, categoria: herramientas)
+	id_owner: 1, cantidad_preguntas: 0, categoria: 7)
 Producto.find_or_create_by(nombre: "Llama", descripcion: "Llama adulta oriunda de Tilcara. Es mansita", 
-	id_owner: 2, cantidad_preguntas: 0, categoria: animales)
+	id_owner: 2, cantidad_preguntas: 0, categoria: 2)
 Producto.find_or_create_by(nombre: "Espejo", descripcion: "Espejo sin marco. Medidas: 0.8m x 1.2m", 
-	id_owner: 1, cantidad_preguntas: 0, categoria: hogar)
+	id_owner: 1, cantidad_preguntas: 0, categoria: 3)
 Producto.find_or_create_by(nombre: "Kriptonita", descripcion: "200 gramos de Kriptonita", 
-	id_owner: 2, cantidad_preguntas: 0, categoria: minerales)
+	id_owner: 2, cantidad_preguntas: 0, categoria: 5)
 Producto.find_or_create_by(nombre: "Aceite y Vinagre", descripcion: "200ml de aceite y 300ml de vinagre. No incluye fascos", 
-	id_owner: 3, cantidad_preguntas: 0, categoria: cocina)
+	id_owner: 3, cantidad_preguntas: 0, categoria: 8)
 
