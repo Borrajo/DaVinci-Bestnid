@@ -6,6 +6,10 @@ class ProductosController < ApplicationController
     else
       @producto_a = Producto.order("created_at DESC")
     end
+    if params[:categoria]
+      @producto_a = Producto.where(categoria: params[:categoria])
+
+    end
   end
 
   def create 

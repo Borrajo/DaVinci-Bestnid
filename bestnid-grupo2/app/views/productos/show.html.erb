@@ -13,7 +13,7 @@
 					<span class="divider"></span>
 				</li>
 				<li>
-					<%=@producto.categoria%>
+					<%=link_to Categoria.find(@producto.categoria).nombre, productos_path(categoria: @producto.categoria) %>
 					
 					<span class="divider"></span>
 				</li>
@@ -30,7 +30,7 @@
 				<%=@producto.nombre%>
 			</h2>
 
-			<img class="img-responsive" alt="400x400" src="http://lorempixel.com/400/400/animals/" class="img-rounded" />
+			<img class="img-rounded" alt="400x400" src="http://lorempixel.com/400/400/animals/">
 			<dl>
 				<h2 class="text-left">
 				Descripcion:

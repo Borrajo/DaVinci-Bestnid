@@ -14,12 +14,13 @@
 			<h2>Categorias</h2>
 			<ul >
 				<% Categoria.all.each do |cat| %>
-				<li><h4>
-					<%= link_to cat.nombre%>
-				</h4>
+				<li>
+				<h4>
+					<%=link_to cat.nombre,productos_path(categoria: cat.id) %>
+				</h4>				
 				</li>
+             <%end%>
 			</ul>
-			<%end%>
 		</div>
 		<!-- aca comienza la otra columna donde iran los productos-->
 		<div class="col-md-10 column">
