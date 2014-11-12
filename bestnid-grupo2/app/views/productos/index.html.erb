@@ -13,10 +13,10 @@
 			<!--Aca va la barra de las categorias, cada categoria es un enlace,-->
 
 			<!-- Boton para ordenar los prodcutos -->
-				<div class="dropdown col-md-12">
-          			<button class="btn dropdown-toggle" 
-          			type="button" data-toggle="dropdown" >Ordenar  <span class="caret"></span>
-                    </button>
+			<div class="btn-group">
+  				<button type="button" class="btn dropdown-toggle"
+         			 data-toggle="dropdown"> Ordenar <span class="caret"></span>
+  				</button>
           			<ul class="dropdown-menu" role="menu">
             			<li role="presentation" class="dropdown-header">Alfabéticamente</li>
             			<li><%=link_to "Ascendente", productos_path(orden: "nombre asc")%></li>
