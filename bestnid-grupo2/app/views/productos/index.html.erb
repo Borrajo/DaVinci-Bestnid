@@ -11,6 +11,24 @@
 	<div class="row">
 		<div class="col-md-2" class="pull-left">
 			<!--Aca va la barra de las categorias, cada categoria es un enlace,-->
+
+			<!-- Boton para ordenar categorias -->
+ 			<!--
+      		<ul class="nav navbar-nav">
+        		<li class="dropdown">
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Odenar <span class="caret"></span></a>
+          			<ul class="dropdown-menu" role="menu">
+            			<li><a href="#">Alfabéticamente</a></li>
+            			<li><a href="#">Publicaciones recientes</a></li>
+            			<li><a href="#">Something else here</a></li>
+         			   	<li class="divider"></li>
+            			<li><a href="#">Separated link</a></li>
+            			<li class="divider"></li>
+            			<li><a href="#">One more separated link</a></li>
+          			</ul>
+        		</li>
+      		</ul>	
+			-->
 			<h2>Categorias</h2>
 			<ul >
 				<% Categoria.all.each do |cat| %>
@@ -46,7 +64,27 @@
 				</div>
 			<% end %>
 			</div>
-		</div>
+
+
+			<div class="col-md-2" class="pull-right">
+
+			<!-- Boton para ordenar categorias -->
+ 	
+      		<ul class="nav navbar-nav">
+        		<li class="dropdown">
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Odenar <span class="caret"></span></a>
+          			<ul class="dropdown-menu" role="menu">
+            			<li><a href="#">Alfabéticamente</a></li>
+            			<li><a href="#">Publicaciones recientes</a></li>
+            			<li><a href="#">Something else here</a></li>
+         			   	<li class="divider"></li>
+            			<li><a href="#">Separated link</a></li>
+            			<li class="divider"></li>
+            			<li><a href="#">One more separated link</a></li>
+          			</ul>
+        		</li>
+      		</ul>	
+
 	</div>
 </div>
 </body> 	
