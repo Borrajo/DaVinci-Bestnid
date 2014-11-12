@@ -9,7 +9,9 @@ class ProductosController < ApplicationController
     end
     if params[:categoria]
       @producto_a = Producto.where(categoria: params[:categoria])
-
+    end
+    if params[:orden]
+        @producto_a = Producto.order(params[:orden])
     end
   end
 

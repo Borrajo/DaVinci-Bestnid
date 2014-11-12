@@ -12,23 +12,21 @@
 		<div class="col-md-2" class="pull-left">
 			<!--Aca va la barra de las categorias, cada categoria es un enlace,-->
 
-			<!-- Boton para ordenar categorias -->
-
-      		<ul class="nav navbar-nav">
-        		<li class="dropdown">
-          			<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Odenar <span class="caret"></span></a>
+			<!-- Boton para ordenar los prodcutos -->
+				<div class="dropdown col-md-12">
+          			<button class="btn dropdown-toggle" 
+          			type="button" data-toggle="dropdown" >Ordenar  <span class="caret"></span>
+                    </button>
           			<ul class="dropdown-menu" role="menu">
             			<li role="presentation" class="dropdown-header">Alfabéticamente</li>
-            			<li><a href="#">Ascendente</a></li>
-            			<li><a href="#">Descendente</a></li>
+            			<li><%=link_to "Ascendente", productos_path(orden: "nombre asc")%></li>
+            			<li><%=link_to "Descendente", productos_path(orden: "nombre desc")%></li>
             			<li class="divider"></li>
             			<li role="presentation" class="dropdown-header">Publicaciones recientes</li>
-            			<li><a href="#">Ascendente</a></li>
-            			<li><a href="#">Descendente</a></li>
+            			<li><%=link_to "Ascendente", productos_path(orden: "created_at asc")%></li>
+            			<li><%=link_to "Descendente", productos_path(orden: "created_at desc")%></li>
           			</ul>
-        		</li>
-      		</ul>	
-
+				</div>
 			<h2>Categorias</h2>
 			<ul >
 				<% Categoria.all.each do |cat| %>
@@ -46,7 +44,7 @@
 				<% @producto_a.all.each do |producto| %>
 				<div class="col-md-5">
 					<div class="thumbnail">
-							<a href=""><img alt="300x300" src="http://lorempixel.com/500/500/animals/" class="img-rounded"></a>
+						<%= link_to image_tag(producto.foto,class: "img-rounded"), producto %>
 							<div class="caption">
 							<h3>
 								<%=link_to producto.nombre, producto %>
@@ -55,8 +53,8 @@
 								<%= truncate(producto.descripcion, length: 50)%>
 							</p>
 							<p>
-								<div type="button" class="btn btn-danger" href ="show_producto_path(@producto) ">Ver</div>
-								 <div type="button" class="btn" href ="show_producto_path(@producto) ">Preguntar</div>
+								<div type="button" class="btn btn-danger" href ="show_producto_path(producto) ">Ver</div>
+								 <div type="button" class="btn" href ="show_producto_path(producto) ">Preguntar</div>
 								
 							</p>
 						</div>

@@ -24,8 +24,9 @@
 			<h2 class="text-left">
 				<%=@producto.nombre%>
 			</h2>
-
-			<img class="img-rounded" alt="400x400" src="http://lorempixel.com/400/400/animals/">
+			<div class="thumbnail">
+				<%= image_tag( @producto.foto,class: "img-rounded") %>
+			</div>
 			<dl>
 				<h2 class="text-left">
 				Descripcion:
