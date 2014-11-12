@@ -27,21 +27,24 @@
 			<div class="thumbnail">
 				<%= image_tag( @producto.foto,class: "img-rounded") %>
 			</div>
-			<dl>
-				<h2 class="text-left">
+		</div>
+
+		<div class="col-md-6 ">
+			<h2 class="text-left">
 				Descripcion:
 			    </h2>
 			    <h4>
+				   
+				       
+			    </h4>
+			    <h4>
 				<%=@producto.descripcion%>
 			    </h4>
-			</dl>
-		</div>
-		<div class="col-md-6 ">
-			<p class="bg-danger">
-				<%=@producto.descripcion%>
-				<a href="/" class="btn btn-success" role="button">Ofertar</a>
+			    <h4>
+				        
+			    </h4>
+				<a href="/" class="btn-lg btn-success" role="button">Ofertar</a>
 
-		</p>
       </div>
     </div>
 	</div>
