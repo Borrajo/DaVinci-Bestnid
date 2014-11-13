@@ -52,6 +52,11 @@
 							<p> 
 								<%= truncate(producto.descripcion, length: 50)%>
 							</p>
+							<div class="caption-right">
+								 <%= producto.created_at.strftime("Publicado el: %d/%m/%Y") %>
+								<!-- dias = Time.now - producto.fecha_finalizacion-->
+								<!-- dias.strftime("Finaliza el %d dias")-->
+							</div>
 							<p>
 								<div type="button" class="btn btn-danger" href ="show_producto_path(producto) ">Ver</div>
 								 <div type="button" class="btn" href ="show_producto_path(producto) ">Preguntar</div>

@@ -33,6 +33,9 @@ class ProductosController < ApplicationController
     @producto = Producto.find(params[:id])
   end
 
+  def fin 
+    
+  end
 
   
 end
