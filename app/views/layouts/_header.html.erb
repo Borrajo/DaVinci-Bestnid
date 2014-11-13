@@ -47,17 +47,13 @@
 
 
         <!-- CAMPOS PARA EL LOGIN -->
-        <div class="col-md-5">
-        <form class="navbar-form navbar-left" role="input">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Ingresar</button>
-        </form>
-        </div>
+        <div class="navbar-header col-md-5">
+          <!-- Small modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">Ingresar</button>
+
+          <!-- Large modal -->
+            <button type="button" class="btn btn-danger " data-toggle="modal" data-target=".bs-example-modal-lg">Registrar</button>
+        
 
       <!--
       <ul class="nav navbar-nav navbar-right">
@@ -78,3 +74,118 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<!-- Modal Login -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="container-fluid">
+      <div class="form-group col-md-12">
+          <h3>Ingreso</h3>
+          <p></p>
+          <input type="text" class="form-control" placeholder="Mail">
+          <p></p>
+          <input type="password" class="form-control" placeholder="Contraseña">
+          <p></p>
+          <div class="pull-right">
+            <button type="submit" class="btn btn-danger">Entrar</button>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Registrarse -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="container-fluid">
+        <div class="form-group col-md-12">
+          <form role="form">
+            <fieldset enable>
+
+              <!-- NOMBRE -->
+              <div class="row">
+                <div class="form-group col-md-4">
+                  <h4><label for="enableTextInput">Nombre</label></h4>
+                  <input type="text" id="enableTextInput" class="form-control" placeholder="Carlos">
+                </div>
+                <h4><label></label></h4>
+                <div class="form-group col-md-6">
+                    <span id="helpBlock" class="help-block">Ingrese de 1 a 25 caracteres</span>
+                </div>
+              </div> <!-- FIN NOMBRE -->
+
+              <!-- APELLIDO -->
+              <div class="row">
+                <div class="form-group col-md-4">
+                  <h4><label for="enableTextInput">Apellido</label></h4>
+                  <input type="text" id="enableTextInput" class="form-control" placeholder="Gardel">
+                </div>
+                <h4><label></label></h4>
+                <div class="form-group col-md-6">
+                    <span id="helpBlock" class="help-block">Ingrese de 1 a 25 caracteres</span>
+                </div>
+              </div> <!-- FIN APELLIDO -->
+
+              <!-- EMAIL -->
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <h4><label for="enableTextInput">Email</label></h4>
+                  <input type="text" id="enableTextInput" class="form-control" placeholder="Ejemplo@dominio.com">
+                </div>
+                <h4><label></label></h4>
+                <div class="form-group col-md-6">
+                    <span id="helpBlock" class="help-block">Ejemplo@dominio.com</span>
+                </div>
+              </div> <!-- FIN EMAIL -->
+
+              <!-- TELEFONO-->
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <h4><label for="enableTextInput">Telefono</label></h4>
+                  <div class="input-group col-md-3">                  
+                    <input type="text" id="enableTextInput" class="form-control" placeholder="Cod. Area">
+                    <input type="text" id="enableTextInput" class="form-control" placeholder="">
+                  </div>
+                  <div class="input-group col-md-3">
+                    <h5><label for="enableTextInput">Localidad</label></h5>
+                    <input type="text" id="enableTextInput" class="form-control" placeholder="La Plata">
+                  </div>
+                  <div class="input-group col-md-3">
+                    <h5><label for="enableTextInput">Provincia</label></h5>
+                    <input type="text" id="enableTextInput" class="form-control" placeholder="Buenos Aires">
+                  </div>
+                </div> 
+              </div> <!-- FIN TELEFONO -->   
+
+              <!-- FECHA DE NACIMIENTO-->
+
+              <!-- DOMICILIO -->
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <h4><label for="enableTextInput">Domicilio</label></h4>
+                  <div class="form-group col-md-2">                  
+                    <input type="text" id="enableTextInput" class="form-control" placeholder="Calle">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <input type="text" id="enableTextInput" class="form-control" placeholder="Altura">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <input type="text" id="enableTextInput" class="form-control" placeholder="Localidad">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <input type="text" id="enableTextInput" class="form-control" placeholder="Provincia">
+                  </div>
+                </div> 
+              </div> <!-- FIN DOMICILIO -->                        
+
+            </fieldset>
+          </form>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
