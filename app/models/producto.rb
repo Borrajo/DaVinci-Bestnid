@@ -16,5 +16,4 @@ class Producto < ActiveRecord::Base
     	return Producto.where("descripcion like ?", "%#{query}%")
   	end
 
-
 end

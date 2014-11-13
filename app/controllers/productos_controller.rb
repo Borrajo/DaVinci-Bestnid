@@ -13,6 +13,7 @@ class ProductosController < ApplicationController
     if params[:orden]
         @producto_a = Producto.order(params[:orden])
     end
+
   end
 
   def create 
@@ -32,10 +33,5 @@ class ProductosController < ApplicationController
   def get_producto
     @producto = Producto.find(params[:id])
   end
-
-  def fin 
-    
-  end
-
   
 end
