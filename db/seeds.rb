@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Creo los usuarios"
-Usuario.find_or_create_by(nombre: "Carlos", apellido: "Maidana", email: "a@a", telefono: "0114234514", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
-Usuario.find_or_create_by(nombre: "Catalina", apellido: "Perez", email: "b@b", telefono: "0114353152", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
-Usuario.find_or_create_by(nombre: "Sergio", apellido: "Ramirez", email: "c@c", telefono: "0114514789", clave: "123456", fecha_nacimiento: DateTime.new(2001,2,3))
+Usuario.find_or_create_by(nombre: "Carlos", apellido: "Maidana", email: "a@a", telefono: "0114234514", clave: "123456", fecha_nacimiento: DateTime.new(1990,2,3))
+Usuario.find_or_create_by(nombre: "Catalina", apellido: "Perez", email: "b@b", telefono: "0114353152", clave: "123456", fecha_nacimiento: DateTime.new(1992,5,3))
+Usuario.find_or_create_by(nombre: "Sergio", apellido: "Ramirez", email: "c@c", telefono: "0114514789", clave: "123456", fecha_nacimiento: DateTime.new(1985,8,3))
 
 puts "Creo las categorias"
 animales =Categoria.find_or_create_by(nombre: "Animales")
