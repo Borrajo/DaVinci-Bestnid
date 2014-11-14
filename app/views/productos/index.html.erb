@@ -43,7 +43,7 @@
 				<% @producto_a.all.each do |producto| %>
 				<div class="col-md-5">
 					<div class="thumbnail">
-						<%= link_to image_tag(producto.foto, heigth: '300', class: "img-rounded"), producto %>
+						<%= link_to image_tag(producto.foto, size: "400", :crop => :fill,  class: "img-rounded", :title => "Ver producto"), producto %>
 							<div class="caption">
 							<h3>
 								<%=link_to producto.nombre, producto %>
