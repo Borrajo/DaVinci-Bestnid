@@ -14,6 +14,8 @@ class Usuario < ActiveRecord::Base
 
 	validates :telefono, presence: true, numericality: { only_integer: true }, length: { minimum:10 , maximum: 50 }
 
-	validates :edad, presence: true, exclusion_of: in: 0…21, message: “Debes ser mayor a 21”	# REVISAR!
+	validates :edad, presence: true 
+	validates_exclusion_of :edad, :in => 0..17, :message => "Debes ser mayor a 18"
+
 
 end
