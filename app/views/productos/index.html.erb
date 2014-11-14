@@ -13,11 +13,10 @@
 			<!--Aca va la barra de las categorias, cada categoria es un enlace,-->
 
 			<!-- Boton para ordenar los prodcutos -->
-			<div class="btn-group">
-  				<button type="button" class="btn dropdown-toggle"
-         			 data-toggle="dropdown"> Ordenar <span class="caret"></span>
+			<div class="btn-group" >
+  				<button type="button" class="btn dropdown-toggle" data-toggle=dropdown> Ordenar <span class="caret"></span> 
   				</button>
-          			<ul class="dropdown-menu" role="menu">
+          			<ul class="dropdown-menu"  role="menu">
             			<li role="presentation" class="dropdown-header">Alfabéticamente</li>
             			<li><%=link_to "Ascendente", productos_path(orden: "nombre asc")%></li>
             			<li><%=link_to "Descendente", productos_path(orden: "nombre desc")%></li>
@@ -44,7 +43,7 @@
 				<% @producto_a.all.each do |producto| %>
 				<div class="col-md-5">
 					<div class="thumbnail">
-						<%= link_to image_tag(producto.foto,class: "img-rounded"), producto %>
+						<%= link_to image_tag(producto.foto, heigth: '300', class: "img-rounded"), producto %>
 							<div class="caption">
 							<h3>
 								<%=link_to producto.nombre, producto %>
