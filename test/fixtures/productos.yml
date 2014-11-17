@@ -4,16 +4,18 @@ one:
   nombre: MyString
   descripcion: MyString
   id_owner: 1
-  fecha_finalizacion: 
+  fecha_finalizacion: 2014-11-17 15:09:37
   cantidad_preguntas: 1
   id_comprador: 1
-  categoria: MyString
+  foto: MyString
+  id_categoria: 1
 
 two:
   nombre: MyString
   descripcion: MyString
   id_owner: 1
-  fecha_finalizacion: 
+  fecha_finalizacion: 2014-11-17 15:09:37
   cantidad_preguntas: 1
   id_comprador: 1
-  categoria: MyString
+  foto: MyString
+  id_categoria: 1

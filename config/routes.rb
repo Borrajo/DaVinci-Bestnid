@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  
-  get 'categorias/index'
 
+  resources :categorias
   resources :usuarios
   resources :productos
   resources :preguntas
   resources :ofertas
   
   root 'productos#index'
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

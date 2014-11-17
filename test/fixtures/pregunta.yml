@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_preguntador: 1
+  id_usuario: 1
   id_producto: 1
   pregunta: MyString
   respuesta: MyString
-  fecha_respuesta: 
+  fecha_respuesta: 2014-11-17 15:10:50
 
 two:
-  id_preguntador: 1
+  id_usuario: 1
   id_producto: 1
   pregunta: MyString
   respuesta: MyString
-  fecha_respuesta: 
+  fecha_respuesta: 2014-11-17 15:10:50

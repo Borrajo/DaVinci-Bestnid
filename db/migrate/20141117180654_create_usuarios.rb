@@ -6,7 +6,12 @@ class CreateUsuarios < ActiveRecord::Migration
       t.string :email
       t.string :telefono
       t.string :clave
-      t.datetime :fecha_nacimiento
+      t.string :foto
+      t.integer :edad
+      t.string :domicilio
+      t.string :numero_tarjeta
+      t.string :titular_tarjeta
+      t.string :vencimiento_tarjeta
 
       t.timestamps
     end

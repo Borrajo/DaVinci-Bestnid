@@ -17,5 +17,4 @@ class Usuario < ActiveRecord::Base
 	validates :edad, presence: true 
 	validates_exclusion_of :edad, :in => 0..17, :message => "Debes ser mayor a 18"
 
-
 end

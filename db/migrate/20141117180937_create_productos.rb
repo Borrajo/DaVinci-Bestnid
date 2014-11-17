@@ -7,7 +7,8 @@ class CreateProductos < ActiveRecord::Migration
       t.datetime :fecha_finalizacion
       t.integer :cantidad_preguntas
       t.integer :id_comprador
-      t.string :categoria
+      t.string :foto
+      t.integer :id_categoria
 
       t.timestamps
     end

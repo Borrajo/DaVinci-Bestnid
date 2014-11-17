@@ -6,7 +6,12 @@ one:
   email: MyString
   telefono: MyString
   clave: MyString
-  fecha_nacimiento: 2014-11-05 13:55:16
+  foto: MyString
+  edad: 1
+  domicilio: MyString
+  numero_tarjeta: MyString
+  titular_tarjeta: MyString
+  vencimiento_tarjeta: MyString
 
 two:
   nombre: MyString
@@ -14,4 +19,9 @@ two:
   email: MyString
   telefono: MyString
   clave: MyString
-  fecha_nacimiento: 2014-11-05 13:55:16
+  foto: MyString
+  edad: 1
+  domicilio: MyString
+  numero_tarjeta: MyString
+  titular_tarjeta: MyString
+  vencimiento_tarjeta: MyString

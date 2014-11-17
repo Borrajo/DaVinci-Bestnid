@@ -15,5 +15,4 @@ class Producto < ActiveRecord::Base
     	# where(:title, query) -> This would return an exact match of the query
     	return Producto.where("( LOWER(descripcion) || LOWER(nombre) )  LIKE ?", "%#{query.downcase}%" )
   	end
-
 end
