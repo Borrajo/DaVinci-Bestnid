@@ -8,7 +8,7 @@ class ProductosController < ApplicationController
       @producto_a = Producto.order("created_at DESC")
     end
     if params[:categoria]
-      @producto_a = Producto.where(categoria: params[:categoria])
+      @producto_a = Producto.where(categoria_id: params[:categoria])
     end
     if params[:orden]
         @producto_a = Producto.order(params[:orden])
