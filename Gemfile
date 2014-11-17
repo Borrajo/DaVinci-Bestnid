@@ -43,4 +43,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 #Heroku Commands
 gem 'rails_12factor', group: :production
 
-ruby "2.1.4"
