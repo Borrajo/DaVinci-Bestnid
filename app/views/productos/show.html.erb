@@ -8,7 +8,7 @@
 					<span class="divider"></span>
 				</li>
 				<li>
-					<%=link_to Categoria.find(@producto.categoria).nombre, productos_path(categoria: @producto.categoria) %>
+					<%=link_to Categoria.find(@producto.categoria_id).nombre, productos_path(categoria: @producto.categoria_id) %>
 					
 					<span class="divider"></span>
 				</li>
@@ -45,11 +45,9 @@
 			    </h4>
 			    <div class="row clearfix">
 					<div class="col-md-4">
-						<div type="button" class="btn-lg btn-success" href ="show_producto_path(producto) ">
-							<div class="text-center">
-								Ofertar
-							</div>
-						</div>
+
+						<%= link_to button_to("Ofertar", productos_path  , 
+						:class => "btn btn-lg btn-success"), @producto%>
 					</div>
 				<div class="col-md-8 ">
 					<h4 class="text-left">

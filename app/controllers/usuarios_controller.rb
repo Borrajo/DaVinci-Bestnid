@@ -1,4 +1,6 @@
 class UsuariosController < ApplicationController
+  before_action :get_usuario, only: [:edit, :update, :destroy, :buy, :sell, :ask, :answer, :show]
+
   def index
   end
 
@@ -24,7 +26,8 @@ class UsuariosController < ApplicationController
   end
 
   def show
- 
   end
 
-end
+  def get_usuario
+      @usuario = Usuario.find(params[:id])
+  end

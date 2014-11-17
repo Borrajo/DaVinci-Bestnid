@@ -30,6 +30,7 @@ class ProductosController < ApplicationController
   end
 
   private 
+  
   def get_producto
     @producto = Producto.find(params[:id])
   end

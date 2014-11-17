@@ -58,8 +58,8 @@
 								 <%= producto.fecha_finalizacion.strftime("Finaliza el %d/%m/%Y a las %H:%M")  %>
 							</div>
 							<p>
-								<div type="button" class="btn btn-danger" href ="show_producto_path(producto) ">Ver</div>
-								 <div type="button" class="btn" href ="show_producto_path(producto) ">Preguntar</div>
+								<%= link_to button_to( "Ver", producto_path(id: producto.id)  , :class => "btn btn-danger"), producto%>
+								<%= link_to button_to( "Preguntar", producto_path(id: producto.id)  , :class => "btn"), producto%>
 								
 							</p>
 						</div>
