@@ -60,12 +60,21 @@
     </div>
 	</div>
 	<div class="row clearfix">
+		<div class="container">
+	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<h3>
-				Preguntas
-			</h3>
-			<!-- se crea una tabla con las preguntas y las respuestas-->
-			<table class="table">
+			<div class="tabbable" id="tabs-795537">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-884539" data-toggle="tab">Preguntas</a>
+					</li>
+					<li class="">
+						<a href="#panel-361720" data-toggle="tab">Ofertas</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-884539">
+						<table class="table">
 				<!--Aca van los nombres de las columnas-->
 				<thead>
 					<tr>
@@ -73,13 +82,12 @@
 							Preguntas y Respuestas
 						</th>
 						<th>
-							fecha
+							Fecha
 						</th>
 					</tr>
 				</thead>
 				<!--Aca comienzan las preguntas y respuestas-->
-				<tbody>
-					<% @producto.preguntas.each  do |pregunta| %> 
+				<% @producto.preguntas.each  do |pregunta| %> 
 					<!--Pregunta-->
 					<tr>
 						<td>
@@ -100,9 +108,20 @@
 						</td>
 					</tr>  
 				<% end %> 
+				<tbody>
 				</tbody>
-			</table> <button type="button" class="btn btn-lg btn-danger">Preguntar</button>
+				</table> <button type="button" class="btn btn-lg btn-danger">Preguntar</button>
+			</table>
+					</div>
+					<div class="tab-pane" id="panel-361720">
+						<p>
+							Aca irian las ofertas
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+</div>
 
 
