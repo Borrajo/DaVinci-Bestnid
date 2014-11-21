@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bootstrap gems
 gem 'bootstrap-sass', '~> 3.2.0'
@@ -40,6 +40,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
-#Heroku Commands
+# Heroku Commands
 gem 'rails_12factor', group: :production
 
+# Users Authentication
+gem 'devise'
