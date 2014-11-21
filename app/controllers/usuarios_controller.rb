@@ -31,3 +31,4 @@ class UsuariosController < ApplicationController
   def get_usuario
       @usuario = Usuario.find(params[:id])
   end
+end
