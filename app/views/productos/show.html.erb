@@ -85,6 +85,7 @@
 						</th>
 					</tr>
 				</thead>
+				
 				<!--Aca comienzan las preguntas y respuestas-->
 				<% @producto.preguntas.each  do |pregunta| %> 
 					<!--Pregunta-->
@@ -100,17 +101,30 @@
 					<!--Respuesta-->
 					<tr class="danger" >
 						<td>
+                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+
 							<%= pregunta.respuesta%>
 						</td>
-						<td class="text-right">
-							
+						<td>
+
+							<%= pregunta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
 						</td>
 					</tr>  
 				<% end %> 
 				<tbody>
 				</tbody>
-				</table> <button type="button" class="btn btn-lg btn-danger">Preguntar</button>
-			</table>
+                <!--Aca va el cuadro de texto para hacer una pregunta-->
+				</table> <div class="row">
+                    <div class="col-lg-8">
+                         <div class="input-group">
+                            <span class="input-group-btn">
+                                  <button class="btn btn-danger" type="button">Preguntar!</button>
+                            </span>
+                            <input type="text " class="form-control" placeholder="Escriba aqui su pregunta, no ingrese datos personales o que violen las normas del sitio ...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-8 -->
+                </div><!-- /.row -->
+			    </table>
 					</div>
 					<div class="tab-pane" id="panel-361720">
 						<p>
