@@ -33,22 +33,25 @@
             <div class="col-md-2 column">
             
 
-            <div class="btn-group">
-            <button class="btn btn-default">
+            <div class="btn">
+            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
 
               <div class="navbar-header col-md-0">
             
               <img alt="35x35" src="http://lorempixel.com/35/35/" class="img-circle" />
-            
-            </div>
+                        
+              </div>
+              
+              <%= current_user.nombre %> <span class="caret"></span>
 
-            Action</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
+            </button> 
+            
+            <ul class="dropdown-menu" >
               <li>
-                <a href="#">Action</a>
+                <%= link_to('Ver perfil', edit_user_registration_path) %>
               </li>
               <li class="disabled">
-                <a href="#">Another action</a>
+                <a href="#"><%= link_to('Editar perfil', edit_user_registration_path) %></a>
               </li>
               <li>
                 <%= link_to('Vender', new_producto_path) %>
