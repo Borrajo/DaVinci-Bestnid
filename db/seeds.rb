@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Creo los usuarios"
-User.find_or_create_by(nombre: "Carlos", apellido: "Maidana", email: "a@a.com", telefono: "0114234514", encrypted_password: "12345678", edad: 18)
-User.find_or_create_by(nombre: "Catalina", apellido: "Perez", email: "b@b.com", telefono: "0114353152", encrypted_password: "12345678", edad: 40)
-User.find_or_create_by(nombre: "Sergio", apellido: "Ramirez", email: "c@c.com", telefono: "0114514789", encrypted_password: "12345678", edad: 29)
+User.create(nombre: "Carlos", apellido: "Maidana", email: "afda@afdas.com", telefono: "011411234514", password: "12345678", edad: 18)
+User.create(nombre: "Catalina", apellido: "Perez", email: "bfdsa@bfdsa.com", telefono: "0114353152", password: "12345678", edad: 40)
+User.create(nombre: "Sergio", apellido: "Ramirez", email: "cfgds@jgfc.com", telefono: "0114514789", password: "12345678", edad: 29)
 
 puts "Creo las categorias"
 animales =Categoria.find_or_create_by(nombre: "Animales")
