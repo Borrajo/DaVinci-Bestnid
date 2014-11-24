@@ -1,93 +1,204 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Registrarse</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+
+  </div>
+
+  <!-- EMAIL -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Ejemplo@mail.com" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>Asegurese de ingresar una casilla de correo valida, se le enviara un email de confimacion de cuenta</i></span>
+    </div>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <!-- PASSWORD -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :password %>
+      <% if @validatable %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Contraseña" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>Minimo 8 caracteres</i></span>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <!-- PASSWORD CONFIRMACION -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirmacion" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>Vuelva a escribir la contraseña</i></span>
+    </div>
   </div>
 
-  <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :nombre %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :nombre, autofocus: true %>
+  <!-- NOMBRE -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :nombre %><br />
+      <%= f.text_field :nombre, autofocus: true, class: "form-control", placeholder: "Carlos" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>Ingrese de 1 a 25 caracteres</i></span>
+    </div>
   </div>
 
-  <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :apellido %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :apellido, autofocus: true %>
+  <!-- APELLIDO -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :apellido %><br />
+      <%= f.text_field :apellido, autofocus: true, class: "form-control", placeholder: "Gardel" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>Ingrese de 1 a 25 caracteres</i></span>
+    </div>
   </div>
 
-  <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :telefono %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :telefono %>
+  <!-- TELEFONO -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :telefono %><br />
+      <%= f.text_field :telefono, class: "form-control", placeholder: "Telefono" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>011-XXXX-XXXX</i></span>
+    </div>
   </div>
 
-  <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :foto %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :foto %>
+  <!-- FOTO -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :foto %><br />
+      <%= f.text_field :foto, class: "form-control", placeholder: "Contraseña" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i></i></span>
+    </div>
   </div>
 
-    <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :edad %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :edad %>
+    <!-- EDAD -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :edad %><br />
+      <%= f.text_field :edad, class: "form-control", placeholder: "Edad" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i></i></span>
+    </div>
   </div>
 
-    <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :domicilio %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :domicilio %>
+    <!-- DOMICILIO -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :domicilio %><br />
+      <%= f.text_field :domicilio, class: "form-control", placeholder: "Domicilio" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>Calle Altura Localidad Derpartamento</i></span>
+    </div>
   </div>
 
-    <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :numero_tarjeta %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :numero_tarjeta %>
+    <!-- NUMERO DE TARJETA -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :numero_tarjeta %><br />
+      <%= f.text_field :numero_tarjeta, class: "form-control", placeholder: "Numero de Tarjeta" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>XXXX-XXXX-XXXX-XXXX</i></span>
+    </div>
   </div>
 
-    <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :titular_tarjeta %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :titular_tarjeta %>
+    <!-- TITULAR TARJETA -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :titular_tarjeta %><br />
+      <%= f.text_field :titular_tarjeta, class: "form-control", placeholder: "Titular" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>Carlos Raul Gardel</i></span>
+    </div>
   </div>
 
-    <!-- Nuevo campo -->
-  <div class="field">
-    <%= f.label :vencimiento_tarjeta %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.text_field :vencimiento_tarjeta %>
+    <!-- VENCIMIENTO -->
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :vencimiento_tarjeta %><br />
+      <%= f.text_field :vencimiento_tarjeta, class: "form-control", placeholder: "Vencimiento" %>
+    </div>
+
+    <br />      
+    <div class="form-group col-md-6">
+        <span id="helpBlock" class="help-block"><i>dd/mm/aaa</i></span>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+  <div class="pull-right">
+    <%= f.submit "Registrarse", class: "btn btn-danger" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<%= render "users/shared/links" %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
