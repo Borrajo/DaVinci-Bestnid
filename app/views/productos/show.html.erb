@@ -72,6 +72,7 @@
 					</li>
 				</ul>
 				<div class="tab-content">
+                    <!--Aca comienzan la pestaña de preguntas y respuestas-->
 					<div class="tab-pane active" id="panel-884539">
 						<table class="table">
 				<!--Aca van los nombres de las columnas-->
@@ -114,18 +115,39 @@
 				<tbody>
 				</tbody>
                 <!--Aca va el cuadro de texto para hacer una pregunta-->
-				</table> <div class="row">
+
+
+                 <!--primer intento de boton
+                </table> <div class="row">
                     <div class="col-lg-8">
                          <div class="input-group">
                             <span class="input-group-btn">
                                   <button class="btn btn-danger" type="button">Preguntar!</button>
                             </span>
                             <input type="text " class="form-control" placeholder="Escriba aqui su pregunta, no ingrese datos personales o use lenguaje vulgar ...">
-                        </div><!-- /input-group -->
+                        </div><!-- /input-group 
                     </div><!-- /.col-lg-8 -->
+                				
+
+
+                <table> 
+                <div class="row">
+                    <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+                        <div class="col-lg-8">
+                             <div class="input-group">
+                                
+                                <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Escriba aqui su pregunta. No ingrese datos personales, ni use lenguaje vulgar..." %>
+                                <span class="input-group-btn">
+                                      <button class="btn btn-danger" type="button">Preguntar!</button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-8 -->
                 </div><!-- /.row -->
 			    </table>
 					</div>
+                    <% end %>
+
+                    <!--Aca comienzan la pestaña de las ofertas -->
 					<div class="tab-pane" id="panel-361720">
 						<p>
 							Aca irian las ofertas
