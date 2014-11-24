@@ -17,10 +17,14 @@ class ProductosController < ApplicationController
   end
 
   def create
+    @producto = Producto.new(params[:nombre], params[:descripcion])
+    if @student.save
+      redirect_to new_producto_path
+    end
   end
 
   def new
-    
+    @producto = Producto.new
   end
 
   def destroy

@@ -1,0 +1,21 @@
+<div class="panel panel-danger ">
+  <div class="panel-heading">
+    <h1 class="panel-title">Vender</h1>
+  </div>
+  <div class="panel-body">
+  	<%= form_for @producto do |f| -%>
+    <!-- EMAIL -->
+    <div class="row">
+      <div class="form-group col-md-4">
+        <%= f.label :nombre %><br />
+        <%= f.text_field :nombre, autofocus: true, class: "form-control", placeholder: "Ejemplo@mail.com" %>
+      </div>
+
+      <br />      
+      <div class="form-group col-md-8">
+          <span id="helpBlock" class="help-block"><i>Asegurese de ingresar una casilla de correo valida, se le enviara un email de confimacion de cuenta</i></span>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
