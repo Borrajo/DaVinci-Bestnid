@@ -16,7 +16,11 @@ class ProductosController < ApplicationController
 
   end
 
-  def create 
+  def create
+  end
+
+  def new
+    
   end
 
   def destroy
