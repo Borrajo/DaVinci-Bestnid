@@ -3,7 +3,7 @@ class Producto < ActiveRecord::Base
 	has_many :ofertas, dependent: :destroy
     has_many :preguntas, dependent: :destroy
     
-	belongs_to :usuarios
+	belongs_to :user
 
 	validates :nombre,presence: true,length: {minimum: 4, maximum: 30}, uniqueness: true
 	validates :descripcion, presence: true,length: {minimum: 10, maximum: 500}
