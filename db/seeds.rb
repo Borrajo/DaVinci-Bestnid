@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Creo los usuarios"
-Usuario.find_or_create_by(nombre: "Carlos", apellido: "Maidana", email: "a@a", telefono: "0114234514", clave: "123456", edad: 18)
-Usuario.find_or_create_by(nombre: "Catalina", apellido: "Perez", email: "b@b", telefono: "0114353152", clave: "123456", edad: 40)
-Usuario.find_or_create_by(nombre: "Sergio", apellido: "Ramirez", email: "c@c", telefono: "0114514789", clave: "123456", edad: 29)
+User.find_or_create_by(nombre: "Carlos", apellido: "Maidana", email: "a@a", telefono: "0114234514", encrypted_password: "123456", edad: 18)
+User.find_or_create_by(nombre: "Catalina", apellido: "Perez", email: "b@b", telefono: "0114353152", encrypted_password: "123456", edad: 40)
+User.find_or_create_by(nombre: "Sergio", apellido: "Ramirez", email: "c@c", telefono: "0114514789", encrypted_password: "123456", edad: 29)
 
 puts "Creo las categorias"
 animales =Categoria.find_or_create_by(nombre: "Animales")
@@ -42,5 +42,6 @@ Producto.find_or_create_by(nombre: "Aceite y Vinagre", descripcion: "200ml de ac
 	usuario_id: 3, cantidad_preguntas: 0, categoria_id: 8, foto: "http://40.media.tumblr.com/f92d39b2c62cf2bc5398797db35ce37d/tumblr_nbsejfmSt21tlipbuo1_400.jpg",
 	created_at: DateTime.new(2014,6,9), fecha_finalizacion: DateTime.new(2014,6,9) + 15.day)
 
-puts "Agrego una pregunta"
-Producto.find(2).preguntas.find_or_create_by(pregunta: "Cuanto pesa?");
+puts "Agrego una pregunta y respuesta"
+Producto.find(2).preguntas.find_or_create_by(pregunta: "Cuanto pesa?", respuesta: "Unos 150 kg ma'o meno'");
+
