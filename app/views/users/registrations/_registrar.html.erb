@@ -1,4 +1,4 @@
-<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -22,55 +22,55 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-
+  <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :nombre %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :nombre, autofocus: true %>
   </div>
 
-
+  <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :apellido %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :apellido, autofocus: true %>
   </div>
 
-
+  <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :telefono %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :telefono %>
   </div>
 
-
+  <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :foto %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :foto %>
   </div>
 
-    
+    <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :edad %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :edad %>
   </div>
 
-
+    <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :domicilio %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :domicilio %>
   </div>
 
-
+    <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :numero_tarjeta %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :numero_tarjeta %>
   </div>
 
- 
+    <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :titular_tarjeta %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :titular_tarjeta %>
   </div>
 
-
+    <!-- Nuevo campo -->
   <div class="field">
     <%= f.label :vencimiento_tarjeta %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.text_field :vencimiento_tarjeta %>
@@ -90,4 +90,4 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %> -->
+<%= link_to "Back", :back %>

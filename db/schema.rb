@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20141123220555) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    # Nuevos campos:
     t.string   "nombre"
     t.string   "apellido"
     t.string   "telefono"
