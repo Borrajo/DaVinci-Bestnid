@@ -14,8 +14,6 @@ class User < ActiveRecord::Base
 
 	validates :email, presence: true, uniqueness: true
 
-	validates :clave, presence: true, length:{minimum: 6, maximum: 50}
-
 	validates :telefono, presence: true, numericality: { only_integer: true }, length: { minimum:10 , maximum: 50 }
 
 	validates :edad, presence: true 
