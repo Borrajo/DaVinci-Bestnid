@@ -28,18 +28,7 @@
 
         <% if user_signed_in? %>
 
-            <div class="navbar-header col-md-5">
-              <!-- Small modal -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">Ingresar</button>
-
-              <!-- Large modal -->
-                <button type="button" class="btn btn-danger " data-toggle="modal" data-target=".bs-example-modal-lg">Registrar</button>
-              
-            </div> <!-- Fin del row -->
-
-        <% else %>
-
-          <!-- CAMPOS PARA EL LOGIN -->
+                  <!-- CAMPOS PARA EL LOGIN -->
           
             <div class="col-md-2 column">
             
@@ -64,11 +53,24 @@
               <li class="divider">
               </li>
               <li>
-                <a href="#">Something else here</a>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
               </li>
             </ul>
           </div>
           </div> <!-- Fin del row -->
+
+
+        <% else %>
+
+
+            <div class="navbar-header col-md-5">
+              <!-- Small modal -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">Ingresar</button>
+
+              <!-- Large modal -->
+                <button type="button" class="btn btn-danger " data-toggle="modal" data-target=".bs-example-modal-lg">Registrar</button>
+              
+            </div> <!-- Fin del row -->
       
         <% end %>
 
@@ -80,13 +82,9 @@
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <div class="container-fluid">
-      <div class="form-group col-md-12">
 
-        <%= render 'users/sessions/login' %>
+      <%= render 'users/sessions/login' %>
 
-      </div>
-      </div>
     </div>
   </div>
 </div>
@@ -95,17 +93,9 @@
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="container-fluid">
-        <div class="form-group col-md-12">
-          <form role="form">
-            <fieldset enable>
 
-              <%= render 'users/registrations/registrar' %>
-                                     
-            </fieldset>
-          </form>        
-        </div>
-      </div>
+      <%= render 'users/registrations/registrar' %>
+
     </div>
   </div>
 </div>
