@@ -1,3 +1,122 @@
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Apellido
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.apellido %>
+        </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Nombre
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.nombre %>
+        </div>
+      </div>
+
+        <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Email
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.email %>
+        </div>
+      </div>
+
+        <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Edad
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.edad %>
+        </div>
+      </div>
+
+        <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Telefono
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.telefono %>
+        </div>
+      </div>
+
+        <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Domicilio
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.domicilio %>
+        </div>
+      </div>
+
+        <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Titular de tarjeta de credito
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.titular_tarjeta %>
+        </div>
+      </div>
+
+        <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Numero de tarjeta de credito
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.numero_tarjeta %>
+        </div>
+      </div>
+
+        <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Vencimiento de tarjeta de credito
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.vencimiento_tarjeta %>
+        </div>
+      </div>
+
+        <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Ultima conexión
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.last_sign_in_at.strftime("%d/%m/%Y a las %H:%M") %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <!-- <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

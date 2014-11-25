@@ -1,5 +1,7 @@
 class Producto < ActiveRecord::Base
 
+	default_scope -> {where("finalizado = false")}
+
 	has_many :ofertas, dependent: :destroy
     has_many :preguntas, dependent: :destroy
     

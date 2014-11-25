@@ -57,7 +57,7 @@
 							<div class="caption-right">
 								<h4>
 								<p> Finaliza en
-								<%= distance_of_time_in_words(producto.fecha_finalizacion,Time.now) %>
+								<%= distance_of_time_in_words(producto.fecha_finalizacion,Time.now, include_seconds: true) %>
 							</p>
 								</h4>
 							</div>
