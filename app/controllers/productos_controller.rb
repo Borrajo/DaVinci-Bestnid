@@ -17,8 +17,11 @@ class ProductosController < ApplicationController
   end
 
   def create
-    @producto = Producto.new(params[:nombre], params[:descripcion])
-    if @student.save
+    @producto = Producto.new(nombre: params[:nombre])
+    if params[:fecha_finalizacion]
+      @producto.fecha_finalizacion = Time.now + params[:fecha_finalizacion]
+    end
+    if @producto.save
       redirect_to new_producto_path
     end
   end
