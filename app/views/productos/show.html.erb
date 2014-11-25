@@ -58,6 +58,7 @@
       </div>
     </div>
 	</div>
+	<!--aca comienza la tabla de las preguntas y ofertas-->
 	<div class="row clearfix">
 		<div class="container">
 	<div class="row clearfix">
@@ -67,28 +68,30 @@
 					<li class="active">
 						<a href="#panel-884539" data-toggle="tab">Preguntas</a>
 					</li>
+					<!-- muestra la pestaña oferta-->
 					<% if @producto.usuario_id == current_user.id%>
 						<li class="">
 							<a href="#panel-361720" data-toggle="tab">Ofertas</a>
 						</li>
 					<%end%>
+					<!-- fin -->
 				</ul>
 				<div class="tab-content">
                     <!--Aca comienzan la pestaña de preguntas y respuestas-->
 					<div class="tab-pane active" id="panel-884539">
-			<table class="table">
-				<!--Aca van los nombres de las columnas-->
-				<thead>
-					<tr>
-						<th>
-							Preguntas y Respuestas
-						</th>
-						<th>
-							Fecha
-						</th>
-					</tr>
-				</thead>
-				
+						<table class="table">
+							<!--Aca van los nombres de las columnas-->
+							<thead>
+								<tr>
+									<th>
+										Preguntas y Respuestas
+									</th>
+									<th>
+										Fecha
+									</th>
+								</tr>
+							</thead>
+							
 				<!--Aca comienzan las preguntas y respuestas-->
 				<% @producto.preguntas.each  do |pregunta| %> 
 					<!--Pregunta-->
@@ -117,21 +120,8 @@
 				<tbody>
 				</tbody>
                 <!--Aca va el cuadro de texto para hacer una pregunta-->
-
-
-                 <!--primer intento de boton
-                </table> <div class="row">
-                    <div class="col-lg-8">
-                         <div class="input-group">
-                            <span class="input-group-btn">
-                                  <button class="btn btn-danger" type="button">Preguntar!</button>
-                            </span>
-                            <input type="text " class="form-control" placeholder="Escriba aqui su pregunta, no ingrese datos personales o use lenguaje vulgar ...">
-                        </div><!-- /input-group 
-                    </div><!-- /.col-lg-8 -->
-       
                 <table> 
-                <div class="row">
+                	<div class="row">
                     <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
                         <div class="col-lg-8">
                              <div class="input-group">
@@ -142,10 +132,10 @@
                                 </span>
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-8 -->
-                </div><!-- /.row -->
+                	</div><!-- /.row -->
 			    </table>
-					</div>
-                    <% end %>
+				</div><!-- /panel de preguntas -->
+                <% end %><!-- / formulario -->
 
                     <!--Aca comienzan la pestaña de las ofertas -->
 						<div class="tab-pane" id="panel-361720">
@@ -163,7 +153,7 @@
 								</thead>
 				
 								<% @producto.ofertas.each  do |oferta| %> 
-								<!--Pregunta-->
+								<!--necesidad-->
 									<tr>
 										<td>
 											<%= oferta.necesidad %>
@@ -173,9 +163,9 @@
 										</td>
 									</tr>
 								<%end%>
-							</p>
-							<table> 
-						</div>
+						</p>
+					   </table> 
+						</div><!-- finaliza el panel de ofertas-->
 				</div>
 			</div>
 		</div>
