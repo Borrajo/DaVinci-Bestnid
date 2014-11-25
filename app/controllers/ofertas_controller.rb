@@ -9,17 +9,22 @@ class OfertasController < ApplicationController
   def edit
   end
 
-  def create
-    @oferta = Oferta.new(producto_id: params[:producto], usuario_id: current_user.id, necesidad: params[:question], monto: params[:cost]);
-      if @oferta.save
-      redirect_to new_oferta_path
-    end
+   def create
+   @oferta = Oferta.new(oferta_params);
+     if @oferta.save
+     redirect_to productos_path
+      end
   end
 
   def new
-    @oferta = Oferta.new(necesidad: "1234567890")
   end
 
   def destroy
+  end
+
+  private
+
+  def oferta_params
+    params.require(:oferta).permit(:monto, :producto_id, :necesidad) 
   end
 end

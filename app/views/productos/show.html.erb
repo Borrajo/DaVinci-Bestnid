@@ -217,16 +217,7 @@
       </div>
       <div class="modal-body">
       	<!-- aca comienzan los campos del modal-->
-      		<%= form_for ofertas_path do |f|%>
-      		<%= f.label ":producto" %>
-      		<%= f.text_field :producto %>
-      		<%= f.label "monto" %>
-      		<%= f.text_field :cost %>
-      		<%= f.label "necesidad" %>
-      		<%= f.text_field :question %>
-            <%= f.submit 'lalala'%> 
-			<%end%>
-
+      		
       		<input id="user_id" name="user" type="hidden" value= <%= @producto.id %> />
 			<form role="form">
 				<div class="form-group">
