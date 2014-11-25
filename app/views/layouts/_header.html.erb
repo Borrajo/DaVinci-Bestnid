@@ -15,7 +15,7 @@
         <!-- BARRA DE BUSQUEDA -->
         <!-- When submit the form, the view rendered will be the index view of our articles resource -->
         <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-        <div class="navbar-header col-md-5" >
+        <div class="navbar-header col-md-6" >
           <div class = "input-group col-md-12">
           <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Busqueda" %>
             <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
@@ -26,9 +26,7 @@
         <% end %>
 
 
-        <% if user_signed_in? %>
-
-                  <!-- CAMPOS PARA EL LOGIN -->
+        <% if user_signed_in? %>  <!-- Header si el usuario inicio sesion -->
           
             <div class="col-md-2 column">
             
@@ -38,7 +36,7 @@
 
               <div class="navbar-header col-md-0">
             
-              <img alt="35x35" src="http://lorempixel.com/35/35/" class="img-circle" />
+              <img alt="35x35" src="http://lorempixel.com/35/35/" class="img-circle"/ >
                         
               </div>
               
@@ -46,7 +44,7 @@
 
             </button> 
             
-            <ul class="dropdown-menu" >
+            <ul class="dropdown-menu">
               <li>
                 <%= link_to('Ver perfil', edit_user_registration_path) %>
               </li>
@@ -66,7 +64,7 @@
           </div> <!-- Fin del row -->
 
 
-        <% else %>
+        <% else %>  <!-- Header si el usuario no inicio sesion -->
 
 
             <div class="navbar-header col-md-5">
