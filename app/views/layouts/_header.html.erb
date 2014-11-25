@@ -15,7 +15,7 @@
         <!-- BARRA DE BUSQUEDA -->
         <!-- When submit the form, the view rendered will be the index view of our articles resource -->
         <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-        <div class="navbar-header col-md-6" >
+        <div class="navbar-header col-md-5" >
           <div class = "input-group col-md-12">
           <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Busqueda" %>
             <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
