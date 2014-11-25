@@ -9,6 +9,7 @@ class OfertasController < ApplicationController
   end
 
   def create
+    Oferta.create(producto_id: params[ :producto], usuario_id: current_user.id, necesidad: params[:question]);
   end
 
   def destroy

@@ -1,0 +1,69 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  hello: "hola mundo"
+  datetime:
+    formats:
+      default: "%d / %m / %Y"
+  datetime:
+    distance_in_words:
+      half_a_minute: "30 segundos"
+      less_than_x_seconds:
+        one:   "menos de 1 segundo"
+        other: "menos de %{count} segundos"
+      x_seconds:
+        one:   "1 segundo"
+        other: "%{count} segundos"
+      less_than_x_minutes:
+        one:   "menos de un minuto"
+        other: "menos de %{count} minutos"
+      x_minutes:
+        one:   "un minuto"
+        other: "%{count} minutos"
+      about_x_hours:
+        one:   "una hora"
+        other: "%{count} horas"
+      x_days:
+        one:   "un dia"
+        other: "%{count} dias"
+      about_x_months:
+        one:   "un mes"
+        other: "%{count} meses"
+      x_months:
+        one:   "un mes"
+        other: "%{count} meses"
+      about_x_years:
+        one:   "un año"
+        other: "%{count} años"
+      over_x_years:
+        one:   "más de un año"
+        other: "más de %{count} años"
+      almost_x_years:
+        one:   "un año aproximadamente"
+        other: "%{count} años aproximadamente"
+    prompts:
+      year:   "año"
+      month:  "mes"
+      day:    "día"
+      hour:   "hora"
+      minute: "minuto"
+      second: "segundo"
