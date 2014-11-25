@@ -41,6 +41,7 @@ class ProductosController < ApplicationController
   
   def get_producto
     @producto = Producto.find(params[:id])
+    @producto.finalizado = @producto.fecha_finalizacion.to_date >= Date.today 
   end
   
 end
