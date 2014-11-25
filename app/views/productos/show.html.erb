@@ -126,15 +126,19 @@
                     <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
 =======
                 <div class="row">
+<<<<<<< HEAD
                     <%= form_tag(new_pregunta_path, :method => "get", class: "navbar-form", id: "pregunta-form") do %>
 >>>>>>> origin/master
+=======
+                    <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+>>>>>>> ccd995a9facdf20bec676077352de4a3d3e1bc89
                         <div class="col-lg-8">
                              <div class="input-group">
                                 
-                                <%= text_field_tag :pregunta, params[:pregunta], class: "form-control", placeholder: "Escriba aqui su pregunta. No ingrese datos personales, ni use lenguaje vulgar..." %>
-                                
-                                <button type="button" class="btn btn-danger">Preguntar!</button>
-                            
+                                <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Escriba aqui su pregunta. No ingrese datos personales, ni use lenguaje vulgar..." %>
+                                <span class="input-group-btn">
+                                      <button class="btn btn-danger" type="button">Preguntar!</button>
+                                </span>
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-8 -->
                 	</div><!-- /.row -->
