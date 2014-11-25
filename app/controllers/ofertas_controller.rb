@@ -1,5 +1,6 @@
 class OfertasController < ApplicationController
   def index
+    @ofertas= Oferta.all
   end
 
   def show
@@ -9,7 +10,11 @@ class OfertasController < ApplicationController
   end
 
   def create
-    Oferta.create(producto_id: params[ :producto], usuario_id: current_user.id, necesidad: params[:question]);
+    @oferta = Oferta.new(producto_id: params[:producto], usuario_id: current_user.id, necesidad: params[:question], monto: params[:cost]);
+  end
+
+  def new
+    @oferta = Oferta.new
   end
 
   def destroy

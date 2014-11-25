@@ -170,14 +170,21 @@
       </div>
       <div class="modal-body">
       	<!-- aca comienzan los campos del modal-->
-      		<%= form_tag(ofertas_path) do |o| %>
-      		<input id="user_id" name="user" type="hidden" value= <%= @producto.id %> />
+      		<%= form_for oferta_path do |f|%>
+      		<%= f.label ":producto" %>
+      		<%= f.text_field :producto %>
+      		<%= f.label "monto" %>
+      		<%= f.text_field :cost %>
+      		<%= f.label "necesidad" %>
+      		<%= f.text_field :question %>
+            <%= f.submit 'lalala'%> 
+			<%end%>
 
+      		<input id="user_id" name="user" type="hidden" value= <%= @producto.id %> />
 			<form role="form">
 				<div class="form-group">
 					 <label for="oferta_necesidad">Por qué necesita este producto?</label>
 					 <input type="text" class="form-control" id="motivo" />
-					       		<%= o.text_field_tag :necesidad %>
 				</div>
 				<div class="row clearfix">
 					<div class="col-md-4 column">
@@ -201,8 +208,6 @@
 					    <button type="button" class="btn btn-default" >Agregar tarjeta</button>
 					 <%end%>
 				</div>
-				      		<%= o.submit %> 
-			<%end%>
 
 			</form>
 
