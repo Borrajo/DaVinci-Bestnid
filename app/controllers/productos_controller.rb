@@ -18,7 +18,7 @@ class ProductosController < ApplicationController
 
   def create
     @producto = Producto.new(params[:nombre], params[:descripcion])
-    if @student.save
+    if @producto.save
       redirect_to new_producto_path
     end
   end

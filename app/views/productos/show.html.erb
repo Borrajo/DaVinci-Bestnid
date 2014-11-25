@@ -67,14 +67,16 @@
 					<li class="active">
 						<a href="#panel-884539" data-toggle="tab">Preguntas</a>
 					</li>
-					<li class="">
-						<a href="#panel-361720" data-toggle="tab">Ofertas</a>
-					</li>
+					<% if @producto.usuario_id == current_user.id%>
+						<li class="">
+							<a href="#panel-361720" data-toggle="tab">Ofertas</a>
+						</li>
+					<%end%>
 				</ul>
 				<div class="tab-content">
                     <!--Aca comienzan la pestaña de preguntas y respuestas-->
 					<div class="tab-pane active" id="panel-884539">
-						<table class="table">
+			<table class="table">
 				<!--Aca van los nombres de las columnas-->
 				<thead>
 					<tr>
@@ -127,9 +129,7 @@
                             <input type="text " class="form-control" placeholder="Escriba aqui su pregunta, no ingrese datos personales o use lenguaje vulgar ...">
                         </div><!-- /input-group 
                     </div><!-- /.col-lg-8 -->
-                				
-
-
+       
                 <table> 
                 <div class="row">
                     <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
@@ -148,11 +148,34 @@
                     <% end %>
 
                     <!--Aca comienzan la pestaña de las ofertas -->
-					<div class="tab-pane" id="panel-361720">
-						<p>
-							Aca irian las ofertas
-						</p>
-					</div>
+						<div class="tab-pane" id="panel-361720">
+						<table class="table">
+							<p>
+								<thead>
+								<tr>
+									<th>
+										Ofertas
+									</th>
+								<th>
+										Fecha
+									</th>
+								</tr>
+								</thead>
+				
+								<% @producto.ofertas.each  do |oferta| %> 
+								<!--Pregunta-->
+									<tr>
+										<td>
+											<%= oferta.necesidad %>
+										</td>
+										<td>
+											<%= oferta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
+										</td>
+									</tr>
+								<%end%>
+							</p>
+							<table> 
+						</div>
 				</div>
 			</div>
 		</div>
@@ -170,7 +193,7 @@
       </div>
       <div class="modal-body">
       	<!-- aca comienzan los campos del modal-->
-      		<%= form_for oferta_path do |f|%>
+      		<%= form_for ofertas_path do |f|%>
       		<%= f.label ":producto" %>
       		<%= f.text_field :producto %>
       		<%= f.label "monto" %>
