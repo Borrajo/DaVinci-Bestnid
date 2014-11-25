@@ -121,15 +121,20 @@
 				</tbody>
                 <!--Aca va el cuadro de texto para hacer una pregunta-->
                 <table> 
+<<<<<<< HEAD
                 	<div class="row">
                     <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+=======
+                <div class="row">
+                    <%= form_tag(new_pregunta_path, :method => "get", class: "navbar-form", id: "pregunta-form") do %>
+>>>>>>> origin/master
                         <div class="col-lg-8">
                              <div class="input-group">
                                 
-                                <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Escriba aqui su pregunta. No ingrese datos personales, ni use lenguaje vulgar..." %>
-                                <span class="input-group-btn">
-                                      <button class="btn btn-danger" type="button">Preguntar!</button>
-                                </span>
+                                <%= text_field_tag :pregunta, params[:pregunta], class: "form-control", placeholder: "Escriba aqui su pregunta. No ingrese datos personales, ni use lenguaje vulgar..." %>
+                                
+                                <button type="button" class="btn btn-danger">Preguntar!</button>
+                            
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-8 -->
                 	</div><!-- /.row -->
