@@ -48,90 +48,100 @@
 						<!--enlace al modal-->
 						<button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#modal-container-257635">Ofertar</button>
 					</div>
-				<div class="col-md-8 ">
-					<h4 class="text-left">
-						<%= @producto.fecha_finalizacion.strftime("Finaliza el %d/%m/%Y a las %H:%M")  %>
+				    <div class="col-md-8 ">
+					   <h4 class="text-left">
+					   	<%= @producto.fecha_finalizacion.strftime("Finaliza el %d/%m/%Y a las %H:%M")  %>
 
-					</h4>
-				</div>
-			</div>
+					   </h4>
+				    </div>
+			    </div>
       </div>
     </div>
-	</div>
-	<!--aca comienza la tabla de las preguntas y ofertas-->
-	<div class="row clearfix">
-		<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="tabbable" id="tabs-795537">
-				<ul class="nav nav-tabs">
-					<li class="active">
-						<a href="#panel-884539" data-toggle="tab">Preguntas</a>
-					</li>
-					<!-- muestra la pestaña oferta-->
-					<% if @producto.usuario_id == current_user.id%>
-						<li class="">
-							<a href="#panel-361720" data-toggle="tab">Ofertas</a>
-						</li>
-					<%end%>
-					<!-- fin -->
-				</ul>
-				<div class="tab-content">
-                    <!--Aca comienzan la pestaña de preguntas y respuestas-->
-					<div class="tab-pane active" id="panel-884539">
-						<table class="table">
-							<!--Aca van los nombres de las columnas-->
-							<thead>
-								<tr>
-									<th>
-										Preguntas y Respuestas
-									</th>
-									<th>
-										Fecha
-									</th>
-								</tr>
-							</thead>
-							
-				<!--Aca comienzan las preguntas y respuestas-->
-				<% @producto.preguntas.each  do |pregunta| %> 
-					<!--Pregunta-->
-					<tr>
-						<td>
-							<%= pregunta.pregunta %>
-						</td>
-						<td>
-							<%= pregunta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
-						</td>
-					</tr>
 
-					<!--Respuesta-->
-					<tr class="danger" >
-						<td>
-                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 
-							<%= pregunta.respuesta%>
-						</td>
-						<td>
 
-							<%= pregunta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
-						</td>
-					</tr>  
-				<% end %> 
-				<tbody>
-				</tbody>
+
+
+
+
+
+
+
+
+
+
+
+<!--aca comienza la tabla de las preguntas y ofertas-->
+        <div class="container">
+           <div class="row clearfix">
+              <div class="col-md-12 column">
+                 <div class="tabbable" id="tabs-795537">
+                    <ul class="nav nav-tabs">
+                       <li class="active">
+                          <a href="#panel-884539" data-toggle="tab">Preguntas</a>
+                       </li>
+                       <!-- muestra la pestaña oferta-->
+                       <% if @producto.usuario_id == current_user.id %>
+                       <li>
+                            <a href="#panel-361720" data-toggle="tab">Ofertas</a>
+                       </li>
+                       <%end%> 
+                       <!-- fin -->
+                    </ul>
+                 
+
+                <div class="tab-content"> <!--Aca comienzan la pestaña de preguntas y respuestas-->
+                    <div class="tab-pane active" id="panel-884539">
+                        <table class="table">
+                            <!--Aca van los nombres de las columnas-->
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Preguntas y Respuestas
+                                    </th>
+                                    <th>
+                                        Fecha
+                                    </th>
+                                </tr>
+                            </thead>
+                            
+                       
+
+
+                            <!--Aca comienzan las preguntas y respuestas-->
+                            <% @producto.preguntas.each  do |pregunta| %> 
+                            <!--Pregunta-->
+                            <tr>
+                                    <td>
+                                        <%= pregunta.pregunta %>
+                                    </td>
+                                    <td>
+                                        <%= pregunta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
+                                    </td>
+                            </tr>
+
+                            <!--Respuesta-->
+                            <tr class="danger" >
+                                 <td>
+                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                                <%= pregunta.respuesta%>
+                                 </td>
+                                 <td>
+                                    <%= pregunta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
+                                </td>
+                             </tr>  
+                             <% end %> 
+                          
+
+
+                <tbody>
+                </tbody>
                 <!--Aca va el cuadro de texto para hacer una pregunta-->
-                <table> 
-<<<<<<< HEAD
-                	<div class="row">
-                    <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-=======
-                <div class="row">
-<<<<<<< HEAD
-                    <%= form_tag(new_pregunta_path, :method => "get", class: "navbar-form", id: "pregunta-form") do %>
->>>>>>> origin/master
-=======
-                    <%= form_tag(productos_path, :method => "get", class: "navbar-form", id: "search-form") do %>
->>>>>>> ccd995a9facdf20bec676077352de4a3d3e1bc89
+                </table> 
+
+                    <div class="row">
+
+               
                         <div class="col-lg-8">
                              <div class="input-group">
                                 
@@ -141,45 +151,60 @@
                                 </span>
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-8 -->
-                	</div><!-- /.row -->
-			    </table>
-				</div><!-- /panel de preguntas -->
-                <% end %><!-- / formulario -->
+                     
+                    </div><!-- /.row -->
+               
+                </div><!-- /pestaña de preguntas -->
+                
 
                     <!--Aca comienzan la pestaña de las ofertas -->
-						<div class="tab-pane" id="panel-361720">
-						<table class="table">
-							<p>
-								<thead>
-								<tr>
-									<th>
-										Ofertas
-									</th>
-								<th>
-										Fecha
-									</th>
-								</tr>
-								</thead>
-				
-								<% @producto.ofertas.each  do |oferta| %> 
-								<!--necesidad-->
-									<tr>
-										<td>
-											<%= oferta.necesidad %>
-										</td>
-										<td>
-											<%= oferta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
-										</td>
-									</tr>
-								<%end%>
-						</p>
-					   </table> 
-						</div><!-- finaliza el panel de ofertas-->
-				</div>
-			</div>
-		</div>
-	</div>
+                        <div class="tab-pane" id="panel-361720">
+                        <table class="table">
+                            <p>
+                                <thead>
+                                <tr>
+                                    <th>
+                                        Ofertas
+                                    </th>
+                                <th>
+                                        Fecha
+                                    </th>
+                                </tr>
+                                </thead>
+                
+                                <% @producto.ofertas.each  do |oferta| %> 
+                                <!--necesidad-->
+                                    <tr>
+                                        <td>
+                                            <%= oferta.necesidad %>
+                                        </td>
+                                        <td>
+                                            <%= oferta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
+                                        </td>
+                                    </tr>
+                                <%end%>
+                        </p>
+                       </table> 
+                       </div><!-- finaliza el pestaña de ofertas-->
+                </div>
+
+             </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
