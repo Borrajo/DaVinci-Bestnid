@@ -17,11 +17,10 @@ class ProductosController < ApplicationController
   end
 
   def create
+
     @producto = Producto.new(producto_params)
     @producto.finalizado = false
-    if params[:fecha_finalizacion]
-      @producto.fecha_finalizacion = Time.now + params[:fecha_finalizacion]
-    end
+    @producto.fecha_finalizacion = params[:fecha_finalizacion]
  
     if @producto.save
       redirect_to @producto
@@ -47,7 +46,7 @@ class ProductosController < ApplicationController
   private 
   
   def producto_params
-   params.require(:producto).permit(:nombre, :descripcion) 
+   params.require(:producto).permit(:nombre, :descripcion, :usuario_id, :categoria_id, :fecha_finalizacion, :foto) 
   end
 
   def get_producto
