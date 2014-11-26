@@ -10,7 +10,8 @@ class OfertasController < ApplicationController
   end
 
    def create
-   @oferta = Oferta.new(oferta_params);
+   @oferta = Oferta.new(oferta_params)
+   @oferta.usuario_id = current_user.id
      if @oferta.save
      redirect_to productos_path
       end
@@ -25,6 +26,6 @@ class OfertasController < ApplicationController
   private
 
   def oferta_params
-    params.require(:oferta).permit(:monto, :producto_id, :necesidad) 
+    params.require(:oferta).permit(:monto, :necesidad) 
   end
 end

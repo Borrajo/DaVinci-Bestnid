@@ -218,45 +218,9 @@
         <h4 class="modal-title">Realice una oferta</h4>
       </div>
       <div class="modal-body">
-      	<!-- aca comienzan los campos del modal-->
-      		
-      		<input id="user_id" name="user" type="hidden" value= <%= @producto.id %> />
-			<form role="form">
-				<div class="form-group">
-					 <label for="oferta_necesidad">Por qué necesita este producto?</label>
-					 <input type="text" class="form-control" id="motivo" />
-				</div>
-				<div class="row clearfix">
-					<div class="col-md-4 column">
-						<div class="form-group">
-							<label for="monto">Cuanto pagaría por él?</label>
-							<div class="input-group">
-  								<span class="input-group-addon">$</span>
-  								<input type="number" min= "0.0" class="form-control" id="monto">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<% if current_user != nil && current_user.numero_tarjeta != nil %>
-					 	<label for="tarjeta">Desea usar la tarjeta terminada en: XXXX-XXXX-XXXX-<%= current_user.numero_tarjeta[-4..25] %> 
-					 	</label>
-					 	<button type="button" class="btn btn-default" >Usar otra tarjeta</button>
-					 <%else%>
-					 	<label for="tarjeta">No posee ninguna tarjeta registrada 
-					    </label>
-					    <button type="button" class="btn btn-default" >Agregar tarjeta</button>
-					 <%end%>
-				</div>
+      	<!-- aca comienzan los campos del modal--> 
 
-			</form>
-
-<!-- aca terminó el modal-->
-      </div>
-      <div class="modal-footer">
-      	<label class="text-danger aria-label="Left Align"" > <i>Recuerde que ofertar es compromiso de compra </i> </label>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="submit" class="btn btn-danger">Ofertar</button>
+      	<%= render  "/ofertas/ofertar", producto_id: @producto.id %>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

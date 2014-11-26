@@ -1,0 +1,36 @@
+<%= form_for :oferta, url: ofertas_path do |f|%>
+<form role="form">
+    <div class="form-group">
+        <label for="oferta_necesidad">Por qué necesita este producto?</label>
+        <%= f.text_field :necesidad, class: "form-control" %>
+      
+    </div>
+    <div class="row clearfix">
+       <div class="col-md-4 column">
+           <div class="form-group">
+                <label for="monto">Cuanto pagaría por él?</label>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <%= f.number_field :monto, min: "0.0", class: "form-control"%>
+                </div>
+           </div>
+      </div>                 
+    </div>
+    <div class="form-group">
+       <% if current_user != nil && current_user.numero_tarjeta != nil %>
+           <label for="tarjeta">Desea usar la tarjeta terminada en: XXXX-XXXX-XXXX-<%= current_user.numero_tarjeta[-4..25] %> 
+           </label>
+           <button type="button" class="btn btn-default" >Usar otra tarjeta</button>
+       <%else%>
+           <label for="tarjeta">No posee ninguna tarjeta registrada 
+           </label>
+           <button type="button" class="btn btn-default" >Agregar tarjeta</button>
+       <%end%>
+    </div>
+</form>
+      <div class="modal-footer">
+          <label class="text-danger aria-label="Left Align"" > <i>Recuerde que ofertar es compromiso de compra </i> </label>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <%= f.submit "Ofertar", class: "btn btn-danger"%>
+      </div>
+<%end%>
