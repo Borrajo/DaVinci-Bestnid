@@ -20,7 +20,11 @@ class ProductosController < ApplicationController
 
     @producto = Producto.new(producto_params)
     @producto.finalizado = false
-    @producto.fecha_finalizacion = params[:fecha_finalizacion]
+    puts @producto.fecha_finalizacion.class
+    if params[:fecha_finalizacion]
+      @producto.fecha_finalizacion = Time.now
+    end
+    @producto.usuario_id = current_user.id
  
     if @producto.save
       redirect_to @producto
