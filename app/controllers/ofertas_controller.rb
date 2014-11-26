@@ -26,6 +26,6 @@ class OfertasController < ApplicationController
   private
 
   def oferta_params
-    params.require(:oferta).permit(:monto, :necesidad) 
+    params.require(:oferta).permit(:monto, :producto_id, :necesidad) 
   end
 end
