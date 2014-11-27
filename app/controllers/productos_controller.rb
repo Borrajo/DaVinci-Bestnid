@@ -22,7 +22,7 @@ class ProductosController < ApplicationController
     @producto.finalizado = false
     puts @producto.fecha_finalizacion.class
     if params[:fecha_finalizacion]
-      @producto.fecha_finalizacion = Time.now
+      @producto.fecha_finalizacion = Time.now + params[:fecha_finalizacion].to_i.day
     end
     @producto.usuario_id = current_user.id
  

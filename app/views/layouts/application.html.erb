@@ -10,21 +10,21 @@
 
 <%= render 'layouts/header' %>
 
+<!-- con este flash, podemos enviar :notice, :error, :success, :warning y se almacena en key
+  y en value se almacena lo que le hayamos puesto, en el que borré solo preguntaba si habia flash:notice,
+-->
+
+<div class="container">
 <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %> alert-dismissable">
+    <div class="alert alert-danger alert-dismissable  fade in">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         <%= value %>
     </div>
 <% end %>
-
-<div class="container"> 
-	<% if flash[:notice] %>
-		<div class ="alert alert-danger">
-			<%= flash[:notice] %>
-		</div>
-	<% end %>
-	<%= yield %>
+  <%= yield %>
 </div>
+
+
 <footer id = "footer">
 <nav class= "navbar navbar-default navbar-fixed-bottom" role= "navigation">
   <div class="container">

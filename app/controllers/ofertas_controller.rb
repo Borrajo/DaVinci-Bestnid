@@ -11,10 +11,9 @@ class OfertasController < ApplicationController
 
    def create
    @oferta = Oferta.new(oferta_params)
-   @oferta.usuario_id = current_user.id
      if @oferta.save
-     redirect_to productos_path
-      end
+     redirect_to producto_path(params[:oferta][:producto_id]), flash.now[:success] = "La oferta se realizó con éxito"
+    end
   end
 
   def new
@@ -26,6 +25,6 @@ class OfertasController < ApplicationController
   private
 
   def oferta_params
-    params.require(:oferta).permit(:monto, :producto_id, :necesidad) 
+    params.require(:oferta).permit(:monto, :producto_id, :necesidad, :usuario_id) 
   end
 end

@@ -1,5 +1,6 @@
 class Producto < ActiveRecord::Base
 
+	
 	default_scope -> {where("finalizado = false")}
 
 	has_many :ofertas, dependent: :destroy
@@ -10,7 +11,11 @@ class Producto < ActiveRecord::Base
 	validates :nombre,presence: true,length: {minimum: 4, maximum: 30}, uniqueness: true
 	validates :descripcion, presence: true,length: {minimum: 10, maximum: 500}
 	
-	
+	def finalizado
+		if Date.today >= self.fecha_finalizacion 
+			self.finalizado = true;
+		end
+	end
 
 	# It returns the articles whose titles contain one or more words that form the query
   	def self.search(query)
