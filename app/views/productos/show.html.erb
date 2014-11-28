@@ -3,21 +3,15 @@
 		<!--Esta es la barra de navegacion de categorias-->
 		<div class="col-md-12 column">
 			<ul class="breadcrumb">
-				<li>
-					<a href="/">Home</a> 
-					<span class="divider"></span>
-				</li>
-				<li>
-					<%=link_to Categoria.find(@producto.categoria_id).nombre, productos_path(categoria: @producto.categoria_id) %>
-					
-					<span class="divider"></span>
-				</li>
-				<li class="active">
-					<%=@producto.nombre%>
-				</li>
+				<li><a href="/">Home</a><span class="divider"></span></li>
+				<li><%=link_to Categoria.find(@producto.categoria_id).nombre, productos_path(categoria: @producto.categoria_id) %>
+              <span class="divider"></span></li>
+				<li class="active"><%=@producto.nombre%></li>
 			</ul>
 		</div>
 	</div>
+  <!-- comprobamos que el producto no se haya vencido -->
+  <% @producto.finalizar%>
 	<!--aca comienza la publicacion en si misma-->
 	<div class="row clearfix">
 		<div class="col-md-6 column">

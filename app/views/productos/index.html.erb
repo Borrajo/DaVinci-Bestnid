@@ -9,23 +9,53 @@
 <body>	
 <div class="container-fluid">
 	<div class="row">
+		<!--esta es la barra que indica el boton de ordenamiento e indica el filtrado -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="group">
+	          		<ol class="breadcrumb" display="inline-block" >
+						<li>
+							<!-- Boton para ordenar los prodcutos -->
+	          				<button type="button" class="btn dropdown-toggle" data-toggle=dropdown role="group"> Ordenar 
+	          					<span class="caret"></span> 
+  							</button>
+	          			   	<ul class="dropdown-menu"  role="menu">
+	            			<li role="presentation" class="dropdown-header">Alfabéticamente</li>
+	            			<li><%=link_to "Ascendente", productos_path(orden: "nombre asc")%></li>
+	            			<li><%=link_to "Descendente", productos_path(orden: "nombre desc")%></li>
+	            			<li class="divider"></li>
+	            			<li role="presentation" class="dropdown-header">Publicaciones recientes</li>
+	            			<li><%=link_to "Ascendente", productos_path(orden: "created_at asc")%></li>
+	            			<li><%=link_to "Descendente", productos_path(orden: "created_at desc")%></li>
+	          			  	</ul>
+	          			</li>
+	          			<li>
+	          				<% if params[:categoria] %>
+	          					Productos de la categoria:<b> <%= Categoria.find(params[:categoria]).nombre %></b>
+	          				<%else%>
+	          					<% if params[:orden] %>
+	          						Productos ordenados por: 
+		          					<% case params[:orden] 
+											when "nombre asc" %>
+									 <b>Alfabeticamente ascedente</b>
+										<% when "nombre desc"%>
+									 <b>Alfabeticamente descendente</b>
+										<%when "created_at asc"%>
+									 <b>Más antiguos</b>
+										<%when "created_at desc"%>
+									 <b>Más recientes</b>
+										<% end %>
+								<%end%>
+							<%end%>		
+	          			</li>
+	          		</ol>
+				</div>
+			</div>
+		</div>
+
 		<div class="col-md-2" class="pull-left">
 			<!--Aca va la barra de las categorias, cada categoria es un enlace,-->
 
-			<!-- Boton para ordenar los prodcutos -->
-			<div class="btn-group" >
-  				<button type="button" class="btn dropdown-toggle" data-toggle=dropdown> Ordenar <span class="caret"></span> 
-  				</button>
-          			<ul class="dropdown-menu"  role="menu">
-            			<li role="presentation" class="dropdown-header">Alfabéticamente</li>
-            			<li><%=link_to "Ascendente", productos_path(orden: "nombre asc")%></li>
-            			<li><%=link_to "Descendente", productos_path(orden: "nombre desc")%></li>
-            			<li class="divider"></li>
-            			<li role="presentation" class="dropdown-header">Publicaciones recientes</li>
-            			<li><%=link_to "Ascendente", productos_path(orden: "created_at asc")%></li>
-            			<li><%=link_to "Descendente", productos_path(orden: "created_at desc")%></li>
-          			</ul>
-				</div>
 			<h2>Categorias</h2>
 			<ul >
 				<% Categoria.all.each do |cat| %>
@@ -40,7 +70,16 @@
 		<!-- aca comienza la otra columna donde iran los productos-->
 		<div class="col-md-10 column">
 		<div class="row">  
+			<!-- finaliza los productos que no habian sido finalizado -->
 				<% @producto_a.all.each do |producto| %>
+				<% producto.finalizar %>
+				<%end%>
+			<!--fin finalizar-->
+			<!--recorre solo los productos activos-->
+			<% if @producto_a.activos.count == 0 %>
+				No existen Productos en esta categoria
+			<%end%>
+				<% @producto_a.activos.each do |producto| %>
 				<div class="col-md-5">
 					<div class="thumbnail">
 						<%= link_to image_tag(producto.foto, size: "400", :crop => :fill,  class: "img-rounded", :title => "Ver producto"), producto %>

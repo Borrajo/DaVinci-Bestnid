@@ -1,6 +1,5 @@
 class ProductosController < ApplicationController
   before_action :get_producto, only: [:show, :destroy]
-
   def index
     if params[:search]
       @producto_a = Producto.search(params[:search]).order("created_at DESC")
@@ -13,7 +12,6 @@ class ProductosController < ApplicationController
     if params[:orden]
         @producto_a = Producto.order(params[:orden])
     end
-
   end
 
   def create
@@ -56,5 +54,4 @@ class ProductosController < ApplicationController
   def get_producto
     @producto = Producto.find(params[:id])
   end
-  
 end
