@@ -42,7 +42,9 @@ class ProductosController < ApplicationController
   end
 
   def show 
-     
+     if @producto.finalizado && current_user.id != @producto.usuario_id
+      redirect_to productos_path
+    end
   end
 
   private 

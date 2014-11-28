@@ -44,7 +44,11 @@
 									 <b>Más antiguos</b>
 										<%when "created_at desc"%>
 									 <b>Más recientes</b>
-										<% end %>
+									<% end %>
+								<%else%>
+									<%if params[:search] %>
+										Resultado de la busqueda:<b> <%= params[:search]%></b>
+									<%end%>
 								<%end%>
 							<%end%>		
 	          			</li>
@@ -77,7 +81,7 @@
 			<!--fin finalizar-->
 			<!--recorre solo los productos activos-->
 			<% if @producto_a.activos.count == 0 %>
-				No existen Productos en esta categoria
+				No existen Productos con esas caracteristicas
 			<%end%>
 				<% @producto_a.activos.each do |producto| %>
 				<div class="col-md-5">
