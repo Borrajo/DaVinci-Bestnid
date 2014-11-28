@@ -5,6 +5,8 @@ class PreguntasController < ApplicationController
   def create
      @pregunta = Pregunta.new(pregunta_params)
      if @pregunta.save
+      #no pueden usarse tildes en los flashes
+      flash[:success] = "Tu pregunta fue realiza con exito"
      redirect_to producto_path(params[:pregunta][:producto_id])
    end
   end

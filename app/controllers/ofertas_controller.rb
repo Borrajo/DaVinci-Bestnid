@@ -12,8 +12,10 @@ class OfertasController < ApplicationController
    def create
    @oferta = Oferta.new(oferta_params)
      if @oferta.save
+      flash[:success] = "Tu oferta fue realiza con exito"
      redirect_to producto_path(params[:oferta][:producto_id])
    else
+    flash[:danger] = "Ya ofertaste en este producto"
     redirect_to producto_path(params[:oferta][:producto_id])
     end
   end
