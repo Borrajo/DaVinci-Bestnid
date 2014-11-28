@@ -125,16 +125,18 @@
                                     </td>
                             </tr>
 
-                            <!--Respuesta-->
-                            <tr class="danger" >
-                                 <td>
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-                                                <%= pregunta.respuesta%>
-                                 </td>
-                                 <td>
-                                    <%= pregunta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
-                                </td>
-                             </tr>  
+                            <!--Respuesta solo si existe-->
+                                <% if pregunta.respuesta? %>
+                                  <tr class="danger" >
+                                       <td>
+                                          <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                                      <%= pregunta.respuesta%>
+                                       </td>
+                                       <td>
+                                          <%= pregunta.fecha_respuesta.strftime("%d/%m/%Y a las %H:%M") %>
+                                      </td>
+                                   </tr>
+                                <%end%>  
                              <% end %> 
                           
 
@@ -148,19 +150,31 @@
 
                
                         <div class="col-lg-8">
-                             <div class="input-group">
-                                
-                                <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Escriba aqui su pregunta. No ingrese datos personales, ni use lenguaje vulgar..." %>
-                                <span class="input-group-btn">
-                                      <button class="btn btn-danger" type="button">Preguntar!</button>
-                                </span>
-                            </div><!-- /input-group -->
+                          <!-- creamos el formulario de preguntar -->
+                          <%= form_for :pregunta, url: preguntas_path do |p|%>
+                            <form role="form">
+                               <div class="form-group">
+                                   <div class="input-group">
+                                        <%= p.hidden_field :producto_id, value:  @producto.id %>
+                                        <% if user_signed_in? %>
+                                            <%= p.hidden_field :usuario_id, value: current_user.id %>
+                                        <%end%>
+                                        <%= p.text_field :pregunta, class: "form-control", placeholder: "Escriba aqui su pregunta. No ingrese datos personales, ni use lenguaje vulgar..." %>
+                                      <span class="input-group-btn">
+                                            <%= p.submit "Preguntar!", class: "btn btn-danger"%>
+                                      </span>
+                                    </div><!-- /input-group -->
+                                </div>
+                            </form>
+                            <%end%> <!-- / formulario -->
                         </div><!-- /.col-lg-8 -->
                      
                     </div><!-- /.row -->
                
                 </div><!-- /pestaña de preguntas -->
-                
+
+
+
 
                     <!--Aca comienzan la pestaña de las ofertas -->
                         <div class="tab-pane" id="panel-361720">
