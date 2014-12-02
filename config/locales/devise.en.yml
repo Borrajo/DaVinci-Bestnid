@@ -61,14 +61,14 @@ en:
 es:
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      confirmed: "Tu direccion de email fue confirmada correctamente."
+      send_instructions: "Vas a recibir un email con las instrucciones para confirmar tu cuenta."
+      send_paranoid_instructions: "Si tu direccion de email ya existe en la base de datos, vas a recibir un email con instrucciones para confimrar tu cuenta."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account is locked."
+      already_authenticated: "Ya estas conectado."
+      inactive: "Todavia no estas logueado."
+      invalid: "%{authentication_keys} o contraseña invalidos."
+      locked: "Tu cuenta esta bloqueada."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Your session expired. Please sign in again to continue."
@@ -99,7 +99,7 @@ es:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
-      signed_in: " Bienvenido a bestnid, #{current_user.nombre}"
+      signed_in: " Bienvenido a bestnid, \"#{current_user.nombre}\"."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
     unlocks:
