@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   	has_many :ofertas
-	has_many :productos
+	has_many :productos, dependent: :destroy
     has_many :preguntas
 
     validates :nombre, presence: true, length: {minimum: 2, maximum: 30}
