@@ -22,7 +22,7 @@ class ProductosController < ApplicationController
     if params[:fecha_finalizacion]
       @producto.fecha_finalizacion = Time.now + params[:fecha_finalizacion].to_i.day
     end
-    @producto.usuario_id = current_user.id
+    @producto.user_id = current_user.id
  
     if @producto.save
       redirect_to @producto
