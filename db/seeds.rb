@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Creo los usuarios"
-User.create(nombre: "Carlos", apellido: "Maidana", email: "carlos@a.com", telefono: "011411234514", password: "12345678", edad: 18)
-User.create(nombre: "Catalina", apellido: "Perez", email: "catalina@a.com", telefono: "0114353152", password: "12345678", edad: 40)
-User.create(nombre: "Sergio", apellido: "Ramirez", email: "sergio@a.com", telefono: "0114514789", password: "12345678", edad: 29)
+User.create(nombre: "Carlos", apellido: "Maidana", email: "carlos@a.com", telefono: "011411234514", password: "12345678", fecha_nacimiento: Date.new(1992,05,10))
+User.create(nombre: "Catalina", apellido: "Perez", email: "catalina@a.com", telefono: "0114353152", password: "12345678", fecha_nacimiento: Date.new(1991,07,15))
+User.create(nombre: "Sergio", apellido: "Ramirez", email: "sergio@a.com", telefono: "0114514789", password: "12345678", fecha_nacimiento: Date.new(1993,07,15))
 
 puts "Creo las categorias"
 animales =Categoria.find_or_create_by(nombre: "Animales")
@@ -20,7 +20,7 @@ indumentaria = Categoria.find_or_create_by(nombre: "Indumentaria")
 herramientas = Categoria.find_or_create_by(nombre: "Herramientas")
 deportes = Categoria.find_or_create_by(nombre: "Deportes")
 cocina = Categoria.find_or_create_by(nombre: "Cocina")
-antiguedades = Categoria.find_or_create_by(nombre: "Antiguedades")
+antigufecha_nacimientoes = Categoria.find_or_create_by(nombre: "Antigufecha_nacimientoes")
 santeria = Categoria.find_or_create_by(nombre: "Santeria")
 automotores = Categoria.find_or_create_by(nombre: "Automotores")
 otros = Categoria.find_or_create_by(nombre: "Otros")

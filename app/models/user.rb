@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
 
 	validates :telefono, presence: true, numericality: { only_integer: true }, length: { minimum:10 , maximum: 50 }
 
-	validates :edad, presence: true 
+	validates :fecha_nacimiento, presence: true 
 	
-	validates_exclusion_of :edad, :in => 0..17, :message => "Debes ser mayor a 18"
 end
