@@ -1,122 +1,130 @@
+
 <div class="container">
   <div class="row clearfix">
-    <div class="col-md-12 column">
-      
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Apellido
-          </h3>
+    <!-- lista de elementos como ventas y amigos -->
+    <div class="col-md-2 column">
+      <ul>
+        <li>
+          
+        </li>
+        <li>
+          Consectetur adipiscing elit
+        </li>
+        <li>
+          Integer molestie lorem at massa
+        </li>
+        <li>
+          Facilisis in pretium nisl aliquet
+        </li>
+        <li>
+          Nulla volutpat aliquam velit
+        </li>
+        <li>
+          Faucibus porta lacus fringilla vel
+        </li>
+        <li>
+          Aenean sit amet erat nunc
+        </li>
+        <li>
+          Eget porttitor lorem
+        </li>
+      </ul>
+    </div>
+    <!--fin de lista de elemento-->
+
+    <!-- imagen -->
+    <div class="col-md-10 column">
+      <div class="row clearfix">
+        <div class="col-md-4 column">
+          <img alt="140x140" src="http://lorempixel.com/140/140/" class="img-rounded" />
         </div>
-        <div class="panel-body">
-          <%= current_user.apellido %>
+        <!--lista con campos para modificar y nombre-->
+        <div class="col-md-8 column">
+          <div class="row clearfix">
+            <!-- muestra el nombre en grande -->
+            <div class="col-md-12 column">
+              <h2 class="text-center">
+                <%= current_user.nombre + " " + @current_user.apellido %>
+              </h2>
+            </div>
+            <!--fin del nombre -->
+          </div>
+          <!-- lista de campos a modificar -->
+          <div class="row clearfix">
+            <div class="col-md-10 column">
+              <ul>
+                <li>
+                    <div class="panel panel-info">
+                       <div class="panel-heading">
+                          <h3 class="panel-title">
+                             Email: 
+                          </h3>
+                       </div>
+                       <div class="panel-body">
+                          <%= current_user.email %>
+                       </div>
+                    </div>
+
+
+                </li>
+                <li>
+                  <%= "Telefono: " + current_user.telefono %>
+                </li>
+                <li>
+                  Integer molestie lorem at massa
+                </li>
+                <li>
+                  Facilisis in pretium nisl aliquet
+                </li>
+                <li>
+                  Nulla volutpat aliquam velit
+                </li>
+                <li>
+                  Faucibus porta lacus fringilla vel
+                </li>
+                <li>
+                  Aenean sit amet erat nunc
+                </li>
+                <li>
+                  Eget porttitor lorem
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-2 column">
+
+            </div>
+          </div><!--fin de lista-->
         </div>
       </div>
-
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Nombre
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.nombre %>
-        </div>
-      </div>
-
-        <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Email
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.email %>
-        </div>
-      </div>
-
-        <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Edad
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.fecha_nacimiento %>
-        </div>
-      </div>
-
-        <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Telefono
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.telefono %>
-        </div>
-      </div>
-
-        <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Domicilio
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.domicilio %>
-        </div>
-      </div>
-
-        <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Titular de tarjeta de credito
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.titular_tarjeta %>
-        </div>
-      </div>
-
-        <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Numero de tarjeta de credito
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.numero_tarjeta %>
-        </div>
-      </div>
-
-        <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Vencimiento de tarjeta de credito
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.vencimiento_tarjeta %>
-        </div>
-      </div>
-
-        <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Ultima conexión
-          </h3>
-        </div>
-        <div class="panel-body">
-          <%= current_user.last_sign_in_at.strftime("%d/%m/%Y a las %H:%M") %>
-        </div>
-      </div>
-
-      <h3>Cancelar mi cuenta</h3>
+      <!-- tabs para ofertas y preguntas -->
+      <div class="row clearfix">
+        <div class="col-md-12 column">
+          <div class="tabbable" id="tabs-569375">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#panel-87367" data-toggle="tab">Section 1</a>
+              </li>
+              <li>
+                <a href="#panel-425311" data-toggle="tab">Section 2</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="panel-87367">
+                <p>
+                  I'm in Section 1.
+                </p>
+              </div>
+              <div class="tab-pane" id="panel-425311">
+                <p>
+                  <h3>Cancelar mi cuenta</h3>
 
       <p> Se borrara toda su informacion, publicaciones, preguntas y ofertas. <%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %></p>
-
-
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
