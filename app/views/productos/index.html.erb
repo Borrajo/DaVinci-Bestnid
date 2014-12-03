@@ -81,7 +81,8 @@
 			<!--fin finalizar-->
 			<!--recorre solo los productos activos-->
 			<% if @producto_a.activos.count == 0 %>
-				No existen Productos con esas caracteristicas
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Aún no existen productos de esta categoria
 			<%end%>
 				<% @producto_a.activos.each do |producto| %>
 				<div class="col-md-5">

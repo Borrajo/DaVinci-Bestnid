@@ -114,37 +114,65 @@
 
 
                             <!--Aca comienzan las preguntas y respuestas-->
-                            <% @producto.preguntas.each  do |pregunta| %> 
-                            <!--Pregunta-->
-                            <tr>
-                                    <td>
-                                        <%= pregunta.pregunta %>
-                                    </td>
-                                    <td>
-                                        <%= pregunta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
-                                    </td>
-                            </tr>
-
-                            <!--Respuesta solo si existe-->
-                                <% if pregunta.respuesta? %>
-                                  <tr class="danger" >
-                                       <td>
-                                          <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-                                                      <%= pregunta.respuesta%>
-                                       </td>
-                                       <td>
-                                          <%= pregunta.fecha_respuesta.strftime("%d/%m/%Y a las %H:%M") %>
+                           
+                                <% @producto.preguntas.each  do |pregunta| %> 
+                                <!--Pregunta-->
+                                <tr>
+                                      <td>
+                                          <%= pregunta.pregunta %>
                                       </td>
-                                   </tr>
-                                <%end%>  
-                             <% end %> 
+                                      <td>
+                                        <%= pregunta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
+                                      </td>
+                                </tr>
+
+                                 <!--Respuesta solo si existe-->
+                                <% if pregunta.respuesta? %>
+                                    <tr class="danger" >
+                                         <td>
+                                           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                                      <%= pregunta.respuesta%>
+                                         </td>
+                                         <td>
+                                          <%= pregunta.fecha_respuesta.strftime("%d/%m/%Y a las %H:%M") %>
+                                         </td>
+                                    </tr>
+                                <% else %>
+                                     <% if user_signed_in? %>
+                                     <% if (@producto.user_id == current_user.id) %>
+                                          <td>
+                                          <!-- creamos el formulario para responder una pregunta -->
+                                           <%= form_for :pregunta, url: preguntas_path do |p|%>
+                                              <form role="form">
+                                                  <div class="form-group">
+                                                        <div class="input-group">
+                                                            <%= p.hidden_field :producto_id, value:  @producto.id %>
+                                                            <% if user_signed_in? %>
+                                                            <%= p.hidden_field :usuario_id, value: current_user.id %>
+                                                            <%end%>
+                                                        <%= p.text_field :pregunta, class: "form-control", placeholder: "Escriba aqui su respuesta. No ingrese datos personales, ni use lenguaje vulgar..." %>
+                                                         <span class="input-group-btn">
+                                                             <%= p.submit "Responder!", class: "btn btn-danger"%>
+                                                         </span>
+                                                        </div><!-- /input-group -->
+                                                  </div>
+                                              </form>
+                                          <%end%> <!-- / formulario -->
+                                          </td>
+                                    <% end %> 
+                                    <% end %> 
+                                  <% end %> <!-- end si existe la pregunta -->
+                                <% end %> <!-- end del for de todas las preg/rpta --> 
                           
 
 
                 <tbody>
                 </tbody>
                 <!--Aca va el cuadro de texto para hacer una pregunta-->
+
                 </table> 
+                <% if user_signed_in? %>
+                <% if !(@producto.user_id == current_user.id) %>
 
                     <div class="row">
 
@@ -170,8 +198,14 @@
                         </div><!-- /.col-lg-8 -->
                      
                     </div><!-- /.row -->
-               
-                </div><!-- /pestaña de preguntas -->
+               <% end %>
+               <% else %>
+                                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                         Debe registrarse para poder realizar preguntas sobre este articulo
+               <% end %>
+              
+               </div><!-- /pestaña de preguntas -->
+                
 
 
 
