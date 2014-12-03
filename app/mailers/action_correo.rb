@@ -1,8 +1,9 @@
 class ActionCorreo < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "bestnid.corp@gmail.com"
 
   def bienvenido_email(user)
   	@user = user
   	@url = 'Bestnid-grupo2.herokuapp.com'
-  	mail(to: @user.email, subject: 'Bienvenido a Bestnid')
+  	mail(to: 'juampacabezon@hotmail.com', subject: 'Bienvenido a Bestnid')
+end
 end
