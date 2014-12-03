@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20141203145034) do
   create_table "productos", force: true do |t|
     t.string   "nombre"
     t.text     "descripcion"
-    t.integer  "usuario_id"
+    t.integer  "user_id"
     t.datetime "fecha_finalizacion"
     t.integer  "cantidad_preguntas"
     t.integer  "comprador_id"
