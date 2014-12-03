@@ -141,24 +141,30 @@
                                      <% if user_signed_in? %>
                                      <% if (@producto.user_id == current_user.id) %>
                                           <td>
+                                          <div class="col-lg-8">
                                           <!-- creamos el formulario para responder una pregunta -->
-                                           <%= form_for :pregunta, url: preguntas_path do |p|%>
-                                              <form role="form">
-                                                  <div class="form-group">
-                                                        <div class="input-group">
-                                                            <%= p.hidden_field :producto_id, value:  @producto.id %>
-                                                            <% if user_signed_in? %>
-                                                            <%= p.hidden_field :usuario_id, value: current_user.id %>
-                                                            <%end%>
-                                                        <%= p.text_field :pregunta, class: "form-control", placeholder: "Escriba aqui su respuesta. No ingrese datos personales, ni use lenguaje vulgar..." %>
-                                                         <span class="input-group-btn">
-                                                             <%= p.submit "Responder!", class: "btn btn-danger"%>
-                                                         </span>
-                                                        </div><!-- /input-group -->
-                                                  </div>
-                                              </form>
-                                          <%end%> <!-- / formulario -->
+                                          <%= form_for :pregunta, url: preguntas_path do |p|%>
+                                               <form role="form">
+                                                    <div class="form-group">
+                                                          <div class="input-group">
+                                                              <%= p.hidden_field :producto_id, value:  @producto.id %>
+                                                          
+                                                              <%= p.hidden_field :usuario_id, value: current_user.id %>
+                                                              <%= p.hidden_field :fecha_respuesta, value: DateTime.now %>
+                                                               
+                                                              <%= p.text_field :respuesta, class: "form-control", placeholder: "Escriba aqui su respuesta. No ingrese datos personales, ni use lenguaje vulgar..." %>
+                                                               <span class="input-group-btn">
+                                                               <%= p.submit "Responder!", class: "btn btn-normal"%>
+                                                               </span>
+                                                          </div><!-- /input-group -->
+                                                    </div>
+                                               </form>
+                                           <%end%> <!-- / formulario -->
+                                          </div>
                                           </td>
+                                          <td>
+
+                                         </td>
                                     <% end %> 
                                     <% end %> 
                                   <% end %> <!-- end si existe la pregunta -->
@@ -200,8 +206,11 @@
                     </div><!-- /.row -->
                <% end %>
                <% else %>
-                                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                         Debe registrarse para poder realizar preguntas sobre este articulo
+                                  <div class="alert alert-danger" role="alert">
+                                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                      <span class="sr-only">Error:</span>
+                                      Debe registrarse para poder realizar preguntas sobre este producto
+                                    </div>
                <% end %>
               
                </div><!-- /pestaña de preguntas -->
