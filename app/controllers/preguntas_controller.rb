@@ -8,6 +8,7 @@ class PreguntasController < ApplicationController
       #no pueden usarse tildes en los flashes
       flash[:success] = "Tu pregunta fue realiza con exito"
      redirect_to producto_path(params[:pregunta][:producto_id])
+     ActionCorreo.bienvenido_email(User.find(@pregunta.usuario_id)).deliver
    end
   end
 
