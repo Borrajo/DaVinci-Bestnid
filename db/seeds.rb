@@ -43,5 +43,5 @@ Producto.find_or_create_by(nombre: "Aceite y Vinagre", descripcion: "200ml de ac
 	created_at: DateTime.new(2014,6,9), fecha_finalizacion: DateTime.new(2014,12,15) + 15.day, finalizado: false)
 
 puts "Agrego una pregunta y respuesta"
-Producto.find(2).preguntas.find_or_create_by(pregunta: "Cuanto pesa?", respuesta: "Unos 150 kg ma'o meno'");
+Producto.find(2).preguntas.find_or_create_by(pregunta: "Cuanto pesa?", respuesta: "Unos 150 kg ma'o meno'", fecha_respuesta: Date.new(2014,11,4));
 

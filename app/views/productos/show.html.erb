@@ -85,7 +85,7 @@
                        </li>
                        <!-- muestra la pestaña oferta-->
                        <% if user_signed_in? %> 
-                       		<% if @producto.usuario_id == current_user.id %>
+                       		<% if @producto.user_id == current_user.id %>
                        		<li>
                             	<a href="#panel-361720" data-toggle="tab">Ofertas</a>
                        		</li>
