@@ -123,3 +123,19 @@ es:
           attributes:
             email:
               blank: ": El campo no puede estar vacio"
+            password:
+              blank: ": El campo no puede estar vacio"
+              too_short: ": El campo es demaciado corto"
+            nombre:
+              blank: ": El campo no puede estar vacio"
+              too_short: ": El campo es demaciado corto"
+            apellido:
+              blank: ": El campo no puede estar vacio"
+              too_short: ": El campo es demaciado corto"
+            telefono:
+              blank: ": El campo no puede estar vacio"
+              too_short: ": El campo es demaciado corto"
+              not_a_number: "No se permiten otros caracteres que no sean numeros"
+            fecha_nacimiento:
+              blank: ": El campo no puede estar vacio"
+              too_short: ": El campo es demaciado corto"
