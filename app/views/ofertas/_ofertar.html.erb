@@ -12,7 +12,7 @@
               <%= f.hidden_field :usuario_id, value: current_user.id %>
               <%end%>
                 <label for="oferta_necesidad">Por qué necesita este producto?</label>
-                <%= f.text_area :necesidad, class: "form-control", rows: 5, cols: 130 %>
+                <%= f.text_area :necesidad, class: "form-control", rows: 5, cols: 130, style: "resize: none" %>
             </div>
             <div class="row clearfix">
                <div class="col-md-4 column">

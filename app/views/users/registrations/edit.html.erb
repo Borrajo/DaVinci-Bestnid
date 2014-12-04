@@ -92,7 +92,7 @@
                   </span></a>
               </li>
               <li>
-                <a href="#panel-425311" data-toggle="tab">Section 2</a>
+                <a href="#panel-425311" data-toggle="tab">Ofertas</a>
               </li>
             </ul>
 
@@ -105,54 +105,7 @@
                 <div class="row clearfix">
                     <% @current_user.productos.each do |producto| %>
                         <% if producto.preguntas.no_contestadas.count > 0 %>
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">
-                                  <!--titulo del producto-->
-                                        <h3 class="panel-title">
-                                          <%= producto.nombre %> (<%=producto.preguntas.no_contestadas.count%>)
-                                        </h3>
-                                  <!--fin titulo de producto-->
-                                </div>
-                                <div class="panel-body">
-                                          <div class="row clearfix">
-                                            <!--imagen-->
-                                                <div class="col-md-2 column">
-                                                  <%= link_to image_tag(producto.foto, size: "100",  class: "img-rounded", :title => "Ver producto"), producto %>
-                                                </div>
-                                            <!--fin imagen-->
-                                            <div class="col-md-7 column">
-                                              <dl class="dl-horizontal">
-                                                <dt>
-                                                  Descripcion:
-                                                </dt>
-                                                <dd>
-                                                  <%= producto.descripcion%> 
-                                                </dd>
-                                                <dt>
-                                                  Publicado el:
-                                                </dt>
-                                                <dd>
-                                                  <%= producto.created_at.to_date %>
-                                                </dd>
-                                                <dt></br>
-                                                  Estado:
-                                                </dt>
-                                                <dd></br>
-                                                  <% if producto.finalizado = true %>
-                                                  Finalizado
-                                                  <%else%>
-                                                  Activo
-                                                  <%end%>
-                                                </dd>
-                                              </dl>
-                                            </div>
-                                            <div class="col-md-2 column pull-right">
-                                               <%= link_to button_to( "Ver", producto_path(id: producto.id)  , :class => "btn btn-danger"), producto%>
-                                            </div>
-
-                                          </div>
-                                </div><!-- end panel Body-->
-                              </div>
+                            <%= render  "/productos/listar", producto: producto %>
                         <%end%>
                     <%end%>
                   </div>
