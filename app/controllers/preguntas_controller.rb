@@ -6,9 +6,9 @@ class PreguntasController < ApplicationController
      @pregunta = Pregunta.new(pregunta_params)
      if @pregunta.save
       #no pueden usarse tildes en los flashes
-      ActionCorreo.bienvenido_email(current_user).deliver
       flash[:success] = "Tu pregunta fue realizada con exito"
-     redirect_to producto_path(params[:pregunta][:producto_id])
+      ActionCorreo.bienvenido_email(current_user).deliver
+      redirect_to producto_path(params[:pregunta][:producto_id])
    end
   end
 

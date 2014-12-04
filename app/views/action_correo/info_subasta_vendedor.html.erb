@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' hhttp-equiv='Content-Type' />
+	</head>
+	<body>
+		<h1> 
+			Señor <%= @user1.nombre + " " + @user1.apellido %> su venta se ha finalizado con exito!
+		</h1>
+		<p>
+			Los datos del comprador son:
+			Nombre: <%= @user2.nombre %>
+			Apellido: <%= @user2.apellido %>
+			Email: <%= @user2.email %>
+			<!-- Monto: <%= Aca iría el monto! %> -->
+		</p>
+		<p>
+			Visitenos en: <a href="<%= @url %>">Bestnid-grupo2.herokuapp.com</a>
+		</p>
+		<p>
+			Saludos!
+		</p>
+	</body>
+</html>
