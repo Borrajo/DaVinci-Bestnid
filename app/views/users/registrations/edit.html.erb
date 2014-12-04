@@ -102,7 +102,6 @@
               <!--PANEL de preguntas -->
               <div class="tab-pane active" id="panel-87367">
                 <p>
-                <div class="container">
                 <div class="row clearfix">
                     <% @current_user.productos.each do |producto| %>
                         <% if producto.preguntas.no_contestadas.count > 0 %>
@@ -110,7 +109,7 @@
                                 <div class="panel-heading">
                                   <!--titulo del producto-->
                                         <h3 class="panel-title">
-                                          <%= producto.nombre %>
+                                          <%= producto.nombre %> (<%=producto.preguntas.no_contestadas.count%>)
                                         </h3>
                                   <!--fin titulo de producto-->
                                 </div>
@@ -118,7 +117,7 @@
                                           <div class="row clearfix">
                                             <!--imagen-->
                                                 <div class="col-md-2 column">
-                                                  <%= image_tag( producto.foto, size: '100', class: "img-rounded") %>
+                                                  <%= link_to image_tag(producto.foto, size: "100",  class: "img-rounded", :title => "Ver producto"), producto %>
                                                 </div>
                                             <!--fin imagen-->
                                             <div class="col-md-7 column">
@@ -127,7 +126,7 @@
                                                   Descripcion:
                                                 </dt>
                                                 <dd>
-                                                  <%= producto.descripcion%> (<%=producto.preguntas.no_contestadas.count%>)
+                                                  <%= producto.descripcion%> 
                                                 </dd>
                                                 <dt>
                                                   Publicado el:
@@ -147,8 +146,8 @@
                                                 </dd>
                                               </dl>
                                             </div>
-                                            <div class="col-md-2 column">
-                                               <a href="#" class="btn btn-danger" type="button">Button</a>
+                                            <div class="col-md-2 column pull-right">
+                                               <%= link_to button_to( "Ver", producto_path(id: producto.id)  , :class => "btn btn-danger"), producto%>
                                             </div>
 
                                           </div>
@@ -157,7 +156,6 @@
                         <%end%>
                     <%end%>
                   </div>
-                </div>
                 </p>
             </div>
               <!-- PANEL DE OFERTAS -->  
