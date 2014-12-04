@@ -1,97 +1,77 @@
 
 <div class="container">
   <div class="row clearfix">
-    <!-- lista de elementos como ventas y amigos -->
-    <div class="col-md-2 column">
-      <ul>
-        <li>
-          
-        </li>
-        <li>
-          Consectetur adipiscing elit
-        </li>
-        <li>
-          Integer molestie lorem at massa
-        </li>
-        <li>
-          Facilisis in pretium nisl aliquet
-        </li>
-        <li>
-          Nulla volutpat aliquam velit
-        </li>
-        <li>
-          Faucibus porta lacus fringilla vel
-        </li>
-        <li>
-          Aenean sit amet erat nunc
-        </li>
-        <li>
-          Eget porttitor lorem
-        </li>
-      </ul>
-    </div>
-    <!--fin de lista de elemento-->
+                      <!-- lista de elementos como ventas y amigos -->
+                      <div class="col-md-2 column">
+                        <ul>
+                          <li>
+                            
+                          </li>
+                          <li>
+                            Consectetur adipiscing elit
+                          </li>
+                          <li>
+                            Integer molestie lorem at massa
+                          </li>
+                          <li>
+                            Facilisis in pretium nisl aliquet
+                          </li>
+                          <li>
+                            Nulla volutpat aliquam velit
+                          </li>
+                          <li>
+                            Faucibus porta lacus fringilla vel
+                          </li>
+                          <li>
+                            Aenean sit amet erat nunc
+                          </li>
+                          <li>
+                            Eget porttitor lorem
+                          </li>
+                        </ul>
+                      </div>
+                      <!--fin de lista de elemento-->
 
-    <!-- imagen -->
+   
     <div class="col-md-10 column">
       <div class="row clearfix">
+         <!-- imagen -->
         <div class="col-md-4 column">
-          <img alt="140x140" src="http://lorempixel.com/140/140/" class="img-rounded" />
+          <%= image_tag( current_user.foto, size: '300', class: "img-rounded") %>
         </div>
         <!--lista con campos para modificar y nombre-->
         <div class="col-md-8 column">
-          <div class="row clearfix">
-            <!-- muestra el nombre en grande -->
-            <div class="col-md-12 column">
-              <h2 class="text-center">
-                <%= current_user.nombre + " " + @current_user.apellido %>
-              </h2>
-            </div>
-            <!--fin del nombre -->
-          </div>
+              <div class="row clearfix">
+                      <!-- muestra el nombre en grande -->
+                      <div class="col-md-12 column">
+                        <h2 class="text-center">
+                          <%= current_user.nombre + " " + @current_user.apellido %>
+                        </h2>
+                      </div>
+                      <!--fin del nombre -->
+              </div>
           <!-- lista de campos a modificar -->
           <div class="row clearfix">
-            <div class="col-md-10 column">
-              <ul>
-                <li>
-                    <div class="panel panel-info">
-                       <div class="panel-heading">
-                          <h3 class="panel-title">
-                             Email: 
-                          </h3>
-                       </div>
-                       <div class="panel-body">
-                          <%= current_user.email %>
-                       </div>
-                    </div>
+            <div class="col-md-12 column">
+              <div class="panel panel-danger">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><h4>Perfil</h4></div>
 
-
+                <!-- List group -->
+                <ul class="list-group">
+                  <li class="list-group-item"><%= "Email :" + current_user.email%></li>
+                  <li class="list-group-item"><%= "Telefono:" + current_user.telefono%></li>
+                  <li class="list-group-item"><%= "Fecha de nacimiento :" + current_user.fecha_nacimiento.to_s%></li>
+                  <li class="list-group-item"><%= "Cuenta creada :" + current_user.created_at.to_date.to_s%></li>
+                  <li class="list-group-item alert-danger">
+                    <div class="row">
+                    <div class="col-md-4 column pull-right">
+                    <%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Se borrara toda su informacion, publicaciones, preguntas y ofertas. Estas seguro?" }, method: :delete %>
+                  </div>
+                </div>
                 </li>
-                <li>
-                  <%= "Telefono: " + current_user.telefono %>
-                </li>
-                <li>
-                  Integer molestie lorem at massa
-                </li>
-                <li>
-                  Facilisis in pretium nisl aliquet
-                </li>
-                <li>
-                  Nulla volutpat aliquam velit
-                </li>
-                <li>
-                  Faucibus porta lacus fringilla vel
-                </li>
-                <li>
-                  Aenean sit amet erat nunc
-                </li>
-                <li>
-                  Eget porttitor lorem
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-2 column">
-
+                </ul>
+              </div>
             </div>
           </div><!--fin de lista-->
         </div>
@@ -102,29 +82,95 @@
           <div class="tabbable" id="tabs-569375">
             <ul class="nav nav-tabs">
               <li class="active">
-                <a href="#panel-87367" data-toggle="tab">Section 1</a>
+                <a href="#panel-87367" data-toggle="tab">Preguntas 
+                  <span class="badge">
+                  <% a = 0
+                     @current_user.productos.each do |producto| %>
+                      <%a = a + producto.preguntas.no_contestadas.count %>
+                  <%end%>
+                  <%= a %>
+                  </span></a>
               </li>
               <li>
                 <a href="#panel-425311" data-toggle="tab">Section 2</a>
               </li>
             </ul>
+
+
+
             <div class="tab-content">
+              <!--PANEL de preguntas -->
               <div class="tab-pane active" id="panel-87367">
                 <p>
-                  I'm in Section 1.
+                <div class="container">
+                <div class="row clearfix">
+                    <% @current_user.productos.each do |producto| %>
+                        <% if producto.preguntas.no_contestadas.count > 0 %>
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                  <!--titulo del producto-->
+                                        <h3 class="panel-title">
+                                          <%= producto.nombre %>
+                                        </h3>
+                                  <!--fin titulo de producto-->
+                                </div>
+                                <div class="panel-body">
+                                          <div class="row clearfix">
+                                            <!--imagen-->
+                                                <div class="col-md-2 column">
+                                                  <%= image_tag( producto.foto, size: '100', class: "img-rounded") %>
+                                                </div>
+                                            <!--fin imagen-->
+                                            <div class="col-md-7 column">
+                                              <dl class="dl-horizontal">
+                                                <dt>
+                                                  Descripcion:
+                                                </dt>
+                                                <dd>
+                                                  <%= producto.descripcion%> (<%=producto.preguntas.no_contestadas.count%>)
+                                                </dd>
+                                                <dt>
+                                                  Publicado el:
+                                                </dt>
+                                                <dd>
+                                                  <%= producto.created_at.to_date %>
+                                                </dd>
+                                                <dt></br>
+                                                  Estado:
+                                                </dt>
+                                                <dd></br>
+                                                  <% if producto.finalizado = true %>
+                                                  Finalizado
+                                                  <%else%>
+                                                  Activo
+                                                  <%end%>
+                                                </dd>
+                                              </dl>
+                                            </div>
+                                            <div class="col-md-2 column">
+                                               <a href="#" class="btn btn-danger" type="button">Button</a>
+                                            </div>
+
+                                          </div>
+                                </div><!-- end panel Body-->
+                              </div>
+                        <%end%>
+                    <%end%>
+                  </div>
+                </div>
                 </p>
-              </div>
+            </div>
+              <!-- PANEL DE OFERTAS -->  
               <div class="tab-pane" id="panel-425311">
                 <p>
-                  <h3>Cancelar mi cuenta</h3>
 
-      <p> Se borrara toda su informacion, publicaciones, preguntas y ofertas. <%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %></p>
-                </p>
+                 </p>
               </div>
-            </div>
-          </div>
-        </div>
+        </div><!--fin del contenido de los paneles -->
       </div>
     </div>
   </div>
 </div>
+</div>
+</div>
+
