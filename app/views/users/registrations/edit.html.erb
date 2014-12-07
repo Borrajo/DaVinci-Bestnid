@@ -81,19 +81,28 @@
         <div class="col-md-12 column">
           <div class="tabbable" id="tabs-569375">
             <ul class="nav nav-tabs">
-              <li class="active">
-                <a href="#panel-87367" data-toggle="tab">Preguntas 
-                  <span class="badge">
-                  <% a = 0
-                     @current_user.productos.each do |producto| %>
-                      <%a = a + producto.preguntas.no_contestadas.count %>
-                  <%end%>
-                  <%= a %>
-                  </span></a>
-              </li>
-              <li>
-                <a href="#panel-425311" data-toggle="tab">Ofertas</a>
-              </li>
+              <% if !current_user.admin %>
+                <li class="active">
+                  <a href="#panel-87367" data-toggle="tab">Preguntas 
+                    <span class="badge">
+                    <% a = 0
+                       @current_user.productos.each do |producto| %>
+                        <%a = a + producto.preguntas.no_contestadas.count %>
+                    <%end%>
+                    <%= a %>
+                    </span></a>
+                </li>
+                <li>
+                  <a href="#panel-425311" data-toggle="tab">Ofertas</a>
+                </li>
+              <% else %>
+                <li>
+                  <a href="#panel-425300" data-toggle="tab">Estadistica de ventas</a>
+                </li>
+                <li>
+                  <a href="#panel-425350" data-toggle="tab">Estadistica de usuarios</a>
+                </li>
+              <% end %>
             </ul>
 
 
@@ -114,8 +123,67 @@
               <!-- PANEL DE OFERTAS -->  
               <div class="tab-pane" id="panel-425311">
                 <p>
+                  <!-- Campo calendario inicio --> 
+                    <!doctype html>
+                    <html lang="en">
+                    <head>
+                      <meta charset="utf-8">
+                      <title>jQuery UI Datepicker - Default functionality</title>
+                      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+                      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+                      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+                      <link rel="stylesheet" href="/resources/demos/style.css">
+                      <script>
+                      $(function() {
+                        $( "#datepicker" ).datepicker();
+                      });
+                      </script>
+                    </head>
+                    <body>
+                     
+                    <p>Inicio: <input type="text" id="datepicker"></p>
+                     
+                     
+                    </body>
+                    </html>
 
+                  <!-- Campo calendario fin -->
+                    <!doctype html>
+                    <html lang="en">
+                    <head>
+                      <meta charset="utf-8">
+                      <title>jQuery UI Datepicker - Default functionality</title>
+                      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+                      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+                      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+                      <link rel="stylesheet" href="/resources/demos/style.css">
+                      <script>
+                      $(function() {
+                        $( "#datepicker1" ).datepicker();
+                      });
+                      </script>
+                    </head>
+                    <body>
+                     
+                    <p>Fin: <input type="text" id="datepicker1"></p>
+
+                    </body>
+                    </html>
                  </p>
+              </div>
+ 
+            <!-- PANEL DE ESTADISTICA DE VENTAS --> 
+              <div class="tab-pane" id="panel-425350">
+                <p>
+
+                </p>
+              </div>
+
+              <!-- PANEL DE ESTADISTICA DE USUARIOS -->
+              <div class="tab-pane" id="panel-425350">
+                <p>
+
+                </p>
               </div>
         </div><!--fin del contenido de los paneles -->
       </div>
