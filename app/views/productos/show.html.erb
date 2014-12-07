@@ -143,14 +143,11 @@
                                               <td>
                                                <div class="col-lg-8">
                                                    <!-- creamos el formulario para responder una pregunta -->
-                                                    <%= form_for :respuesta, url: edit_pregunta_path(pregunta) do |p|%>
+                                                    <%= form_for(@pregunta) do |p|%>
                                                         <form role="form">
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <%= p.hidden_field :producto_id, value:  @producto.id %>
-                                                                    <%= p.hidden_field :pregunta, value:  pregunta.pregunta %>
-                                                                    <%= p.hidden_field :usuario_id, value: current_user.id %>
-                                                
+                                                               
                                                                     <%= p.hidden_field :fecha_respuesta, value: DateTime.now %>
                                                                     <%= p.text_field :respuesta, class: "form-control", placeholder: "Escriba aqui su respuesta. No ingrese datos personales, ni use lenguaje vulgar..." %>
                                                                     <span class="input-group-btn">
