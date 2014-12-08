@@ -38,7 +38,14 @@ class ProductosController < ApplicationController
   def destroy
   end
 
-  def edit
+def edit
+end
+
+#Aca esta lo qeu te decía  si logras asociar una view para este metodo ya estaríamos 
+  def ver
+    if params[:inicio] && [:fin]
+        @productos = Producto.where(:created_at => params[:inicio].beginning_of_day..params[:fin].end_of_day)
+    end
   end
 
   def show 

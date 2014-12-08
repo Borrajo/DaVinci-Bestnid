@@ -1,33 +1,20 @@
+<link rel="stylesheet" type="text/css" href="../css/datepicker.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
 
 <div class="container">
   <div class="row clearfix">
                       <!-- lista de elementos como ventas y amigos -->
                       <div class="col-md-2 column">
-                        <ul>
-                          <li>
-                            
-                          </li>
-                          <li>
-                            Consectetur adipiscing elit
-                          </li>
-                          <li>
-                            Integer molestie lorem at massa
-                          </li>
-                          <li>
-                            Facilisis in pretium nisl aliquet
-                          </li>
-                          <li>
-                            Nulla volutpat aliquam velit
-                          </li>
-                          <li>
-                            Faucibus porta lacus fringilla vel
-                          </li>
-                          <li>
-                            Aenean sit amet erat nunc
-                          </li>
-                          <li>
-                            Eget porttitor lorem
-                          </li>
+                        <ul><h3>
+                          <li><%=link_to "Inicio", productos_path %></li>
+                          <li><%=link_to "Editar Perfil", productos_path %></li>
+                          <li><%=link_to "Compras", productos_path %></li>
+                          <li><%=link_to "Ventas", productos_path %></li>
+                          <li><%=link_to "Preguntas Realizadas", productos_path %></li>
+                          <li><%=link_to "Preguntas sin resolver", productos_path %></li>
+                          <li><%=link_to "Amigos", productos_path %></li>
+                          <li><%=link_to "Enemigos", productos_path %></li></h3>
                         </ul>
                       </div>
                       <!--fin de lista de elemento-->
@@ -122,55 +109,66 @@
             </div>
               <!-- PANEL DE OFERTAS -->  
               <div class="tab-pane" id="panel-425311">
-                <p>
-                  <!-- Campo calendario inicio --> 
-                    <!doctype html>
-                    <html lang="en">
-                    <head>
-                      <meta charset="utf-8">
-                      <title>jQuery UI Datepicker - Default functionality</title>
-                      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-                      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-                      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-                      <link rel="stylesheet" href="/resources/demos/style.css">
-                      <script>
-                      $(function() {
-                        $( "#datepicker" ).datepicker();
-                      });
-                      </script>
-                    </head>
-                    <body>
                      
-                    <p>Inicio: <input type="text" id="datepicker"></p>
-                     
-                     
-                    </body>
-                    </html>
+                  <div class="container">
+                    <div class="row clearfix">
+                      <%= form_for :producto, url: productos_path do |p|%>
+                    </br>
+                        <div class ="col-md-3 column">
+                              <div class="form-group">
+                              
 
-                  <!-- Campo calendario fin -->
-                    <!doctype html>
-                    <html lang="en">
-                    <head>
-                      <meta charset="utf-8">
-                      <title>jQuery UI Datepicker - Default functionality</title>
-                      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-                      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-                      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-                      <link rel="stylesheet" href="/resources/demos/style.css">
-                      <script>
-                      $(function() {
-                        $( "#datepicker1" ).datepicker();
-                      });
-                      </script>
-                    </head>
-                    <body>
-                     
-                    <p>Fin: <input type="text" id="datepicker1"></p>
+                                <!-- Campo calendario inicio --> 
+                                  <div class='input-group date' data-behaviour= 'datepicker'>
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                      </span>
+                                      <%= p.text_field :inicio, 'data-behaviour' => 'datepicker', class: "form-control", placeholder:"Ingrese la fecha de inicio" %>
+                                  </div>
+                              </div>
 
-                    </body>
-                    </html>
-                 </p>
-              </div>
+                              <!-- Campo calendario fin -->
+                              <div class="form-group">
+                                  <div class='input-group date' data-behaviour= 'datepicker'>
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                      </span>
+                                     <%= p.text_field :inicio, 'data-behaviour' => 'datepicker', class: "form-control", placeholder:"Ingrese la fecha de finalizacion" %>
+                                  </div>
+                              </div>
+
+                              <!--Script que abre el datePicker-->
+                                          <script type="text/javascript">
+                                              $(function () {
+                                                  $('[data-behaviour~=datepicker]').datepicker({
+                                                    format: 'dd-mm-yyyy', 
+                                                    autoclose: true,
+                                                    language: 'es'
+                                                  });
+                                              });
+                                          </script>
+                              <!--fin del datepikcer-->
+
+                        </div><!--final de columna 3-->
+                        <div class ="col-md-2 column">
+                        </br>
+
+                        <!--Aca hay dos botones uno es un link_to, un enlace a ... que puede llevar parametros de inicio y de fin, entonces podria redigir a una pagina para levantar esos parametros y mostrarlos, el problema es que esa pagina 'extra' no se como hacerla. podria hacer que se muestre en la pagina de edit del devise, pero no se como tratar con el controlador para que lo haga-->
+
+                        <!-- con el otro boton hace un submit de un formulario, el formulario es metodo POST, y se usa para crear cosas nuevas o modificarlas CREATE o UPDATE, no creo que sea conveniente... practicamente estamos en lo mismo de hoy, falta asociar el valor del campo con la variable-->
+
+                        <!-- yo buscaria la manera de hacerlo por el lado del link_to enviandole los dos parametros a algun metodo de productos, por ejemplo index o alguno nuevo inventado y ese devuelve la lista yo deje algo en el controlador se llama def ver ...-->
+
+                        <!--no segui mas porque me quedé sin internet y no pude investigar más-->
+                        <!-- aca puede ser que al final haya algo mas 
+                        http://stackoverflow.com/questions/12928918/how-to-setup-bootstrap-datepicker-rails -->
+                        <%= link_to button_to( "Consultrr", productos_path(inicio: Date.today- 4.month, fin: Date.today)  , :class => "btn btn-danger"),productos_path%>
+                          <%= p.submit "Consultar", class: "btn btn-danger"%>
+                        </div>
+                    </div><!--final de row-->
+                    <%end%><!--fin del formulario-->
+                  </div><!--final de container-->
+
+
+               </div><!--fin panel de fechas -->
  
             <!-- PANEL DE ESTADISTICA DE VENTAS --> 
               <div class="tab-pane" id="panel-425350">
