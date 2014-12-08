@@ -53,18 +53,30 @@
 				    </div>
 			    </div>
           <% if !user_signed_in? %>
-            <div class="row clearfix">
-              <div class="col-md-12">
-                <div class="alert alert-danger" role="alert"><h3> Debe estar registrado para poder ofertar </h3></div>
+              <div class="row clearfix">
+               <div class="col-md-12">
+                  <div class="alert alert-danger" role="alert"><h3> Debe estar registrado para poder ofertar </h3></div>
+               </div>
               </div>
-            </div>
           <%end%>
-          <% if (current_user.id == @producto.user_id) && (@producto.comprador_id == nil) && (@producto.finalizado) %>
-            <div class="row clearfix">
-              <div class="col-md-12">
-                <div class="alert alert-danger" role="alert"><h3> Esta subasta ya finalizó. Debe ir a la pestaña "Ofertas" y elegir la necesidad ganadora </h3></div>
-              </div>
-            </div>
+          
+             
+             <% if user_signed_in? %>
+                  <% if (current_user.id == @producto.user_id) && (@producto.comprador_id == nil) && (@producto.finalizado) %>
+                    <div class="row clearfix">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger" role="alert"><h3> Esta subasta ya finalizó. Debe ir a la pestaña "Ofertas" y elegir la necesidad ganadora </h3></div>
+                            </div>
+                      </div>
+                <%end%>
+                 <% if (current_user.id == @producto.user_id) && (@producto.comprador_id != nil) && (@producto.finalizado) %>
+                       <div class="row clearfix">
+                             <div class="col-md-12">
+                                    <div class="alert alert-danger" role="alert"><h3> Esta subasta ya finalizó y eligió al ganador </h3></div>
+                             </div>
+                       </div>
+                 <%end%>
+
           <%end%>
       </div>
     </div>
@@ -258,6 +270,18 @@
 
 
                                         </td>
+                                        <% end %>
+                                        <% if (@producto.finalizado) && (@producto.comprador_id != nil ) %> 
+                                           <td>
+                                               <% if oferta.user_id == @producto.comprador_id %> 
+                                        
+
+                                                      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                                      GANADORA
+                         
+                                               <% end %>
+
+                                           </td>
                                         <% end %>
                                     </tr>
                                 <%end%>
