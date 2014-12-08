@@ -107,6 +107,12 @@
                 <li>
                   <a href="#panel-425350" data-toggle="tab">Estadistica de usuarios</a>
                 </li>
+
+
+              <!--Pestaña para probar FILTRADO -->
+               <li>
+                  <a href="#panel-425518" data-toggle="tab">PRUEBA FILTRO</a>
+                </li>
               <% end %>
             </ul>
 
@@ -134,7 +140,6 @@
 
               <!-- PANEL DE OFERTAS -->  
               <div class="tab-pane" id="panel-425311">
-          
                  <p>
                  <div class="row clearfix">
                   
@@ -217,8 +222,77 @@
               <div class="tab-pane" id="panel-425350">
                 <p>
 
+
+                    <% inicio = User.find(1).created_at %>
+                    <% fin = User.find(3).created_at %>
+                    <% aux1 = User.where(:created_at => inicio.beginning_of_day..fin.end_of_day) %>
+
+<!--                     -------------------------------------------------------------------------------- -->
+
+                  <% total = 0 %>
+                    <table style="width:1000px; height:100px;">
+                      <tr>
+                        <th> Nombre </th>
+                        <th> cuenta </th>
+                        <th> Fecha de registro </th>    
+                      </tr>
+                      <% aux1.all.each do |aux| %>
+                        <tr>
+                          <td> <%= aux.nombre %> </td>
+                          <td> <%= aux.email %> </td>
+                          <td> <%= aux.created_at %> </td>
+                          <% total = total + 1 %>
+                        </tr>
+                      <% end %>
+                    </table>
+
+                    <p> Cantidad de usuarios registrados entre esas fechas: <%= total %> </p>
+
                 </p>
               </div><!--final del panel de estadisticas de usuario-->
+
+
+              <!-- PANEL DE PRUEBA DE FILTRADO -->
+              <div class="tab-pane" id="panel-425518">
+                <p>
+
+
+<!--                   Filtrado de productos comprados por fechas -->
+                  <!--  ---------------------------------------------------------------------------------->
+
+                    <% inicio = Producto.find(1).created_at %>
+                    <% fin = Producto.find(3).created_at %>
+
+                    <% aux1 = Producto.where(:created_at => inicio.beginning_of_day..fin.end_of_day) %>
+
+                    <% aux2 = aux1.where(:finalizado => false) %>
+
+                    <% aux3 = aux2.where(:comprador_id => nil) %>
+
+                  <!--  -------------------------------------------------------------------------------- -->
+
+                    <% total = 0 %>
+                    <table style="width:1000px; height:100px;">
+                      <tr>
+                        <th> Producto </th>
+                        <th> Comprador </th>
+                        <th> Monto </th>
+                        <th> Fecha de compra </th>                      
+                      </tr>
+                      <% aux3.all.each do |aux| %>
+                        <tr>
+                          <td> <%= aux.nombre %> </td>
+                          <td> <%= User.find(aux.user_id).nombre %> </td>
+                          <td> <%= 100 %> </td>                          
+                          <td> <%= aux.updated_at %> </td>
+                          <% total = total + 100 %>
+                        </tr>                      
+                      <% end %>
+                    </table>
+                    <% total = total*30/100 %>
+                    <p> Total = <%= total %> </p>                  
+                </p>
+              </div><!--final del panel de prueba de fltrado-->
 
 
         </div><!--fin del contenido de los paneles -->
