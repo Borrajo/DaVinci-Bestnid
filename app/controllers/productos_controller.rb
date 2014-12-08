@@ -50,7 +50,7 @@ end
 
   def show 
     if(@producto.finalizado)
-       if (!user_signed_in? || current_user.id != @producto.usuario_id)
+       if (!user_signed_in? || current_user.id != @producto.user_id)
         redirect_to productos_path
        end
      end
