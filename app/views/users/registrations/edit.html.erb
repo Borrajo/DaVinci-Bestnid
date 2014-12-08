@@ -69,6 +69,7 @@
           <div class="tabbable" id="tabs-569375">
             <ul class="nav nav-tabs">
               <% if !current_user.admin %>
+               
                 <li class="active">
                   <a href="#panel-87367" data-toggle="tab">Preguntas 
                     <span class="badge">
@@ -79,13 +80,30 @@
                     <%= a %>
                     </span></a>
                 </li>
+               
                 <li>
-                  <a href="#panel-425311" data-toggle="tab">Historial de mis subastas</a>
+                  <a href="#panel-425311" data-toggle="tab">Historial de mis subastas
+                    <% a = 0
+                       @current_user.productos.each do |producto| %>
+                            <% if ("producto.comprador IS NULL") and producto.finalizado  %>
+                                   <%a = a + 1 %>
+                            <%end%>
+                       <%end%>
+                       <% if (a != 0)  %>
+                        <span class="badge">
+                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        </span>
+                        <%end%>
+                        </a>
                 </li>
+              
+
               <!--ACA VA UN ELSE PARA OCULTAR LAS PESTAÑAS DEL ADMIN -->
                 <li>
                   <a href="#panel-425300" data-toggle="tab">Estadistica de ventas</a>
                 </li>
+             
+
                 <li>
                   <a href="#panel-425350" data-toggle="tab">Estadistica de usuarios</a>
                 </li>
