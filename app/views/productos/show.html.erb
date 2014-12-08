@@ -95,8 +95,16 @@
                        <% if user_signed_in? %> 
                        		<% if @producto.user_id == current_user.id %>
                        		<li>
-                            	<a href="#panel-361720" data-toggle="tab">Ofertas</a>
-                       		</li>
+                            	<a href="#panel-361720" data-toggle="tab">Ofertas
+                
+                          
+                              <% if (@producto.comprador_id == nil) && (@producto.finalizado)  %>
+                                    <span class="badge">
+                                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    </span>
+                              <%end%>
+                              </a>
+                       	 </li>
                        		<%end%>
                         <%end%> 
                        <!-- fin -->
@@ -189,7 +197,7 @@
                                    <div class="input-group">
                                         <%= p.hidden_field :producto_id, value:  @producto.id %>
                                         <% if user_signed_in? %>
-                                            <%= p.hidden_field :usuario_id, value: current_user.id %>
+                                            <%= p.hidden_field :user_id, value: current_user.id %>
                                         <%end%>
                                         <%= p.text_field :pregunta, class: "form-control", placeholder: "Escriba aqui su pregunta. No ingrese datos personales, ni use lenguaje vulgar..." %>
                                       <span class="input-group-btn">
@@ -226,9 +234,11 @@
                                     <th>
                                         Ofertas
                                     </th>
+                                 <% if (@producto.finalizado) && (@producto.comprador_id == nil) %> 
                                 <th>
-                                        Fecha
+                                        Elección
                                     </th>
+                                  <% end %> 
                                 </tr>
                                 </thead>
                 
@@ -238,9 +248,17 @@
                                         <td>
                                             <%= oferta.necesidad %>
                                         </td>
+                                        <% if (@producto.finalizado) && (@producto.comprador_id == nil) %> 
                                         <td>
-                                            <%= oferta.created_at.strftime("%d/%m/%Y a las %H:%M") %>
+
+
+
+                                           boton
+
+
+
                                         </td>
+                                        <% end %>
                                     </tr>
                                 <%end%>
                         </p>
