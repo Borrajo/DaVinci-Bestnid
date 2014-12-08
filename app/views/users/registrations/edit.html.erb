@@ -85,7 +85,7 @@
                   <a href="#panel-425311" data-toggle="tab">Historial de mis subastas
                     <% a = 0
                        @current_user.productos.each do |producto| %>
-                            <% if ("producto.comprador IS NULL") and producto.finalizado  %>
+                            <% if (producto.comprador_id == nil) and (producto.finalizado)  %>
                                    <%a = a + 1 %>
                             <%end%>
                        <%end%>

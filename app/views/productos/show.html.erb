@@ -42,8 +42,7 @@
           <% if user_signed_in? %>
             <% if current_user.id != @producto.user_id %>
 						<button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#modal-container-257635">Ofertar</button>
-            <%else%>
-            <button type="button" class="btn btn-lg btn-success" disabled >Ofertar</button>
+            
           <%end%>
           <%end%>
 					</div>
@@ -57,6 +56,13 @@
             <div class="row clearfix">
               <div class="col-md-12">
                 <div class="alert alert-danger" role="alert"><h3> Debe estar registrado para poder ofertar </h3></div>
+              </div>
+            </div>
+          <%end%>
+          <% if (current_user.id == @producto.user_id) && (@producto.comprador_id == nil) && (@producto.finalizado) %>
+            <div class="row clearfix">
+              <div class="col-md-12">
+                <div class="alert alert-danger" role="alert"><h3> Esta subasta ya finalizó. Debe ir a la pestaña "Ofertas" y elegir la necesidad ganadora </h3></div>
               </div>
             </div>
           <%end%>

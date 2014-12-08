@@ -64,7 +64,7 @@
   </div> <!-- end panel Body-->
  
     <dd></br>
-                      <% if ("producto.comprador IS NULL") and producto.finalizado %>
+                      <% if (producto.comprador_id == nil) and (producto.finalizado) %>
                      
                       <div class="alert alert-success" role="alert">
                       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
