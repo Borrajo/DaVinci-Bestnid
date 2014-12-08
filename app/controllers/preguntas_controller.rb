@@ -43,7 +43,4 @@ class PreguntasController < ApplicationController
   def pregunta_params
     params.require(:pregunta).permit(:pregunta, :producto_id, :usuario_id, :respuesta, :fecha_respuesta) 
   end
-  def respuesta_params
-    params.require(:respuesta).permit(:pregunta, :producto_id, :usuario_id, :respuesta, :fecha_respuesta) 
-  end
 end

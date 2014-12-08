@@ -103,12 +103,8 @@
                             <!--Aca van los nombres de las columnas-->
                             <thead>
                                 <tr>
-                                    <th>
-                                        Preguntas y Respuestas
-                                    </th>
-                                    <th>
-                                        Fecha
-                                    </th>
+                                    <th> Preguntas y Respuestas </th>
+                                    <th>Fecha</th>
                                 </tr>
                             </thead>
                             
@@ -142,6 +138,7 @@
                                 <% else %>
                                      <% if user_signed_in? %>
                                           <% if (@producto.user_id == current_user.id) %>
+                                          <table>
                                               <td>
                                                <div class="col-lg-8">
                                                    <!-- creamos el formulario para responder una pregunta -->
@@ -149,7 +146,7 @@
                                                         <form role="form">
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <%= p.hidden_field :id, value: pregunta.id %>
+                                                                    <%= p.hidden_field :producto_id, value:  @producto.id %>
                                                                     <%= p.hidden_field :fecha_respuesta, value: DateTime.now %>
                                                                     <%= p.text_field :respuesta, class: "form-control", placeholder: "Escriba aqui su respuesta. No ingrese datos personales, ni use lenguaje vulgar..." %>
                                                                     <span class="input-group-btn">
@@ -160,10 +157,8 @@
                                                         </form>
                                                     <%end%> <!-- / formulario de respuesta-->
                                                </div>
-                                              </td>
-                                              <td>
-
-                                              </td>
+                                               </td>
+                                            </table>
                                           <% end %> 
                                       <% end %> 
                                 <% end %> <!-- end si existe la pregunta -->
@@ -180,8 +175,6 @@
                 <% if !(@producto.user_id == current_user.id) %>
 
                     <div class="row">
-
-               
                         <div class="col-lg-8">
                           <!-- creamos el formulario de preguntar -->
                           <%= form_for :pregunta, url: preguntas_path do |p|%>
@@ -254,20 +247,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- MODAL PARA CARGAR UNA OFERTA-->
 <div class="modal fade" id="modal-container-257635" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -276,3 +255,4 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
