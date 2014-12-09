@@ -7,7 +7,10 @@ class PreguntasController < ApplicationController
       if @pregunta.save
       #no pueden usarse tildes en los flashes
       flash[:success] = "Tu pregunta fue realizada con exito"
-      ActionCorreo.bienvenido_email(current_user).deliver
+      redirect_to producto_path(params[:pregunta][:producto_id])
+      else 
+      #no pueden usarse tildes en los flashes
+      flash[:danger] = "Tu pregunta no se puedo realizar"
       redirect_to producto_path(params[:pregunta][:producto_id])
       end
   end

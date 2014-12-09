@@ -1,4 +1,4 @@
-	class Pregunta < ActiveRecord::Base
+class Pregunta < ActiveRecord::Base
 
   default_scope -> {order("id")} 
   
@@ -8,7 +8,6 @@
   belongs_to :user
 
   validates :pregunta, uniqueness: true, presence: true
-  validates :respuesta, presence: true
 
 
 end
