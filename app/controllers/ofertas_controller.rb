@@ -9,7 +9,7 @@ class OfertasController < ApplicationController
   def edit
   end
 
-   def create
+  def create
    @oferta = Oferta.new(oferta_params)
      if @oferta.save
       flash[:success] = "Tu oferta fue realiza con exito"
@@ -26,9 +26,18 @@ class OfertasController < ApplicationController
   def destroy
   end
 
+  def update
+   @oferta = Oferta.find(params[:id])
+    if @pregunta.update_attributes(oferta_params)
+      #no pueden usarse tildes en los flashes
+      flash[:success] = "Felicidades ya has elegido un ganador!"
+      redirect_to @oferta.producto
+    end
+  end
+
   private
 
   def oferta_params
-    params.require(:oferta).permit(:monto, :producto_id, :necesidad, :usuario_id) 
+    params.require(:oferta).permit(:monto, :producto_id, :necesidad, :user_id) 
   end
 end

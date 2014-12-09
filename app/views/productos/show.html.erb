@@ -168,11 +168,10 @@
                                               <td>
                                                <div class="col-lg-8">
                                                    <!-- creamos el formulario para responder una pregunta -->
-                                                    <%= form_for :pregunta, url: producto_path(pregunta.id), method: :patch do |p| %>
+                                                    <%= form_for pregunta, url: pregunta_path(pregunta) do |p| %>
                                                         <form role="form">
                                                             <div class="form-group">
                                                                 <div class="input-group">
-                                                                    <%= p.hidden_field :producto_id, value:  @producto.id %>
                                                                     <%= p.hidden_field :fecha_respuesta, value: DateTime.now %>
                                                                     <%= p.text_field :respuesta, class: "form-control", placeholder: "Escriba aqui su respuesta. No ingrese datos personales, ni use lenguaje vulgar..." %>
                                                                     <span class="input-group-btn">
@@ -265,7 +264,12 @@
 
 
 
-                                           boton
+                                           <%= form_for oferta, url: oferta_path(oferta) do |o| %>
+                                              <%= p.hidden_field :user_id, value:  oferta.user_id %>
+                                              <span class="input-group-btn">
+                                                <%= p.submit "Elegir", class: "btn btn-danger"%>
+                                              </span>
+                                           <% end %>
 
 
 

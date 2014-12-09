@@ -9,7 +9,7 @@
             <div class="form-group">
               <%= f.hidden_field :producto_id, value:  producto_id %>
               <% if user_signed_in? %>
-              <%= f.hidden_field :usuario_id, value: current_user.id %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
               <%end%>
                 <label for="oferta_necesidad">Por qué necesita este producto?</label>
                 <%= f.text_area :necesidad, class: "form-control", rows: 5, cols: 130, style: "resize: none" %>

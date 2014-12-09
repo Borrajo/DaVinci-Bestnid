@@ -18,12 +18,8 @@ class ProductosController < ApplicationController
 
     @producto = Producto.new(producto_params)
     @producto.finalizado = false
-    puts @producto.fecha_finalizacion.class
-    if params[:fecha_finalizacion]
-      @producto.fecha_finalizacion = Time.now + params[:fecha_finalizacion].to_i.day
-    end
+      @producto.fecha_finalizacion = Time.now + params[:producto][:fecha_finalizacion].to_i.day
     @producto.user_id = current_user.id
- 
     if @producto.save
       redirect_to @producto
     else
@@ -39,21 +35,6 @@ class ProductosController < ApplicationController
   end
 
   def edit
-    @pregunta = Pregunta.find(params[:id])
-  end
-
-  def update
-     @pregunta = Pregunta.find(params[:id])
-      if @pregunta.update_attributes(pregunta_params)
-        #no pueden usarse tildes en los flashes
-        flash[:success] = "Tu respuesta fue realizada con exito"
-        redirect_to producto_path(params[:pregunta][:producto_id])
-      else
-        render 'edit'
-        #no pueden usarse tildes en los flashes
-        flash[:danger] = "No se pudo generar la respuesta y no sabemos porque :S"
-        redirect_to pregunta_path(params[:pregunta][:producto_id])
-      end
   end
 
 #Aca esta lo qeu te decía  si logras asociar una view para este metodo ya estaríamos 
@@ -77,10 +58,6 @@ class ProductosController < ApplicationController
    params.require(:producto).permit(:nombre, :descripcion, :usuario_id, :categoria_id, :fecha_finalizacion, :foto) 
   end
   
-  def pregunta_params
-    params.require(:pregunta).permit(:pregunta, :producto_id, :usuario_id, :respuesta, :fecha_respuesta) 
-  end
-
   def get_producto
     @producto = Producto.find(params[:id])
   end

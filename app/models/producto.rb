@@ -5,7 +5,7 @@ class Producto < ActiveRecord::Base
     scope :activos, -> { where("finalizado = false") }
 
 	has_many :ofertas, dependent: :destroy
-    has_many :preguntas, dependent: :destroy
+  has_many :preguntas, dependent: :destroy
     
 	belongs_to :user
 

@@ -22,7 +22,7 @@ class PreguntasController < ApplicationController
   end
 
   def edit
-    @pregunta = Pregunta.find(params[:id])
+  
   end
 
   def update
@@ -30,11 +30,6 @@ class PreguntasController < ApplicationController
       if @pregunta.update_attributes(pregunta_params)
         #no pueden usarse tildes en los flashes
         flash[:success] = "Tu respuesta fue realizada con exito"
-        redirect_to pregunta_path(params[:pregunta][:producto_id])
-      else
-        render 'edit'
-        #no pueden usarse tildes en los flashes
-        flash[:danger] = "No se pudo generar la respuesta y no sabemos porque :S"
         redirect_to pregunta_path(params[:pregunta][:producto_id])
       end
   end

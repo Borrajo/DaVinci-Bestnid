@@ -5,7 +5,7 @@ class Oferta < ActiveRecord::Base
   
 	validates :necesidad,presence: true
 
-	validates :usuario_id, :uniqueness => {:scope => :producto_id, message: "Solo puede ofertar una vez por producto" }
+	validates :user_id, :uniqueness => {:scope => :producto_id, message: "Solo puede ofertar una vez por producto" }
 	
 end
 
