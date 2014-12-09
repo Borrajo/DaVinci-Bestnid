@@ -159,7 +159,7 @@
               <div class="tab-pane" id="panel-425300">
                 <div class="container">
                     <div class="row clearfix">
-                      <%= form_for :producto, url: productos_path do |p|%>
+                      <%= form_tag :producto, url: estadisticas_productos_path do |p|%>
                     </br>
                         <div class ="col-md-3 column">
                               <div class="form-group">
@@ -169,7 +169,7 @@
                                   <div class='input-group date' data-behaviour= 'datepicker'>
                                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                       </span>
-                                      <%= p.text_field :inicio, 'data-behaviour' => 'datepicker', class: "form-control", placeholder:"Ingrese la fecha de inicio" %>
+                                      <%= p.text_field :inicio, type: 'date', class: "form-control", placeholder:"Ingrese la fecha de inicio" %>
                                   </div>
                               </div>
 
@@ -178,37 +178,16 @@
                                   <div class='input-group date' data-behaviour= 'datepicker'>
                                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                       </span>
-                                     <%= p.text_field :inicio, 'data-behaviour' => 'datepicker', class: "form-control", placeholder:"Ingrese la fecha de finalizacion" %>
+                                     <%= p.text_field :fin, type: 'date', class: "form-control", placeholder:"Ingrese la fecha de inicio" %>
                                   </div>
                               </div>
-
-                              <!--Script que abre el datePicker-->
-                                          <script type="text/javascript">
-                                              $(function () {
-                                                  $('[data-behaviour~=datepicker]').datepicker({
-                                                    format: 'dd-mm-yyyy', 
-                                                    autoclose: true,
-                                                    language: 'es'
-                                                  });
-                                              });
-                                          </script>
-                              <!--fin del datepikcer-->
 
                         </div><!--final de columna 3-->
                         <div class ="col-md-2 column">
                         </br>
 
-                        <!--Aca hay dos botones uno es un link_to, un enlace a ... que puede llevar parametros de inicio y de fin, entonces podria redigir a una pagina para levantar esos parametros y mostrarlos, el problema es que esa pagina 'extra' no se como hacerla. podria hacer que se muestre en la pagina de edit del devise, pero no se como tratar con el controlador para que lo haga-->
-
-                        <!-- con el otro boton hace un submit de un formulario, el formulario es metodo POST, y se usa para crear cosas nuevas o modificarlas CREATE o UPDATE, no creo que sea conveniente... practicamente estamos en lo mismo de hoy, falta asociar el valor del campo con la variable-->
-
-                        <!-- yo buscaria la manera de hacerlo por el lado del link_to enviandole los dos parametros a algun metodo de productos, por ejemplo index o alguno nuevo inventado y ese devuelve la lista yo deje algo en el controlador se llama def ver ...-->
-
-                        <!--no segui mas porque me quedé sin internet y no pude investigar más-->
-                        <!-- aca puede ser que al final haya algo mas 
-                        http://stackoverflow.com/questions/12928918/how-to-setup-bootstrap-datepicker-rails -->
-                        <%= link_to button_to( "Consultrr", productos_path(inicio: Date.today- 4.month, fin: Date.today)  , :class => "btn btn-danger"),productos_path%>
-                          <%= p.submit "Consultar", class: "btn btn-danger"%>
+                        <%= link_to button_to( "Consultar1", productos_path(inicio: Date.today- 4.month, fin: Date.today)  , :class => "btn btn-danger"),productos_path%>
+                          <%= p.submit "Consultar2", class: "btn btn-danger"%>
                         </div>
                     </div><!--final de row-->
                     <%end%><!--fin del formulario-->
@@ -222,25 +201,23 @@
               <div class="tab-pane" id="panel-425350">
                 <p>
 
-
+<!--  -------------------------------------------------------------------------------- -->
                     <% inicio = User.find(1).created_at %>
                     <% fin = User.find(3).created_at %>
                     <% aux1 = User.where(:created_at => inicio.beginning_of_day..fin.end_of_day) %>
-
-<!--                     -------------------------------------------------------------------------------- -->
 
                   <% total = 0 %>
                     <table style="width:1000px; height:100px;">
                       <tr>
                         <th> Nombre </th>
-                        <th> cuenta </th>
+                        <th> Cuenta </th>
                         <th> Fecha de registro </th>    
                       </tr>
                       <% aux1.all.each do |aux| %>
                         <tr>
                           <td> <%= aux.nombre %> </td>
                           <td> <%= aux.email %> </td>
-                          <td> <%= aux.created_at %> </td>
+                          <td> <%= aux.created_at.strftime("%d/%m/%Y") %> </td>
                           <% total = total + 1 %>
                         </tr>
                       <% end %>
@@ -268,8 +245,6 @@
                     <% aux2 = aux1.where(:finalizado => false) %>
 
                     <% aux3 = aux2.where(:comprador_id => nil) %>
-
-                  <!--  -------------------------------------------------------------------------------- -->
 
                     <% total = 0 %>
                     <table style="width:1000px; height:100px;">

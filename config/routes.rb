@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users do
+    collection do
+        get 'estadisticas'
+    end
+  end  
   resources :categorias
   resources :usuarios
-  resources :productos
+  resources :productos do
+    collection do
+        get 'estadisticas'
+    end
+  end
   resources :preguntas
   resources :ofertas
   
