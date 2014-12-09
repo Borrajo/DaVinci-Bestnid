@@ -30,7 +30,7 @@ class PreguntasController < ApplicationController
       if @pregunta.update_attributes(pregunta_params)
         #no pueden usarse tildes en los flashes
         flash[:success] = "Tu respuesta fue realizada con exito"
-        redirect_to pregunta_path(params[:pregunta][:producto_id])
+        redirect_to pregunta.producto
       end
   end
 

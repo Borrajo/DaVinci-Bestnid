@@ -68,9 +68,16 @@
                      
                       <div class="alert alert-success" role="alert">
                       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                      <span class="sr-only">Error:</span>
+                      <% if producto.ofertas.count == 0 %>
+                        <span class="sr-only">Aviso:</span>
+                            Su producto ya finalizo y no tuvo ofertas.
+                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                      <% else %>
+                        <span class="sr-only">Error:</span>
                           Recuerde que este producto ya finalizó y aun tiene pendiente elegir la oferta ganadora. Presione "Ver" y elija una de las ofertas recibidas
-                       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>   
+                       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                      <% end %>
+
                       </div>
                     
                       <%end%>

@@ -65,8 +65,13 @@
                   <% if (current_user.id == @producto.user_id) && (@producto.comprador_id == nil) && (@producto.finalizado) %>
                     <div class="row clearfix">
                         <div class="col-md-12">
+                          <% if @producto.ofertas.count == 0 %>
+                            <div class="alert alert-danger" role="alert"><h3> Subasta finalizada y no recibio ninguna oferta. </h3></div>
+                            </div>
+                          <% else %>
                             <div class="alert alert-danger" role="alert"><h3> Esta subasta ya finalizó. Debe ir a la pestaña "Ofertas" y elegir la necesidad ganadora </h3></div>
                             </div>
+                          <% end %>
                       </div>
                 <%end%>
                  <% if (current_user.id == @producto.user_id) && (@producto.comprador_id != nil) && (@producto.finalizado) %>
@@ -261,18 +266,19 @@
                                         </td>
                                         <% if (@producto.finalizado) && (@producto.comprador_id == nil) %> 
                                         <td>
-
-
-
-                                           <%= form_for oferta, url: oferta_path(oferta) do |o| %>
-                                              <%= p.hidden_field :user_id, value:  oferta.user_id %>
-                                              <span class="input-group-btn">
-                                                <%= p.submit "Elegir", class: "btn btn-danger"%>
-                                              </span>
-                                           <% end %>
-
-
-
+                                          <%= form_for @producto, url: producto_path(oferta.producto_id) do |p|%>
+                                          <form role="form">
+                                             <div class="form-group">
+                                                 <div class="input-group">
+                                                    <%= p.hidden_field :fecha_de_compra, value: DateTime.now %>
+                                                    <%= p.hidden_field :comprador_id, value: oferta.user_id %>
+                                                    <span class="input-group-btn">
+                                                          <%= p.submit "Elegir", class: "btn btn-danger"%>
+                                                    </span>
+                                                  </div><!-- /input-group -->
+                                              </div>
+                                          </form>
+                                          <%end%> <!-- / formulario -->
                                         </td>
                                         <% end %>
                                         <% if (@producto.finalizado) && (@producto.comprador_id != nil ) %> 

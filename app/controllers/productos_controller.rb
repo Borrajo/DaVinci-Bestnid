@@ -37,6 +37,15 @@ class ProductosController < ApplicationController
   def edit
   end
 
+  def update
+     @producto = Producto.find(params[:id])
+      if @producto.update_attributes(oferta_params)
+        #no pueden usarse tildes en los flashes
+        flash[:success] = "Felicidades has elegido al ganador."
+        redirect_to producto_path
+      end
+  end
+
 #Aca esta lo qeu te decía  si logras asociar una view para este metodo ya estaríamos 
   def ver
     if params[:inicio] && [:fin]
@@ -56,6 +65,10 @@ class ProductosController < ApplicationController
   
   def producto_params
    params.require(:producto).permit(:nombre, :descripcion, :usuario_id, :categoria_id, :fecha_finalizacion, :foto) 
+  end
+
+  def oferta_params
+    params.require(:producto).permit(:comprador_id, :fecha_de_compra)
   end
   
   def get_producto
