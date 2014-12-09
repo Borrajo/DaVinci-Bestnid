@@ -68,8 +68,7 @@
         <div class="col-md-12 column">
           <div class="tabbable" id="tabs-569375">
             <ul class="nav nav-tabs">
-              <% if !current_user.admin %>
-               
+
                 <li class="active">
                   <a href="#panel-87367" data-toggle="tab">Preguntas 
                     <span class="badge">
@@ -98,7 +97,7 @@
                 </li>
               
 
-              <!--ACA VA UN ELSE PARA OCULTAR LAS PESTAÑAS DEL ADMIN -->
+              <% if current_user.admin %>
                 <li>
                   <a href="#panel-425300" data-toggle="tab">Estadistica de ventas</a>
                 </li>
@@ -130,9 +129,6 @@
 
 
 
-
-
-
               <!-- PANEL DE OFERTAS -->  
               <div class="tab-pane" id="panel-425311">
                  <p>
@@ -147,8 +143,6 @@
                </div><!--fin panel de fechas -->
  
 
-
-            
 
             <!-- PANEL DE ESTADISTICA DE VENTAS --> 
               <div class="tab-pane" id="panel-425300">

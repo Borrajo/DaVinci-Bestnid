@@ -6,14 +6,22 @@
 	<body>
 		<h1> 
 			Señor <%= @user1.nombre + " " + @user1.apellido %> su venta se ha finalizado con exito!
-		</h1>
+		</h1><br />
 		<p>
 			Los datos del comprador son:
-			Nombre: <%= @user2.nombre %>
-			Apellido: <%= @user2.apellido %>
-			Email: <%= @user2.email %>
-			<!-- Monto: <%= Aca iría el monto! %> -->
 		</p>
+		<p>	
+			Nombre: <%= @user2.nombre %>
+		</p>
+		<p>	
+			Apellido: <%= @user2.apellido %>
+		</p>
+		<p>	
+			Email: <%= @user2.email %>
+		</p>
+		<p>	
+			Monto obtenido por la venta: <%= @monto %>
+		</p><br />
 		<p>
 			Visitenos en: <a href="<%= @url %>">Bestnid-grupo2.herokuapp.com</a>
 		</p>

@@ -42,6 +42,8 @@ class ProductosController < ApplicationController
       if @producto.update_attributes(oferta_params)
         #no pueden usarse tildes en los flashes
         flash[:success] = "Felicidades has elegido al ganador."
+        ActionComprador.info_subasta_comprador(User.find(params[:producto][:comprador_id]), User.find(Producto.find(params[:id]).user_id), params[:producto][:monto]).deliver  #User1 = comprador y User2 = vendedor
+        ActionVendedor.info_subasta_vendedor(User.find(Producto.find(params[:id]).user_id), User.find(params[:producto][:comprador_id]), params[:producto][:monto]).deliver    #User1 = vendedor y User2 = comprador
         redirect_to producto_path
       end
   end
@@ -64,7 +66,7 @@ class ProductosController < ApplicationController
   end
 
   def oferta_params
-    params.require(:producto).permit(:comprador_id, :fecha_de_compra)
+    params.require(:producto).permit(:comprador_id, :fecha_de_compra, :monto)
   end
   
   def get_producto
