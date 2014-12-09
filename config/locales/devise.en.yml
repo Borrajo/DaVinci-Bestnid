@@ -85,8 +85,8 @@ es:
       failure: "No se pudo autentificar %{kind} porque \"%{reason}\"."
       success: "%{kind} se autentifico correctamente."
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
+      no_token: "No podes acceder a esta pagina sin antes provenir del email para resetear la contraseña. Si en realidad si has venido desde el email de reseteo de contraseña, por favor asegurate de haber usado la URL provista completa."
+      send_instructions: "En unos minutos recibiras un email con instrucciones para saber como resetear tu contraseña."
       send_paranoid_instructions: "Si tu mail existe en nuestra base de datos, recibiras un link en tu casilla de correo para recuperar tu contraseña."
       updated: "Tu contraseña fue cambiada correctamente. Ahora estas logueado."
       updated_not_active: "Tu contraseña fue cambiada correctamente."
@@ -99,7 +99,7 @@ es:
       update_needs_confirmation: "Has actualizado tu cuenta correctamente, pero necesitamos verificar tu nueva direccion de email. Por favor revisa tu casilla de email y has clic en el link de confirmacion."
       updated: "Has actualizado tu cuenta correctamente."
     sessions:
-      signed_in: " Bienvenido a bestnid."
+      signed_in: "Bienvenido a bestnid."
       signed_out: "Has salido de tu cuenta."
       already_signed_out: "Has salido de tu cuenta."
     unlocks:
