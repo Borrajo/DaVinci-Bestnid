@@ -4,7 +4,7 @@
 
       <% @aux1 = Producto.where(:fecha_de_compra => params[:inicio].to_date.beginning_of_day..params[:fin].to_date.end_of_day) %>
 
-      <% @aux3 = @aux1.where(:comprador_id => !nil) %>
+      <% @aux3 = @aux1.where(:comprador_id != nil) %>
 
       <% total = 0 %>
       <table style="width:1000px; height:100px;">
