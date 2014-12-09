@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+
+      <% @aux1 = User.where(:created_at => params[:inicio].to_date.beginning_of_day..params[:fin].to_date.end_of_day) %>
+
+      <% total = 0 %>
+      <table style="width:1000px; height:100px;">
+        <tr>
+          <th> Nombre </th>
+          <th> Cuenta </th>
+          <th> Fecha de registro </th>    
+        </tr>
+        <% @aux1.all.each do |aux| %>
+          <tr>
+            <td> <%= aux.nombre %> </td>
+            <td> <%= aux.email %> </td>
+            <td> <%= aux.created_at.strftime("%d/%m/%Y") %> </td>
+            <% total = total + 1 %>
+          </tr>
+        <% end %>
+      </table>
+
+      <p> Cantidad de usuarios registrados entre esas fechas: <%= total %> </p>
+
+    </div>
+  </div>
+</div>

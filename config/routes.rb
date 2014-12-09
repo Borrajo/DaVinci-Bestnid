@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
 
-  devise_for :users do
-    collection do
+  devise_for :users
+  resources :categorias
+  resources :usuarios do
+      collection do
         get 'estadisticas'
+        post 'estadisticas'
     end
   end  
-  resources :categorias
-  resources :usuarios
   resources :productos do
     collection do
         get 'estadisticas'
+        post 'estadisticas'
     end
   end
   resources :preguntas

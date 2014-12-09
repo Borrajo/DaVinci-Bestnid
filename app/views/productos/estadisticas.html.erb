@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+
+      <% @aux1 = Producto.where(:created_at => params[:inicio].to_date.beginning_of_day..params[:fin].to_date.end_of_day) %>
+
+      <% @aux3 = @aux1.where(:comprador_id => !nil) %>
+
+      <% total = 0 %>
+      <table style="width:1000px; height:100px;">
+        <tr>
+          <th> Producto </th>
+          <th> Comprador </th>
+          <th> Monto </th>
+          <th> Fecha de compra </th>                      
+        </tr>
+        <% @aux3.all.each do |aux| %>
+          <tr>
+            <td> <%= aux.nombre %> </td>
+            <td> <%= User.find(aux.user_id).nombre %> </td>
+            <td> <%= 100 %> </td>                          
+            <td> <%= aux.updated_at.strftime("%d/%m/%Y") %> </td>
+            <% total = total + 100 %>
+          </tr>                      
+        <% end %>
+      </table>
+      
+      <% total = total*30/100 %>
+      <p> Total = <%= total %> </p>
+
+    </div>
+  </div>
+</div>

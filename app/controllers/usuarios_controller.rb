@@ -29,6 +29,10 @@ class UsuariosController < ApplicationController
 
   end
 
+  def estadistica
+    
+  end
+
   def get_usuario
   end
 end
