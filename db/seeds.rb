@@ -42,7 +42,16 @@ Producto.find_or_create_by(nombre: "Kriptonita", descripcion: "200 gramos de Kri
 Producto.find_or_create_by(nombre: "Aceite y Vinagre", descripcion: "200ml de aceite y 300ml de vinagre. No incluye fascos", 
 	user_id: 3, cantidad_preguntas: 0, categoria_id: 8, foto: "http://40.media.tumblr.com/f92d39b2c62cf2bc5398797db35ce37d/tumblr_nbsejfmSt21tlipbuo1_400.jpg",
 	created_at: DateTime.new(2014,6,9), fecha_finalizacion: DateTime.new(2014,12,15) + 15.day, finalizado: false)
+Producto.find_or_create_by(nombre: "Silla", descripcion: "Silla donde se sento Freddie Mercury una vez", 
+	user_id: 1, cantidad_preguntas: 0, categoria_id: 7, foto: "http://40.media.tumblr.com/77bb112fcd60be90d4c0cdd36bbb8225/tumblr_nbsev0DXh51tlipbuo1_400.jpg",
+	created_at: DateTime.new(2014,6,9), fecha_finalizacion: DateTime.new(2014,11,15) + 15.day, finalizado: true)
+Producto.find_or_create_by(nombre: "Papamovil Mercedes", descripcion: "Papa movil (p papamobile) con Juan Pablo II(Giovanni Paolo II). Es un modelo unico del Mercedes Benz Serie ML 430 que utilizo el Papa", 
+	user_id: 1, cantidad_preguntas: 0, categoria_id: 10, foto: "https://scontent-b-atl.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/527891_270065266438352_207761564_n.jpg?oh=7cdf09aa9be343a002cd460f00b6c907&oe=54FBBA5D",
+	created_at: DateTime.new(2014,6,9), fecha_finalizacion: DateTime.new(2014,11,15) + 15.day, finalizado: true)
 
 puts "Agrego una pregunta y respuesta"
 Producto.find(2).preguntas.find_or_create_by(pregunta: "Cuanto pesa?", respuesta: "Unos 150 kg ma'o meno'", fecha_respuesta: Date.new(2014,11,4));
 
+puts "Agrego ofertas"
+Oferta.find_or_create_by(producto_id: 7, user_id: 2, necesidad: "Juan Pablo fue el mejor papa de la historia para mi y me encantaria tener esta figura para recordarlo siempre",
+	 monto: 100)
