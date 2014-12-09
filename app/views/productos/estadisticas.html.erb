@@ -7,7 +7,7 @@
       <% @aux3 = @aux1.where(:comprador_id != nil) %>
 
       <% total = 0 %>
-      <table style="width:1000px; height:100px;">
+      <table class="table" style="width:1000px; height:100px;">
         <tr>
           <th> Producto </th>
           <th> Vendedor </th>
@@ -16,7 +16,7 @@
           <th> Fecha de compra </th>                      
         </tr>
         <% @aux3.all.each do |aux| %>
-          <tr>
+          <tr class="active">
             <td> <%= aux.nombre %> </td>
             <td> <%= User.find(aux.user_id).nombre %> </td>
             <td> <%= User.find(aux.comprador_id).nombre %> </td>
