@@ -108,11 +108,6 @@
                   <a href="#panel-425350" data-toggle="tab">Estadistica de usuarios</a>
                 </li>
 
-
-              <!--Pestaña para probar FILTRADO -->
-               <li>
-                  <a href="#panel-425518" data-toggle="tab">PRUEBA FILTRO</a>
-                </li>
               <% end %>
             </ul>
 
@@ -159,13 +154,38 @@
               <div class="tab-pane" id="panel-425300">
                 <div class="container">
                     <div class="row clearfix">
-                      
+                    <%= form_tag (estadisticas_productos_path) do %>
                     </br>
                         <div class ="col-md-3 column">
                               <div class="form-group">
                               
 
-                   
+                                <!-- Campo calendario inicio --> 
+                                  <div class='input-group date' data-behaviour= 'datepicker'>
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                      </span>
+                                      <%= date_field_tag :inicio, params[:inicio], type: 'date', class: "form-control" %>
+                                  </div>
+                              </div>
+
+                              <!-- Campo calendario fin -->
+                              <div class="form-group">
+                                  <div class='input-group date' data-behaviour= 'datepicker'>
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                      </span>
+                                     <%= date_field_tag :fin, params[:fin], type: 'date', class: "form-control" %>
+                                  </div>
+                              </div>
+
+                        </div><!--final de columna 3-->
+                        <div class ="col-md-2 column">
+                        </br>
+
+                          <%= submit_tag "Consultar2", class: "btn btn-danger"%>
+                        
+                        </div>
+                    </div><!--final de row-->
+                    <% end %>
                   </div><!--final de container-->
               </div><!--final del panel de estadisticas de ventas-->
 
@@ -174,75 +194,42 @@
 
               <!-- PANEL DE ESTADISTICA DE USUARIOS -->
               <div class="tab-pane" id="panel-425350">
-                <p>
+                <div class="container">
+                    <div class="row clearfix">
+                    <%= form_tag (estadisticas_usuarios_path) do %>
+                    </br>
+                        <div class ="col-md-3 column">
+                              <div class="form-group">
+                              
 
-<!--  -------------------------------------------------------------------------------- -->
-                    <% inicio = User.find(1).created_at %>
-                    <% fin = User.find(3).created_at %>
-                    <% aux1 = User.where(:created_at => inicio.beginning_of_day..fin.end_of_day) %>
+                                <!-- Campo calendario inicio --> 
+                                  <div class='input-group date' data-behaviour= 'datepicker'>
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                      </span>
+                                      <%= date_field_tag :inicio, params[:inicio], type: 'date', class: "form-control" %>
+                                  </div>
+                              </div>
 
-                  <% total = 0 %>
-                    <table style="width:1000px; height:100px;">
-                      <tr>
-                        <th> Nombre </th>
-                        <th> Cuenta </th>
-                        <th> Fecha de registro </th>    
-                      </tr>
-                      <% aux1.all.each do |aux| %>
-                        <tr>
-                          <td> <%= aux.nombre %> </td>
-                          <td> <%= aux.email %> </td>
-                          <td> <%= aux.created_at.strftime("%d/%m/%Y") %> </td>
-                          <% total = total + 1 %>
-                        </tr>
-                      <% end %>
-                    </table>
+                              <!-- Campo calendario fin -->
+                              <div class="form-group">
+                                  <div class='input-group date' data-behaviour= 'datepicker'>
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                      </span>
+                                     <%= date_field_tag :fin, params[:fin], type: 'date', class: "form-control" %>
+                                  </div>
+                              </div>
 
-                    <p> Cantidad de usuarios registrados entre esas fechas: <%= total %> </p>
+                        </div><!--final de columna 3-->
+                        <div class ="col-md-2 column">
+                        </br>
 
-                </p>
+                          <%= submit_tag "Consultar2", class: "btn btn-danger"%>
+                        
+                        </div>
+                    </div><!--final de row-->
+                    <% end %>
+                  </div><!--final de container-->
               </div><!--final del panel de estadisticas de usuario-->
-
-
-              <!-- PANEL DE PRUEBA DE FILTRADO -->
-              <div class="tab-pane" id="panel-425518">
-                <p>
-
-
-<!--                   Filtrado de productos comprados por fechas -->
-                  <!--  ---------------------------------------------------------------------------------->
-
-                    <% inicio = Producto.find(1).created_at %>
-                    <% fin = Producto.find(3).created_at %>
-
-                    <% aux1 = Producto.where(:created_at => inicio.beginning_of_day..fin.end_of_day) %>
-
-                    <% aux2 = aux1.where(:finalizado => false) %>
-
-                    <% aux3 = aux2.where(:comprador_id => nil) %>
-
-                    <% total = 0 %>
-                    <table style="width:1000px; height:100px;">
-                      <tr>
-                        <th> Producto </th>
-                        <th> Comprador </th>
-                        <th> Monto </th>
-                        <th> Fecha de compra </th>                      
-                      </tr>
-                      <% aux3.all.each do |aux| %>
-                        <tr>
-                          <td> <%= aux.nombre %> </td>
-                          <td> <%= User.find(aux.user_id).nombre %> </td>
-                          <td> <%= 100 %> </td>                          
-                          <td> <%= aux.updated_at %> </td>
-                          <% total = total + 100 %>
-                        </tr>                      
-                      <% end %>
-                    </table>
-                    <% total = total*30/100 %>
-                    <p> Total = <%= total %> </p>                  
-                </p>
-              </div><!--final del panel de prueba de fltrado-->
 
 
         </div><!--fin del contenido de los paneles -->
@@ -252,4 +239,3 @@
 </div>
 </div>
 </div>
-

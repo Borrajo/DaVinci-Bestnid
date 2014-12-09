@@ -46,11 +46,7 @@ class ProductosController < ApplicationController
       end
   end
 
-#Aca esta lo qeu te decía  si logras asociar una view para este metodo ya estaríamos 
-  def ver
-    if params[:inicio] && [:fin]
-        @productos = Producto.where(:created_at => params[:inicio].beginning_of_day..params[:fin].end_of_day)
-    end
+  def estadistica
   end
 
   def show 
