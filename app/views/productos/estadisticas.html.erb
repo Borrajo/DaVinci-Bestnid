@@ -2,7 +2,7 @@
   <div class="row clearfix">
     <div class="col-md-12 column">
 
-      <% @aux1 = Producto.where(:created_at => params[:inicio].to_date.beginning_of_day..params[:fin].to_date.end_of_day) %>
+      <% @aux1 = Producto.where(:fecha_de_compra => params[:inicio].to_date.beginning_of_day..params[:fin].to_date.end_of_day) %>
 
       <% @aux3 = @aux1.where(:comprador_id => !nil) %>
 
@@ -21,7 +21,7 @@
             <td> <%= User.find(aux.user_id).nombre %> </td>
             <td> <%= User.find(aux.comprador_id).nombre %> </td>
             <td> <%= aux.monto %> </td>                          
-            <td> <%= aux.updated_at.strftime("%d/%m/%Y") %> </td>
+            <td> <%= aux.fecha_de_compra.strftime("%d/%m/%Y") %> </td>
             <% total = total + aux.monto %>
           </tr>                      
         <% end %>
