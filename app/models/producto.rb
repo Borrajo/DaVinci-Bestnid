@@ -1,6 +1,6 @@
 class Producto < ActiveRecord::Base
 
-	default_scope -> { order("created_at desc") }
+	
 
     scope :activos, -> { where("finalizado = false") }
 
