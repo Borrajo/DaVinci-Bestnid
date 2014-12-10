@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Creo los usuarios"
-User.create(nombre: "Carlos", apellido: "Maidana", email: "carlos@a.com", telefono: "011411234514",foto: "https://pbs.twimg.com/profile_images/1119269505/0509071614Peter_Griffin.jpg", password: "12345678", fecha_nacimiento: Date.new(1992,05,10))
-User.create(nombre: "Catalina", apellido: "Perez", email: "catalina@a.com", telefono: "0114353152",foto: "http://www.diariouno.com.ar/export/1367952609367/sites/diariouno/imagenes/2013/05/07/-_marge_simpson.jpg_274898881.jpg" , password: "12345678", fecha_nacimiento: Date.new(1991,07,15))
-User.create(nombre: "Sergio", apellido: "Ramirez", email: "sergio@a.com", telefono: "0114514789",foto: "http://asapblogs.typepad.com/photos/uncategorized/2007/06/21/ap060228044420.jpg", password: "12345678", fecha_nacimiento: Date.new(1993,07,15))
+User.create(nombre: "Carlos", apellido: "Maidana", email: "carlos_bestnid@hotmail.com", telefono: "011411234514",foto: "https://pbs.twimg.com/profile_images/1119269505/0509071614Peter_Griffin.jpg", password: "12345678", fecha_nacimiento: Date.new(1992,05,10))
+User.create(nombre: "Catalina", apellido: "Perez", email: "catalina_bestnid@hotmail.com", telefono: "0114353152",foto: "http://www.diariouno.com.ar/export/1367952609367/sites/diariouno/imagenes/2013/05/07/-_marge_simpson.jpg_274898881.jpg" , password: "12345678", fecha_nacimiento: Date.new(1991,07,15))
+User.create(nombre: "Sergio", apellido: "Ramirez", email: "sergio_bestnid@hotmail.com", telefono: "0114514789",foto: "http://asapblogs.typepad.com/photos/uncategorized/2007/06/21/ap060228044420.jpg", password: "12345678", fecha_nacimiento: Date.new(1993,07,15))
 User.create(nombre: "Admin", apellido: "Admin", email: "bestnid.corp@gmail.com", telefono: "0114514789",foto: "http://upload.wikimedia.org/wikipedia/commons/b/b9/User_admin.svg", password: "12345678", fecha_nacimiento: Date.new(1993,07,15), admin: true)
 
 puts "Creo las categorias"
