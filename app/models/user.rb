@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  	has_many :ofertas
+  	has_many :ofertas, dependent: :destroy
 	has_many :productos, dependent: :destroy
-    has_many :preguntas
+    has_many :preguntas, dependent: :destroy
 
     validates :nombre, presence: true, length: {minimum: 2, maximum: 30}
 

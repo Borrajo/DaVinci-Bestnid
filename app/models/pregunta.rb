@@ -4,7 +4,7 @@ class Pregunta < ActiveRecord::Base
   
   	scope :no_contestadas, -> {where("respuesta IS NULL")} 
 
-  belongs_to :producto, dependent: :destroy
+  belongs_to :producto
   belongs_to :user
 
   validates :pregunta, uniqueness: true, presence: true

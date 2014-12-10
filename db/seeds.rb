@@ -39,7 +39,7 @@ Producto.find_or_create_by(nombre: "Espejo", descripcion: "Espejo sin marco. Med
 Producto.find_or_create_by(nombre: "Kriptonita", descripcion: "200 gramos de Kriptonita", 
 	user_id: 2, cantidad_preguntas: 0, categoria_id: 4, foto: "http://41.media.tumblr.com/8e08757ed8fd1c3368e29dc127140ef1/tumblr_nbsewqvU231tlipbuo1_1280.jpg",
 	created_at: DateTime.new(2014,5,8), fecha_finalizacion: DateTime.new(2014,12,8) + 28.day, finalizado: false)
-Producto.find_or_create_by(nombre: "Aceite y Vinagre", descripcion: "200ml de aceite y 300ml de vinagre. No incluye fascos", 
+Producto.find_or_create_by(nombre: "Aceite y Vinagre", descripcion: "200ml de aceite y 300ml de vinagre. No incluye frascos", 
 	user_id: 3, cantidad_preguntas: 0, categoria_id: 8, foto: "http://40.media.tumblr.com/f92d39b2c62cf2bc5398797db35ce37d/tumblr_nbsejfmSt21tlipbuo1_400.jpg",
 	created_at: DateTime.new(2014,6,9), fecha_finalizacion: DateTime.new(2014,12,15) + 15.day, finalizado: false)
 Producto.find_or_create_by(nombre: "Silla", descripcion: "Silla donde se sento Freddie Mercury una vez", 

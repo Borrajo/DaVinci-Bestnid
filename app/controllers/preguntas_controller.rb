@@ -39,6 +39,6 @@ class PreguntasController < ApplicationController
 
   private
   def pregunta_params
-    params.require(:pregunta).permit(:pregunta, :producto_id, :usuario_id, :respuesta, :fecha_respuesta) 
+    params.require(:pregunta).permit(:pregunta, :producto_id, :user_id, :respuesta, :fecha_respuesta) 
   end
 end

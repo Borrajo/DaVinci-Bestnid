@@ -2,8 +2,8 @@ class Oferta < ActiveRecord::Base
 
   default_scope -> {order("id")}
 
-  belongs_to :productos, dependent: :destroy
-  belongs_to :users, dependent: :destroy
+  belongs_to :productos
+  belongs_to :users
   
   validates :necesidad,presence: true
 
