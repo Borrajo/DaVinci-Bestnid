@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
 	<head>
 		<meta content='text/html; charset=UTF-8' hhttp-equiv='Content-Type' />
 	</head>
@@ -20,7 +21,7 @@
 			Email: <%= @user2.email %>
 		</p>
 		<p>	
-			Monto obtenido por la venta: <%= @monto %>
+			Monto obtenido por la venta: <%=(@monto.to_f)*0.7%>
 		</p><br />
 		<p>
 			Visitenos en: <a href="<%= @url %>">Bestnid-grupo2.herokuapp.com</a>
