@@ -139,11 +139,18 @@
                                 </tr>
                             </thead>
                             
-                       
-
-
                             <!--Aca comienzan las preguntas y respuestas-->
-                           
+
+                            <!--Muestra el mensaje si no hay preguntas-->
+                                <% if @producto.preguntas.count == 0 %>
+                                  <tr>
+                                    <td>
+                                      Todavía no hay preguntas para este producto.
+                                    </td>
+                                  </tr>
+                                <%end%>
+                            <!--fin del mensaje-->
+
                                 <% @producto.preguntas.each  do |pregunta| %> 
                                 <!--Pregunta-->
                                 <tr>
