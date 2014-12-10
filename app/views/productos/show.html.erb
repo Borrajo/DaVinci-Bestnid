@@ -273,9 +273,8 @@
                                                     <%= p.hidden_field :fecha_de_compra, value: DateTime.now %>
                                                     <%= p.hidden_field :comprador_id, value: oferta.user_id %>
                                                     <%= p.hidden_field :monto, value: oferta.monto %>
-                                                    <span class="input-group-btn">
+                                                  
                                                           <%= p.submit "Elegir", class: "btn btn-danger"%>
-                                                    </span>
                                                   </div><!-- /input-group -->
                                               </div>
                                           </form>
@@ -290,9 +289,9 @@
                                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                                                       GANADORA
                          
-                                               <% end %>
+                                               <% end %><!-- end -->
 
-                                           </td>
+                                          </td>
                                         <% end %>
                                     </tr>
                                 <%end%>
