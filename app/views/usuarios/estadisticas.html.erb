@@ -2,7 +2,7 @@
   <div class="row clearfix">
     <div class="col-md-12 column">
 
-      <% @aux1 = User.where(:created_at => params[:inicio].to_date.beginning_of_day..params[:fin].to_date.end_of_day) %>
+      <% @aux1 = User.where(:created_at => params[:inicio].to_date.beginning_of_day..params[:fin].to_date.end_of_day).order("created_at desc") %>
 
       <% total = 0 %>
       <table class="table" style="width:1000px; height:100px;">
@@ -19,7 +19,7 @@
             <% total = total + 1 %>
           </tr>
         <% end %>
-        <% if total = 0 %>
+        <% if total == 0 %>
           <tr class="active">
             <td>
               No hay usuario registrados en estas fechas
