@@ -25,6 +25,13 @@
             <% total = total + aux.monto %>
           </tr>                      
         <% end %>
+        <% if @aux3.count == 0 %>
+          <tr class="active">
+            <td>
+              No existen producto vendidos en estas fechas
+            </td>
+          </tr>
+          <%end%>
       </table>
       
       <% total = total*30/100 %>

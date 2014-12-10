@@ -19,6 +19,13 @@
             <% total = total + 1 %>
           </tr>
         <% end %>
+        <% if total = 0 %>
+          <tr class="active">
+            <td>
+              No hay usuario registrados en estas fechas
+            </td>
+          </tr>
+          <%end%>
       </table>
 
       <p> Cantidad de usuarios registrados entre esas fechas: <%= total %> </p>

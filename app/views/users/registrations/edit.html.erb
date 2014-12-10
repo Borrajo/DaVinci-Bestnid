@@ -152,28 +152,28 @@
                     </br>
                         <div class ="col-md-3 column">
                               <div class="form-group">
-                              
-
                                 <!-- Campo calendario inicio --> 
+                                Fecha de inicio:
                                   <div class='input-group date' data-behaviour= 'datepicker'>
                                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                       </span>
-                                      <%= date_field_tag :inicio, params[:inicio], type: 'date', class: "form-control" %>
+                                      <%= date_field_tag :inicio, params[:inicio], type: 'date', value: Date.today , class: "form-control" %>
                                   </div>
                               </div>
 
                               <!-- Campo calendario fin -->
                               <div class="form-group">
+                                Fecha de finalización:
                                   <div class='input-group date' data-behaviour= 'datepicker'>
                                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                       </span>
-                                     <%= date_field_tag :fin, params[:fin], type: 'date', class: "form-control" %>
+                                     <%= date_field_tag :fin, params[:fin], type: 'date', value: Date.today , class: "form-control" %>
                                   </div>
                               </div>
 
                         </div><!--final de columna 3-->
                         <div class ="col-md-2 column">
-                        </br>
+                        </br></br>
 
                           <%= submit_tag "Consultar", class: "btn btn-danger"%>
                         
@@ -195,30 +195,30 @@
                         <div class ="col-md-3 column">
                               <div class="form-group">
                               
-
+                                Fecha de inicio:
                                 <!-- Campo calendario inicio --> 
                                   <div class='input-group date' data-behaviour= 'datepicker'>
                                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                       </span>
-                                      <%= date_field_tag :inicio, params[:inicio], type: 'date', class: "form-control" %>
+                                      <%= date_field_tag :inicio, params[:inicio], type: 'date', value: Date.today ,class: "form-control" %>
                                   </div>
                               </div>
-
+                                Fecha de finalización:
                               <!-- Campo calendario fin -->
                               <div class="form-group">
                                   <div class='input-group date' data-behaviour= 'datepicker'>
                                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                       </span>
-                                     <%= date_field_tag :fin, params[:fin], type: 'date', class: "form-control" %>
+                                     <%= date_field_tag :fin, params[:fin], type: 'date', value: Date.today ,class: "form-control" %>
                                   </div>
                               </div>
 
                         </div><!--final de columna 3-->
                         <div class ="col-md-2 column">
-                        </br>
+                        </br></br>
 
                           <%= submit_tag "Consultar", class: "btn btn-danger"%>
-                        
+                      
                         </div>
                     </div><!--final de row-->
                     <% end %>

@@ -5,8 +5,7 @@
     <!-- Checkeo de Errores -->
     <% if @producto.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@producto.errors.count, "error") %> prohibited
-          this article from being saved:</h2>
+        <h2><%= pluralize(@producto.errors.count, "problema") %> prohiben que esta publicación sea creada:</h2>
         <ul>
         <% @producto.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
